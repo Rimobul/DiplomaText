@@ -558,6 +558,62 @@ The evaluation of development tools is performed on on a Windows machine for And
 
 \subsection{Results}
 
+
+
+\section{Methodology}
+
+There exist multiple texts comparing a couple of multi-platform development tools [REF]. Some of them even provide guide or explanation on how the tools were chosen and how to pick the most suitable one for particular projects [REF]. However, there is no comprehensive methodology, generic enough to cover a wide variety of multi-platform frameworks. From the theoretical and practical information we have gathered in previous chapters, it is possible to construct a series of methodological steps that will achieve exactly this goal.
+
+\subsection{Necessary preconditions}
+If the methodology is supposed to be effective in the process of selecting the right tool, several preconditions need to be satisfied. The most important factor is specification. Of course, it is impossible to determine every single part of the resulting application right from the start. However, the more precise the specification, the more accurate results can be expected. 
+
+The architect, business analyst or product owner should be aware also of the long-term vision for the next iterations. It is very unlikely that a prototype will be done in one tool, which will have to be switched for another, because of changed requirements. Most customers have neither enough money nor time.
+
+Another important factor is to collect as much data about the available resources as possible. Enough information about the size, expertise and maturity of the development team can reduce both time and costs dramatically. Also, mapping already available software and hardware can help to keep the budget.
+
+\subsection{Methodologically unsuitable projects}
+
+Before proceeding with the methodology itself, several eliminating questions should be answered. If the answer is “yes” to one or multiple questions, given project cannot be correctly assessed by this methodology.
+
+\begin{itemize}
+	\item \textbf{Is only one operating system (even with multiple screen sizes) targeted?} 
+	If the answer is “yes”, then there is no reason to use multi-platform framework. There is nothing that beats native development. The world of multi-platform tools is a world of compromises. Native development allows to use the operating system to its fullest potential, while not limiting the performance. If Java or ObjectiveC are concerns, there exist alternatives also for single-platform development, such as Swift or Kotlin.
+	
+	\item \textbf{Do you want to target operating systems other than Android, BlackBerry, iOS and Windows?} 
+	This methodology is aimed strictly on mobile OSs. Although some tools allow development for desktop computers as well, this possibility is not discussed in the methodology. From those featured in the methodology, Qt, Embarcadero, Kivy, RubyMotion or Xamarin target also one or multiple desktop platforms. 
+	
+	The key operating systems for this methodology are Android and iOS. Attention is paid also to Windows support (namely Windows 10 UWP and Windows 8.1 WinRT). Tools enabling development for BlackBerry are examined for their full support. However, should the reader want to focus on different mobile operating systems (like Symbian, Bada or others), this methodology and the suggested results may not be suitable for that use case.
+	
+	\item \textbf{Will the app use extensively multiple platform-specific APIs, sensors or widgets?} 
+	Many platform-specific features (like Android widgets or Windows life tiles) are not present on other operating systems, thus several multi-platform development tools ignore them altogether. Since the focus of multi-platform tools is to run a single common code on multiple platforms, they often use the road of least common denominator and strip away features, which have no alternatives on other platforms. Some tools provide platform overrides, or allow to have platform-specific application and UI layers. Yet, if the design and functionality for each OS is significantly different\footnote{An example of this may be something as simple as a slider. While on iOS and Windows the native slider allows arbitrary steps, the Android SeekBar is bound to 1000 steps. As a result, values not divisible by 1000 broke the application, since the slider could not find the right position. It took several days to determine the cause of the issue and write a reliable platform-agnostic solution}, a multi-platform tool is useless. 
+	
+	Tools with active community may have various 3rd party resources, but these may complicate the licencing, increase the cost, decrease performance and violate the security. Adding a large quantity of libraries or plugins will increase the size of the application dramatically. 
+	
+	\item \textbf{Do you want to create a game?} 
+	Although some multi-platform development tools studied by this methodology allow game development to certain extent, for a fully-fledged 2D or 3D game it may not be appropriate. Discussing the differences between individual game framework is beyond the scope of this work. Multi-platform frameworks allowing game development include (but are not limited to) Unity 3D, Unreal Development Kit, Marmelade, MoSync or Wave. However, should the reader plan creating multiple apps and wish to utilize the invested learning effort, he/she is advised to use the methodology and focus on tools supporting game development.
+	
+	\item \textbf{Do you want to create a new web app for both desktop and mobile, or port an existing desktop web page to mobile environment?} 
+	If the project is a web page or web application that should be available both for mobile and desktop environment and there is no intention of using native APIs or sensors, mobile web app frameworks should be considered. They produce a common web page, adjusted for the mobile devices. For starters, Bootstrap Mobile, AppPress, Sencha Touch, Dojo or jQuery Mobile should be examined. 
+	
+	\item \textbf{Do you want to create a business-focused enterprise application with connection to an existing cloud backend?}
+	This thesis focuses on frameworks, which allow general-purpose app creation. However, there is a plethora of tools and services which can create a single-purpose app (e.g. for monitoring of employees, to provide ERP and CRM services). Examples of such tools can be Appticles, i-exceed, Pega Systems or Retriever Communications. 
+	
+	Other group of single-purpose multi-platform tools focus on providing MBaaS services. They integrate into existing cloud systems (like AWS, Azure, Oracle, IBM, SAP or Salesforce) and enable data access and management from a mobile app. Providers of these services include nypresence, AppGyver, IBM Mobile First, Kinvey, MobileFrame, MooFWD. There is plenty of others, not covered in this thesis. However, MBaaS providers who allow creating offline apps and multi-purpose apps have been added to the main methodology.
+\end{itemize}
+
+
+\subsection{Recommended way of using the methodology}
+	If the project has passed all questions from chapter 5.2, it means it is suitable to be subjected to the methodology. The whole methodology consists of 4 sets of questions. Each set has decreasing importance. The first set of questions is the most important. Tools not fulfilling requirements posed in this set violate the project's specification radically. Such tools should be removed from further evaluation.
+	
+	It is possible that for certain projects the most suitable multi-platform development tool will be clear already after the first set of questions. However, usually the first set of question selects a small group of frameworks with similar capabilities. To distinguish which of them is the most appropriate for a certain project, the second set of questions should be taken. This set contains conditions which are fairly common in mobile app development. Failing one or two requirements in the second set is not as critical as in the first set. Usually, there exists a work-around, but it may increase the project cost, development time or negatively impact app's performance.
+	
+	Projects having unusual or highly specific requirements should be subjected also to the third set of questions. This set contains conditions which are rare, or there exists an easy workaround. It also focuses on features that may help to decrease the development time or increase performance, user experience and stability of an application. Either way, after the second or third set of questions, the majority of project will get a clear recommendation on which framework to use.
+	
+	If there is no clear winner even after the third set of questions, then there is the last set of questions. These supplementary questions have no clear answer. They rather point out further criteria which can be researched to discover the most suitable development tool.
+	
+	EVALUTAION
+
+
 \begin{thebibliography}{99}
 	\bibitem{cptBenchmarking2014} \textit{Cross-Platform Tool Benchmarking 2014} [online]. [cit. 2017-02-19]. In: http://www.research2guidance.com/r2g/Cross-Platform-Tool-Benchmarking-Report-2014.pdf
 	\bibitem{taxonomyCP}EL-KASSAS, Wafaa S., Bassem A. ABDULLAH, Ahmed H. YOUSEF a Ayman M. WAHBA. \textit{Taxonomy of Cross-Platform Mobile Applications Development Approaches} [online]. Department of Computer and Systems Engineering, Faculty of Engineering, Ain Shams University, Egypt, 2015 [cit. 2017-02-19]. In: http://www.sciencedirect.com/science/article/pii/S2090447915001276
