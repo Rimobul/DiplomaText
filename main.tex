@@ -370,14 +370,15 @@ It is often stated by many developers, that the only true multi platform develop
 \subsubsection{Hybrid applications}
 Hybrid apps try to minimize the problems of web apps, while benefiting from their strengths. They wrap the JavaScript (and HTML + CSS) application in a lightweight native wrapper, most often a webview stripped of almost all functionality. Unlike mobile web apps, hybrid applications are available also offline and have much better access to native APIs, interfaces and peripheries. However, the native functionality may differ for each OS. The application is still in a web browser, which drastically decreases its performance. Plus, the nature of JavaScript does not allow to use multiple threads. Also, hybrid applications do not have access to native UI. A drawback for some may be a benefit to others - the application will look the same on each operating system. 
 
-\subsubsection{Cross-compilation}
-Cross-compilation describes the practice of developing an app using platform-agnostic API. This applies for all layers, from UI to data persistence. The cross-compiler transforms the code into native platform-specific executable apps (or libraries). This approach is known as WORA (Write once, run anywhere). The positives of cross-compilation is definitely the native performance and access to native APIs. However, it is difficult to keep a cross-compiler consistent and up-to-date with all mobile operating systems and platforms. Also, the WORA approach limits the options provided by an operating system, leaving only the least common denominator.
-
 \subsubsection{Interpretation}
-Interpreted apps utilize a custom runtime environment or virtual machine (like Java Virtual Machine or Mono) and its own API to execute the application, while interfacing with the native platform at the same time. To the developer, creating a cross-compilation or interpreted application may seem very similar. However, since the latter includes bindings to native libraries, the WORA approach can be more loose, allowing platform-specific overrides. On one side, VMs include all the positives of cross-compilation, offer higher portability and more update flexibility compared to cross-compilers. They can use the whole palette of native UI elements and API interfaces. Yet, the virtual machine still needs to be updated based on both native platform and custom API innovations. Plus, depending on the technical maturity of a virtual machine, it may use more resources, or have lower performance compared to native apps.
+Interpreted apps utilize a custom runtime environment or virtual machine (like JavaScript engine or Java Virtual Machine), while interfacing with the native platform at the same time. Interpreted apps are written predominantely in JavaScript, similar to mobile web apps and hybrid apps. However, they are not executed in a web browser, so there is no sand-box limitation and no HTML DOM. As the name suggests, the code is directly interpreted by an included JavaScript engine. Access to native APIs and sensors is almost unlimited. Various tools provide various UI rendering techniques - some use native UI elements (like Appcelerator and NativeScript), others provide a platform-agnostic unified UI (e.g. Codename One and React Native). Performance-wise, interpreted apps are in between hybrid and cross-compiled apps. However, they allow faster protoryping process, since updating code does not require a build process.
+
+\subsubsection{Cross-compilation}
+To the developer, creating a cross-compilation or interpreted application may seem very similar. However, cross-compilation is a much more complicated process. 
+Cross-compilation describes the practice of developing an app using platform-agnostic API or programming language. The cross-compiler transforms the code into native platform-specific executable apps (or libraries). While some tools (e.g. Kivy or Qt) apply this process to all layers - from data layer to UI - resulting in a true WORA approach, others allow more platform-specific access (like RubyMotion or Xamarin). Cross-compiled apps have performance closest to truly native apps. Due to complicated process of cross-compilation and OS differences, some tools combine cross-compilation with interpretation (e.g. Mono.Android interprets code from .NET libraries).
 
 \subsubsection{Source translation}
-The last approach, source translation is based in translating one high-level programming language into another. The app is then run from the platform-specific programming language. Similar to cross-compilation and VMs, the advantages of this technique is the native performance, native UI and almost unlimited access to native API. However, the WORA approach is very limiting also for source translation. Moreover, the translation may not be optimized, resulting in degraded performance. 
+The last approach, source translation is based in translating one high-level programming language into another. The app is then run from the platform-specific programming language. Similar to cross-compilation and Virtual Machines, the advantages of this technique is the native performance, native UI and almost unlimited access to native API. However, no framework uses pure source translation approach. Rather, it is combined with other approaches - hybrid, interpreted or cross-compiled - where only part of code is translated.
 
 \subsection{MBaaS}
 For many businesses the use case of an internal company application is often the same - to collect inputs, store them, and to perform various analyses, display data and notify employees when necessary. This requires a database server, or other cloud storage, web api, web server, and often both a mobile and web application. To implement the complete work flow correctly and efficiently a whole group of software engineers, developers and coders is needed. Many companies would need to outsource development of such project, or hire several freelance developers. Further costs connected with support services and the need to reveal company secrets to 3rd parties are all risks that many are not willing to undertake.
@@ -458,7 +459,7 @@ It is clear that the most popular programming language is JavaScript. Most tools
 Already now we are able to distinguish several decisive criteria to choose a development tool for multi-platform mobile applications. The supported operating systems, programming languages, price, licencing, etc. However, to determine also other criteria, not visible on the first sight, further investigation needs to be done. We will pick a few development tools from previous chapter for evaluation and implement several use cases in them.
 
 \subsection{Development tools chosen for evaluation}
-To test the differences between individual tools, several of them were chosen for closer evaluation. Xamarin, representing the cross-compiled group, serves as a reference framework, due to author’s previous experience with it. The largest group, hybrid apps, will be represented by its most known member - PhoneGap. From tools using cross-compilation, Qt was chosen for evaluation.
+To test the differences between individual tools, the most popular tool\footnote{According to a joint popularity index from Google Trends and G2Crowd} from each build approach was chosen. Xamarin, representing the cross-compiled group, serves as a reference framework, due to author’s previous experience with it. The largest group, hybrid apps, will be represented by its most known member - Apache Cordova. From tools using interpretation, React Native is on the rise.
 
 \subsubsection{Xamarin}
 Xamarin is a software company producing a mobile multi-platform development tool of the same name. It was established in May 2011 and acquired by Microsoft in February 2016. Xamarin (the platform) allows developers to code in C\# for Android, iOS and Windows. Developers can use the Visual Studio IDE on Windows or Xamarin Studio on both Windows and MacOS. However, only Android applications can be built on both operating systems. To create an iOS application, developer needs a Mac device to perform the build. Likewise, Windows (Phone) app can be developed only on a Windows (Desktop) machine. 
@@ -468,24 +469,20 @@ On iOS, Xamarin compiles Ahead-of-Time to native assembly, while on Android ther
 The second way to develop applications for Xamarin is via Xamarin.Forms. This is a custom-made UI framework, that removes the need to implement user interfaces for each platform individually. However, creating platform-specific behaviour is still possible (and in some cases required). With Xamarin.Forms the amount of code shared across platforms can be up to 100\% \cite{xamarin}.
 
 \subsubsection{Apache Cordova}
-One of the most popular multiplatform development tools is definitely PhonGap. PhoneGap is the original and most popular distribution of Apache Cordova \footnote{https://cordova.apache.org/}. 
+One of the most popular multiplatform development tools is definitely PhonGap. PhoneGap is the original and most popular distribution of Apache Cordova \cite{apacheCordova}, which is an open source development framework enabling app development using HTML 5, CSS 3 and JavaScript. Cordova provides a native wrapper with a web view (or equivalent component) and accesses hardware peripheries with JavaScript API. The application itself is built within the web view wrapper. This type of app development is called hybrid. 
 
-So what is Apache Cordova? It is an open source development framework, which enables app development using HTML 5, CSS 3 and JavaScript. Cordova provides a native wrapper with a web view (or equivalent component) and accesses hardware periferies with JavaScript API. The application itself is built within the web view wrapper. This type of app development is called hybrid. 
-
-Although the application is installed natively and runs offline, the UI elements are often different, access to native API is restricted and the application tends to have decreased performance. Plus, for hackers and copycats it is very easy to download the installation package and extract the JavaScript files, since they are generally included as standard web content [https://www.codenameone.com/blog/comparing-phonegap-cordova-and-codename-one.html]. 
+Although the application is installed natively and runs offline, the UI elements are often different, access to native API is restricted and the application tends to have decreased performance. Plus, for hackers and copycats it is very easy to download the installation package and extract the JavaScript files, since they are generally included as standard web content \cite{cordovaVsCodename}. 
 
 Yet, developing using Apache Cordova (and other hybrid tools) is very fast, and some obfuscation tools exist. It is worth noting that PhoneGap is not the only distribution of Apache Cordova. There are many others, like Ionic, allowing development in Angular, NSBasic, developed in Basic, or Telerik, which supports JavaScript, Angular and TypeScript.
 
-For the evaluation, the Visual Studio distribution of Apache Cordova was chosen. By default, it offers development in HTML 5, CSS 3 and JavaScript or TypeScript. However, it contains also templates for Angular projects and is directly recommended by the Ionic framework \footnote{http://ionicframework.com/getting-started/}. 
+For the evaluation, the Visual Studio distribution of Apache Cordova was chosen. By default, it offers development in HTML 5, CSS 3 and JavaScript or TypeScript. However, it contains also templates for Angular projects and is directly recommended by the Ionic framework \cite{ionicGetStarted}. 
 
-\subsubsection{Qt}
-Qt is a multi-platform application framework, which enables development in C++ not only for mobile operating systems (Android, iOS and Windows Phone), but also desktop (Windows, MacOS, various Linux distributions) and embedded systems. 
+\subsubsection{React Native}
+React Native is a multi-platform development tool created by Facebook. It uses similar technology as ReactJS and converts it into Android and iOS apps. Support for Universal Windows Platform is on the way and there already exists a unofficial plugin for Windows development\cite{npmReactNativeWindows}.
 
-Qt applications can be coded from Visual Studio, but it also provides its own IDE, called Qt Creator. The IDE offers various extensions for mobile application development. However, the extension for Windows Phone development can be installed only on a Windows PC. Similarly, the extension for iOS development is available only for MacOS. 
+Although interpreted frameworks may seem similar to hybrid tools due to the use of JavaScript, there is no WebView container and no HTML DOM. Interpreted tools use alternative approaches to UI representation: Appcelerator and NativeScript use XML, React Native utilizes JSX. Although some interpreted frameworks provide native look and feel for the UI layer, due to the nature of JSX, React Native renders a platform-agnostic UI resembling web pages. 
 
-Qt comes under several licences, from open source to enterprise. The price for the tools and API depends on the type of product the developer, or the company is creating. For open source projects, it is for free. 
-
-The framework does not use any virtual machines. Because Qt apps are written in C++, they can be compiled by an OS-specific compiler and run natively. The downside of this approach is that they cannot use the platform-specific UI components. To compensate this, Qt uses styling libraries, that mimic the native look and feel \footnote{https://blog.qt.io/blog/2014/12/03/native-android-style-in-qt-5-4/}. 
+JavaScript interpreted approach has been present for a while, thanks to Appcelerator. However, only in recent years it got more traction with the declining popularity of PhoneGap and the rise of tools like Fuse, NativeScript, Tabris.js and, most prominently, React Native. The only interpreted framework tool studied in this thesis, which does not use JavaScript, is Codename One with its Java implementation.
 
 \subsection{Use case definition}
 This is the list of use case scenarios, that will be implemented by each developer tool:
@@ -552,11 +549,9 @@ The evaluation of development tools is performed on on a Windows machine for And
 		Tools for Universal Windows Apps 14.0 \\
 		Tools for Universal Windows Apps 14.0 \\
 		\midrule
-		\textbf{Qt}\\
+		\textbf{React Native}\\
 		\midrule
-		Qt Creator 4.1.0 \\
-		Based on Qt 5.7.0 (MSVC 2013, 32 bit) \\
-		Android Support 4.1.0, Qt 5.7.0 for Universal Windows Platform \\	
+		React Native ???\\	
 		\midrule	
 	\end{tabular}
 \end{table}
@@ -574,6 +569,10 @@ The evaluation of development tools is performed on on a Windows machine for And
 	\bibitem{rajTolety} RAJ, R a SB TOLETY. A study on approaches to build cross-platform mobile applications and criteria to select appropriate approach. \textit{2012 Annual IEEE India Conference (INDICON)}. 2012, 625–9.
 	\bibitem{evaluationOfCP} FRIBERG, Joy. \textit{Evaluation of cross-platform development for mobile devices} [online]. Department of Computer and Information Science , Linköpings universitet, 2014 [cit. 2017-02-19]. In: https://www.diva-portal.org/smash/get/diva2:691708/FULLTEXT01.pdf
 	\bibitem{aarhus}NIELSEN, Bobby. \textit{Cross Platform Mobile Development} [online]. Department of Computer Science, University of Aarhus, 2015 [cit. 2017-02-19]. In: https://pdfs.semanticscholar.org/de11/7b518d31ebcad7a864f9b16d1bcd53365d6a.pdf
+	\bibitem{apacheCordova} Apache Cordova. \textit{Apache Cordova} [online]. [cit. 2017-02-26]. In: https://cordova.apache.org/	
+	\bibitem{cordovaVsCodename} COMPARING PHONEGAP/CORDOVA AND CODENAME ONE. \textit{Codename One} [online]. [cit. 2017-02-26]. Dostupné z: https://www.codenameone.com/blog/comparing-phonegap-cordova-and-codename-one.html	
+	\bibitem{ionicGetStarted} Get started with Ionic Framework. \textit{Ionic} [online]. [cit. 2017-02-26]. Dostupné z: http://ionicframework.com/getting-started/	
+	\bibitem{npmReactNativeWindows} React-native-windows. \textit{Npm} [online]. [cit. 2017-02-26]. Dostupné z: https://www.npmjs.com/package/react-native-windows
 	\bibitem{xamarin} SOME XAMARIN BOOK
 	
 \end{thebibliography}
