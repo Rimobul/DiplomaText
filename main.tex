@@ -603,15 +603,305 @@ Before proceeding with the methodology itself, several eliminating questions sho
 
 
 \subsection{Recommended way of using the methodology}
-	If the project has passed all questions from chapter 5.2, it means it is suitable to be subjected to the methodology. The whole methodology consists of 4 sets of questions. Each set has decreasing importance. The first set of questions is the most important. Tools not fulfilling requirements posed in this set violate the project's specification radically. Such tools should be removed from further evaluation.
+If the project has passed all questions from chapter 5.2, it means it is suitable to be subjected to the methodology. The whole methodology consists of 4 sets of questions. Each set has decreasing importance. The first set of questions is the most important. Tools not fulfilling requirements posed in this set violate the project's specification radically. Such tools should be removed from further evaluation.
 	
-	It is possible that for certain projects the most suitable multi-platform development tool will be clear already after the first set of questions. However, usually the first set of question selects a small group of frameworks with similar capabilities. To distinguish which of them is the most appropriate for a certain project, the second set of questions should be taken. This set contains conditions which are fairly common in mobile app development. Failing one or two requirements in the second set is not as critical as in the first set. Usually, there exists a work-around, but it may increase the project cost, development time or negatively impact app's performance.
+It is possible that for certain projects the most suitable multi-platform development tool will be clear already after the first set of questions. However, usually the first set of question selects a small group of frameworks with similar capabilities. To distinguish which of them is the most appropriate for a certain project, the second set of questions should be taken. This set contains conditions which are fairly common in mobile app development. Failing one or two requirements in the second set is not as critical as in the first set. Usually, there exists a work-around, but it may increase the project cost, development time or negatively impact app's performance.
 	
-	Projects having unusual or highly specific requirements should be subjected also to the third set of questions. This set contains conditions which are rare, or there exists an easy workaround. It also focuses on features that may help to decrease the development time or increase performance, user experience and stability of an application. Either way, after the second or third set of questions, the majority of project will get a clear recommendation on which framework to use.
+Projects having unusual or highly specific requirements should be subjected also to the third set of questions. This set contains conditions which are rare, or there exists an easy workaround. It also focuses on features that may help to decrease the development time or increase performance, user experience and stability of an application. Either way, after the second or third set of questions, the majority of project will get a clear recommendation on which framework to use.
 	
-	If there is no clear winner even after the third set of questions, then there is the last set of questions. These supplementary questions have no clear answer. They rather point out further criteria which can be researched to discover the most suitable development tool.
+If there is no clear winner even after the third set of questions, then there is the last set of questions. These supplementary questions have no clear answer. They rather point out further criteria which can be researched to discover the most suitable development tool.
 	
-	EVALUTAION
+If not explicitly said otherwise, each question in the first three sets can be answered in three different ways: yes, nice to have and no. Yes means the feature or condition mentioned in the question is necessary in the application and cannot be skipped. Nice to have describes a feature, which is not crucial for the application or has not been included in the requirements, but could improve the performance or UX of the project. No means the condition is irrelevant to the project.
+	
+Similarly, each feature or condition can be fulfilled by the framework in one of three ways: yes, partially and no. Yes means the feature is fully supported by the development tool. Partially means the feature can be implemented, but it comes with a hiccup. The option "partially" usually comes with a note further describing the limitation. No means the feature is completely absent in the framework. Combination of possible answers and requirement implementations results in an evaluation matrix:
+	
+\begin{table}
+	\centering
+	\caption{Evaluation matrix}
+	\begin{tabular}{p{3cm} | p{3cm} | p{3cm} | p{3cm}}
+		\toprule
+		\textbf{The user wants it: / The framework has it:} & \textbf{Yes} & \textbf{Partially} & \textbf{No} \\
+		\midrule
+		\textbf{Yes} & +7 / +5 / +3 points & 0 / 0 / 0 points & Excluded from evaluation / -5 / -3 points \\
+		\midrule
+		\textbf{Nice to have} & +7 / +5 / +3 points & 0 / 0 / 0 points & -7 / 0 / 0 points \\
+		\midrule
+		\textbf{No} & 0 / 0 / 0 points & 0 / 0 / 0 points &  0 / 0 / 0 points \\
+		\midrule	
+	\end{tabular}
+\end{table}
+
+Particular way of assigning points is described at the beginning of each set of questions. Questions, which have a different way of assigning points, describe the process in place. A short example of assigning points can be found in the following subchapter.
+
+\subsubsection{Example score evaluation}
+For the purpose of brevity, we will compare only four tools - Codename One, Ionic, NeoMAD and ViziApps. Also the specification will be very simple. The application should run on Android, iOS and Windows. There should be a separate layout for tablets and phones. The app will work via WiFi, but occasional Bluetooth capability is a nice-to-have feature.
+
+First, we will prepare a table. The columns will be filled with the names of the development tools. The rows will be used for adding points.
+
+\begin{table}
+	\centering
+	\caption{Sample evaluation - step 1}
+	\begin{tabular}{p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}}
+		\toprule
+		& \textbf{Codename One} & \textbf{Ionic} & \textbf{NeoMAD} & \textbf{ViziApps} \\
+		\midrule
+		\textbf{Total} &&&& \\
+		\midrule
+	\end{tabular}
+\end{table}
+	
+Then we continue through the methodology and examine all necessary questions. We will write the answers in the form of points each tool scored.
+
+\begin{table}
+	\centering
+	\caption{Sample evaluation - step 2}
+	\begin{tabular}{p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}}
+		\toprule
+		& \textbf{Codename One} & \textbf{Ionic} & \textbf{NeoMAD} & \textbf{ViziApps} \\
+		\midrule
+		\textbf{Can create Android app?} & +7 & +7 & +7 & +7 \\
+		\textbf{Can create BlackBerry app?} & 0 & 0 & 0 & 0 \\
+		\textbf{Can create iOS app?} & +7 & +7 & +7 & +7 \\
+		\textbf{Can create Windows app?} & +7 & +7 & +7 & Excluded \\
+		\midrule
+		\textbf{Total} &&&& \\
+		\midrule
+	\end{tabular}
+\end{table}
+
+The first requirement for our sample project is to target Android, iOS and Windows. Since this question belongs to the first set, we operate with the step of 7 points. Let us apply the evaluation matrix from table 13. BlackBerry is not relevant to our project, so we choose the "No" row. As we can see, all frameworks gain 0 points for BlackBerry implementation - regardless of whether they support it or not. However, for Android, iOS and Windows we apply the "Yes" row. All frameworks, which support a platform gain +7 points per platform. There is no framework that would partially support a platform, so none gets 0 points for Android, iOS or Windows. However, ViziApps does not support development for Windows platform. Failing any "Yes" question in the first set results in immediate exclusion of a development tool from further evaluation. Thus we continue only with 3 frameworks in the next step.
+
+\begin{table}
+	\centering
+	\caption{Sample evaluation - step 3}
+	\begin{tabular}{p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}}
+		\toprule
+		& \textbf{Codename One} & \textbf{Ionic} & \textbf{NeoMAD} & \textbf{ViziApps} \\
+		\midrule
+		\textbf{Can create Android app?} & +7 & +7 & +7 & +7 \\
+		\textbf{Can create BlackBerry app?} & 0 & 0 & 0 & 0 \\
+		\textbf{Can create iOS app?} & +7 & +7 & +7 & +7 \\
+		\textbf{Can create Windows app?} & +7 & +7 & +7 & Excluded \\
+		\midrule
+		\textbf{Is it possible to adjust the layout for phone and tablet?} & -5 & +5 & +5 & - \\
+		\midrule
+		\textbf{Total} &&&& \\
+		\midrule
+	\end{tabular}
+\end{table}
+
+UI responsiveness to various screen sizes is a question from the second set. Once again, we look at the "Yes" row of the evaluation matrix. Questions from the second set are evaluated by 5 points. Immediately, we can see that Codename One does not support various screen layouts. For the second set of questions, the punishment for failing a condition are not that harsh. We do not remove Codename One from further evaluation, but we subtract 5 points from its score. Ionic and NeoMAD, on the other hand, both provide functional layout adjustments, so they both gain 5 points. We proceed to the last, voluntary feature.
+
+\begin{table}
+	\centering
+	\caption{Sample evaluation - step 4}
+	\begin{tabular}{p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}}
+		\toprule
+		& \textbf{Codename One} & \textbf{Ionic} & \textbf{NeoMAD} & \textbf{ViziApps} \\
+		\midrule
+		\textbf{Can create Android app?} & +7 & +7 & +7 & +7 \\
+		\textbf{Can create BlackBerry app?} & 0 & 0 & 0 & 0 \\
+		\textbf{Can create iOS app?} & +7 & +7 & +7 & +7 \\
+		\textbf{Can create Windows app?} & +7 & +7 & +7 & Excluded \\
+		\midrule
+		\textbf{Is it possible to adjust the layout for phone and tablet?} & -5 & +5 & +5 & - \\
+		\midrule
+		\textbf{Is Bluetooth supported?} & 0 & +3 & 0 & - \\
+		\midrule
+		\textbf{Total} &&&& \\
+		\midrule
+	\end{tabular}
+\end{table}
+
+Implementing Bluetooth is not a necessary condition, thus we use the "Nice to have" row from the evaluation matrix. Bluetooth capability belongs to the third set of questions, rated with 3 points. Neither Codename One, nor NeoMAD provide an out-of-the box support for Bluetooth. A 3rd party library, or custom implementation has to be used instead. Thus, they gain 0 points. Ionic, which comes with Bluetooth support directly, gains 3 points. When all questions have been answered, we can continue to the final evaluation
+
+\begin{table}
+	\centering
+	\caption{Sample evaluation - step 5}
+	\begin{tabular}{p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}}
+		\toprule
+		& \textbf{Codename One} & \textbf{Ionic} & \textbf{NeoMAD} & \textbf{ViziApps} \\
+		\midrule
+		\textbf{Can create Android app?} & +7 & +7 & +7 & +7 \\
+		\textbf{Can create BlackBerry app?} & 0 & 0 & 0 & 0 \\
+		\textbf{Can create iOS app?} & +7 & +7 & +7 & +7 \\
+		\textbf{Can create Windows app?} & +7 & +7 & +7 & Excluded \\
+		\midrule
+		\textbf{Is it possible to adjust the layout for phone and tablet?} & -5 & +5 & +5 & - \\
+		\midrule
+		\textbf{Is Bluetooth supported?} & 0 & +3 & 0 & - \\
+		\midrule
+		\textbf{Total} & 19 & 29 & 26 & - \\
+		\midrule
+	\end{tabular}
+\end{table}
+
+After counting all the points, we can see that Ionic is the most suitable framework for our particular project, with NeoMAD being close in second place. Codename One is far behind and ViziApps did not even make it through the first round. However, for other projects the results can be totally different. If the reader was not still decided whether to use Ionic or NeoMAD, he/she can research further facts, such as how good is the documentation, how buggy is the tool or what other apps have been created using the particular framework.
+
+\subsection{Primary questions}
+This is the first and most important set of questions. Majority of the questions are crucial to all applications. Questions that are irrelevant to your project should be skipped. All tools that do not satisfy at least one condition in this first category should be removed. There might be some tools that have partial or planned support for some of the conditions. It depends on your particular use case whether this limitation can be accepted or not. 
+
+\begin{enumerate}
+	\item Does the tool support all required mobile operating systems? (Evaluation matrix, 7 points for each required and supported platform)
+	The obvious question is for which operating systems will the application be developed. All tools mentioned in this thesis (and almost all multi-platform development tools in general) allow development for Android and iOS. Development for Windows 10 is also supported by vast majority of tools, or planned, at least. However, development for BlackBerry is more difficult, since only 4 tools out of the 23 featured in this thesis fully support development for this OS.
+	
+	\item Does the tool support development on desktop operating systems you own? (Evaluation matrix, 7 points for each required and supported platform)
+	Most tools can be installed both on Mac and Windows desktops, while a bit smaller portion supports Linux as well. Others provide a web-based IDE, which is platform independent (but available only online). There are a few exceptions that have very strict limitations, e.g. RubyMotion can be installed and developed only on a Mac. 
+	
+	\begin{enumerate}
+		\item Does the tool allow iOS builds on Windows/Linux? (Evaluation matrix, 7 points) 
+		If you own at least one Mac or do not wish to target iOS, you can skip this question. While Android applications can be built on any desktop OS, projects for iPhones and iPads require compilation on a Mac device. Some tools (like Aquro, Codename One, Smartface and ViziApps) remove this obstacle by providing cloud-based builds. You do not need to buy a Mac, but you must accept that your project is being compiled somewhere in the cloud.
+		
+		\item Does the tool allow Windows builds on Mac/Linux? (Evaluation matrix, 7 points) 
+		If you own at least one Windows PC or do not wish to target Windows mobile platform, you can skip this question. Similar to iOS, also Windows mobile requires builds on a Windows desktop machine. Unlike macOS, however, you can install Windows on a virtual machine, side by side with your Linux or Mac, so this problem is solved easier. Yet, you still need at least one Windows license. If you want to avoid buying a Windows PC, or software license, Appery.io, Codename One, Tabris and Telerik Platform offer cloud builds for Windows mobile.
+	\end{enumerate}
+	
+	\item How much are you willing to pay? What licensing do you need? What is the size of your team? (compare with the offered prices, do not assign any points, but remove tools which fail your requirements) 
+	Most licences and subscriptions are based on the size of the development team. Individuals or small teams can get licences for free, or a very small cost. However, teams around 25 people and above usually require an enterprise-grade licence. These high-end licensing options are usually in thousands of dollars per year per developer. 
+	
+	Some companies charge their tools monthly, others annually. In some you pay for the tool itself. Others charge you for IDE, MBaaS features or support and updates. Always examine the possibility to use discounts if you have some sort of subscription. And if the costs are still too high, look for a free and open source tool - there is plenty of them.
+	
+	\item Do you want the UI to look the same on all operating systems, or use the native look and feel? Does the tool support it? (do not assign any points, but remove tools which fail your requirements) 
+	Even with a single shared UI code, the application may still look native on individual platforms. Many tools offer the possibility of transforming the platform-agnostic UI code into platform-specific UI elements. Others take a different approach and give the possibility for the app to look exactly the same on Android, iOS and Windows. Both approaches have their pros and cons and it depends on each project what is most suitable for them. Kivy, Kony, Qt and most of the hybrid frameworks give the opportunity to have the same look and feel across all operating systems. Appcelerator, Embarcadero, Ionic and Xamarin are examples of tools that take the native UX approach.
+	
+	\begin{enumerate}
+		\item If you chose native look, do you want to code a single UI layer for all operating systems, or a custom layer for each mobile OS? Does the tool support it? (do not assign any points, but remove tools which fail your requirements) 
+		While some projects need to do rapid prototyping, others may want to facilitate the opportunities brought by each platform. If your project needs to implement different UI for each OS (e.g. to use the Android fragments, which are not available on iOS), you might want to look at tools like Appcelerator, NativeScript, React Native, RubyMotion or Xamarin. However, all of the platforms studied by this thesis provide also the possibility to write a single UI layer for all target platforms. This allows almost 100\% code sharing, but reduces the available UI elements to the lowest common denominator.
+	\end{enumerate}
+	
+	\item Does your project require multithreading and does the development tool support it? (Evaluation matrix, 7 points) 
+	Downloading, uploading, calling remote web services, image and sound processing or other computation-heavy calculations are all examples of tasks, which take some time. During this time the app should still be responsive and, perhaps, be able to schedule also further tasks. This requires using multiple threads - one serving the UI responsiveness and the others doing the tasks in background. If the project contains a large portion of functionality involving multitasking, you should avoid all JavaScript-based tools (both hybrid and interpreted). JavaScript does not support threading on a language level, and while there are workarounds using web workers, their implementation is inferior, compared to traditional threads. Using C++, C\#, Java, Python or Ruby should handle the situation just fine.
+	
+	\item Do you want to access the media, use the camera and microphone, play audio and video? Does the tool provide the API? (Evaluation matrix, 7 points for each required and supported feature) 
+	Capturing photos and videos is one of the most common hardware interfaces used in mobile applications. While all studied development tools allow taking photos, not all of them are able to capture video or record sounds (Kivy, Kony, NativeScript, React Native). For example, there exists a 3rd party library for Kivy, but it allows recording sounds only for Android. Even the consecutive replay of recorded sound or video is not warranted in all tools - it is completely absent in Instant Developer, and a 3rd party library is needed for NativeScript and React Native.
+	
+	\item Do you want to use geolocation, accelerometer or gyroscope? Does the tool provide the API? (Evaluation matrix, 7 points for each required and supported feature) 
+	The global and relative positioning of the mobile device is another functionality often used in an application. Accessing GPS and navigation is offered out-of-the-box in all tools, except of Kivy and Smartface. However, using accelerometer or gyroscope needs a 3rd party library or custom implementation in Kivy, NativeScript, React Native and Smartface.
+	
+	\item Do you want to access the device state (battery status, network availability, OS version, etc.)? Does the tool provide necessary APIs? (Evaluation matrix, 7 points) 
+	Although this functionality is not usually required, particular applications may change their behaviour due to low battery power or unstable Internet connection. Yet, some tools do not provide this information (Corona, Kony, ViziApps) or rely on 3rd party libraries or custom implementation (Codename One, Kivy, Qt, React Native).
+	
+	\item Do you want to use a background process? Does the tool support them? (Evaluation matrix, 7 points) 
+	Some applications might find it useful to have a permanent background service with no interface. This could be applied for several use cases, like tracking the position, updating stock markets data, notifying user of an emergency situation. You should take into consideration, that iOS has very limited support for background processes, allowing only geolocation updates. All other background functionality is restricted (with the exception for VoIP applications). The only possible workaround is using remote push notifications. Android, BlackBerry and Windows allow creating background processes, but their implementation and requirements may differ. In all cases, you should keep in mind that background processes on any platform are considered low priority. Therefore they are the first victims when the underlying OS needs to kill running apps and get more resources.
+	
+	Because of these obstacles, only a handful of tools provide a way to create background services (Codename One, Embarcadero, NeoMAD, Qt, Xamarin). Although there exist 3rd party libraries for all tools based on Apache Cordova, their functionality is limited and inconsistent across individual operating systems.
+	
+	\item Do you want to use PUSH notifications? Does the tool support them? (Evaluation matrix, 7 points) 
+	Unlike local notifications, which are both sent and received by the application itself, push notifications are one of the few ways how a remote server can alert your application without prior request. They are important on Android and Windows, since there are still limited ways for push-model communication. However, they are absolutely essential on iOS, because it is the only way to replace background processes. It should be noted, that notifications differ a lot on individual platform. On Android, they are the most customizable, allowing various sorts of interaction, customization and binding functionality. It is possible to create interactive notifications on Windows as well. However, iOS are very limited, offer almost no interactivity and - in case the application is in background - push notifications are handled by the operating system itself, rather than the hosting application. 
+	
+	Push notifications are well established in tools providing MBaaS services, as it is one of their core functionalities. Yet, they are such an essential feature nowadays, almost all multi-platform development tools implement them (with Kivy and Qt supporting only Android and Windows notifications).
+	
+	\item Do you need to create custom plugins or invoke native libraries? Does the tool support it? (Evaluation matrix, 7 points) 
+	Even with the richest environment of 3rd party plugins, there can still be a custom library or UI element that is only available as a native C\#/Java/ObjectiveC/Swift package. You may also want to target a specific device, which has non-standard API, such as ambient lights. To do so, you need to interact with the native package either through a wrapper, or directly. Most tools provide one way or another to achieve this capability. But code-free tools, like Instant Developer, SmartFace or ViziApps have limited to no support for such behaviour.
+	
+	\item Is app monitoring and crash analytics required by the project? Are they supported by the tool? (Evaluation matrix, 7 points) 
+	Even when the app is out, the work is not done. Monitoring usage, performance and application crashes is vital for providing continual support and improvement. While there are some free libraries and tools like ACRA, Crashlytics or Xcode Crash Reports, they may not be compatible with your chosen development tool. You should closely examine, whether integration of the multi-platform development tool and analytics framework is possible. If not, try to find out, whether an alternative is provided by the tool (e.g. Telerik Analytics for NativeScript or HockeyApp for Xamarin).
+\end{enumerate}
+
+\subsection{Secondary questions}
+This set of questions contains conditions that are important for some applications, while irrelevant to others. Failing a condition in this category may seriously affect the development process, but a sort of workaround is usually possible.
+
+\begin{enumerate}
+	\item How would you characterize the complexity of your app? (TBD)
+	TBD
+	
+	\item Is designer or previewer tool available? (Evaluation matrix, 5 points) 
+	A design or preview tool allows to see the changes in UI code immediately on a simulated mobile device screen. Some allow also WYSIWYG editing. This can highly improve the communication between a designer, product owner and the developer. It can be also very helpful in rapid prototyping and agile development.
+	
+	\item Do you want to have different UI for phone and tablet? Does the tool support multiple or responsive layouts? (Evaluation matrix, 5 points) 
+	There are apps that look good on all screen sizes. And then there are apps that need radical layout changes to ensure good user experience both on smartphones and tablets. Most tools offer the possibility to create different layout for smaller and larger screens, or use the CSS responsive design in case of web technologies. Corona, for example, uses conditional compilation to render the right layout on a device. However, there is a number of tools (Aquro, Codename One, Instant Developer, Kivy, Qt, Tabris, ViziApps) that have no support for different UI layouts. The only way, to create a tablet-specific design is to create a separate application.
+	
+	\item Does the design include any platform-specific overrides? Does the tool support them? (Evaluation matrix, 5 points) 
+	Even if most parts of the application will be the same on all operating systems, there might be one or two things that will differ in order to maintain the native UX. While almost all tools achieve this either by replacing code files, conditional compilation or dependency injection, there are a few exceptions which do not support platform-specific overrides, namely Instant Developer, Smartface and ViziApps.
+	
+	\item Will the application work with the file system? Is the tool able to access and manage it? (Evaluation matrix, 5 points) 
+	All studied development tools provide access to the file system, although there might be some restrictions for Qt and hybrid apps. It is worth mentioning, that the file system structure differs a lot on Android, iOS and Windows. 
+	
+	\item Will the application require persistent storage? Can the tool work with app properties or mobile database? (Evaluation matrix, 5 points for each required and supported database) 
+	Excluding file system, Android, iOS and Windows offer 2 different approaches to data persistence. Simple key-value data pairs, such as the current application state or settings are usually saved in the app properties (SharedPreferences/NSUserDefaults/ApplicationDataContainer). More complex data structures are usually stored in a database. The most common database used in mobile world is SQLite, which has almost universal support across the studied tools. Couchbase and Realm are examples of other popular mobile database engines, also supported by several tools. Aquro and ViziApps are the only two multi-platform development tools not allowing any client-side data storage, since they rely on all data being stored in the cloud.
+	
+	\item Do you want to use Bluetooth, NFC, fingerprint or barcode scanner? Is their API available in given tool? (Evaluation matrix, 5 points for each required and supported feature) 
+	Unlike the other sensors, Bluetooth, NFC and fingerprint scanners are not software-related, but depend on the hardware outfit. This makes their availability fragmented even within an operating system. Only a small portion of studied tools provide the functionality out-of-the box. The majority relies on 3rd party libraries, or custom wrappers invoking native functionality. This is true also for the barcode or QR scanner - although it is captured by camera, it is processed usually by the native API.
+	
+	\item Is integration with assistant service (Alexa, Cortana, Google Assistant, Siri) possible? (Evaluation matrix, 5 points for each required and supported assistant) 
+	Although the usage of AI-powered virtual assistance is still limited to several use cases and language, their possibilities are growing with each new update. Already now, virtual assistants are able to pick the best suited application for a particular request. If you want your application to be popular, it should communicate with the virtual assistant. Not all tools provide necessary support for this behaviour. [REF]
+	
+	\item Does the tool support debugging? (Evaluation matrix, 5 points) 
+	Debugging is one of the earliest tools that can help developers find and fix possible errors. It allows to closely examine every line of code. For any application that has medium to high complexity, debugging capability is a must.
+	
+	\item Does the tool support unit testing? (Evaluation matrix, 5 points) 
+	Unit tests are the first tests done after (or sometimes before) a piece of code is written. While not examining the system as a whole, they test each method or class individually. This helps to increase the clarity and readability of code. Unit tests are then the first indicator whether new or refactored code is functional and satisfies all required standards.
+	
+	\item Does the tool support automated UI testing? (Evaluation matrix, 5 points) 
+	While new functionality is generally thoroughly tested manually, repeated tasks, such as smoke tests or regression tests, can be automated. Automated UI tests substantially increase the volume of tests performed for complex business- and enterprise-ready applications. They can be also incorporated into the continuous integration process.
+	
+	\item Does the tool support app profiling? (Evaluation matrix, 5 points) 
+	Neither unit tests, nor manual tests are able to discover low-level or long-running issues, like memory leaks or taking up too much resources. If high quality and high performance are important for your project, you should definitely use a tool or IDE that provides app profiling.
+\end{enumerate}
+
+\subsection{Tertiary questions}
+Following questions have either low impact on the application development or relate to a very small niche of projects and a workaround is possible. Yet, they still may balance the scales in one way or another. They serve as a finishing touch after the coarse separation in first two categories.
+
+\begin{enumerate}
+	\item Does the tool allow development in a programming language you already have experience with? (Evaluation matrix, 3 points for each required and supported language) 
+	Even if the developers have no previous experience with a multi-platform development tool, high skills in a particular programming language might help them to learn using it more quickly. 
+	
+	Currently, the most wide-spread programming language for multi-platform development is JavaScript, or some of its derivatives (Angular, TypeScript). However, there exists at least one or two tools for each major programming language (BASIC, C++, C\#, Delphi, Java, Lua, Python, Ruby). There are even a few tools which allow code-free visual app building.
+	
+	\item Are MBaaS features or cloud connection necessary? Are they available? (Evaluation matrix, 3 points) 
+	Many project rely on at least some basic cloud connectivity. Interaction with backend server or social networks is exactly what MBaaS providers offer. If the development tool does not feature an out-of-the-box MBaaS support, check the possibility of custom implementation. Especially code-free and JavaScript-based tools are prone to inability to add custom functionality.
+	
+	\item Do you need an embedded web browser? Does the tool allow its use? (Evaluation matrix, 3 points) 
+	Using an embedded web browser is one of the less common functionalities. Its use is very peculiar in case of the hybrid apps, since they themselves are ran from within a web browser - therefore, it is a browser inside a browser. Yet, with the exception of Instant Developer and Smartface, all tools support this functionality. Ionic, Kivy and NeoMAD require custom implementation and PhoneGap does not feature web browser for BlackBerry.
+	
+	\item Do you want to access the address book and be able to make a call, or send SMS? Does the tool provide all necessary APIs? (Evaluation matrix, 3 points) 
+	While contemporary smartphones are often more smart than phones, accessing the contacts list, making calls or texting is still used, from time to time. It is therefore a bit of relief that all examined development tools support this functionality, although some may require a 3rd party library.
+	
+	\item Is a testing environment for multiple devices required? Does the tool feature any? (Evaluation matrix, 3 points) 
+	Even automated tests on an emulator or real device have one major shortfall - they test only a single screen size. Screen fragmentation is a long lasting and well known issue on Android devices, but with the support for older hardware it is relevant also in the iOS and Windows world. Amazon Web Services provide a service known as Device Farm [https://aws.amazon.com/device-farm/], which allows simultaneous UI testing on hundreds of physical Android and iOS devices in the cloud. Similar services are offered also by BitBar [http://bitbar.com/testing/], Firebase [https://firebase.google.com/docs/test-lab/] and TestObject [https://testobject.com/]. Some of the multi-platform development tools featured in this thesis provide also a cloud testing service, arguably with better integration with their product line (e.g. Telerik and Xamarin). If your app has the potential of being installed by millions of users, testing it on a Device Farm, or similar service, may be highly beneficial.
+	
+	\item Does the tool allow continuous integration, if necessary? (Evaluation matrix, 3 points) 
+	Continuous integration is a crucial part of DevOps, enabling small but valuable and rapid updates of an product or service. The whole process consists of various steps, like from coding, collaboration, versioning, unit and automatic testing to packaging, releasing and configuration management. A tool that can be easily incorporated into the process can result in shorter development cycles and higher customer satisfaction.
+	
+	\item Are closed test groups required and supported? (Evaluation matrix, 3 points) 
+	While all major application stores feature the possibility to share a WIP app to a tester group (Apple TestFlight, Google Play Testing, Windows Package Flights), some multi-platform development tools offer incorporated features of app distribution, giving you even more control. ViziApps, for example, offers the possibility of OTA (Over the Air) updates of installed apps.
+	
+	\item Is OpenGL or WebGL required? Is it supported? (Evaluation matrix, 3 points) 
+	There are some applications that may find use in hardware-accelerated 3D graphics. A model catalogue, design studio or a game are some examples of this kind of apps. Rendering and managing a 3D object requires the use of OpenGL library specialized for mobile or web environment. Most tools support the integration of either OpenGL ES or WebGL. However, Aquro, Instant Developer, Smartface and ViziApps are exceptions to this rule.
+	
+	\item Does the tool support creating 2D games, if necessary? (Evaluation matrix, 3 points) 
+	Although for a full-featured game development a mobile game framework would be more suitable, some multi-platform development tools are mature enough to host a simple 2D game. Examples of them can be Corona Labs, Kivy, Qt or Xamarin.
+	
+	\item Does the tool support augmented or virtual reality, if necessary? (Evaluation matrix, 3 points) 
+	Although augmented and virtual reality applications are dominated by games, various utility and even business apps are getting still more popular as well. Implementing one of these technologies might be exactly the thing that will set your app apart from the competition.
+\end{enumerate}
+
+\subsection{Supplementary questions}
+Do the developers have experience with a multi-platform development tool?
+If the answer to this question is yes, then you should consider consulting your development team. Their past experience might be very helpful in resolving the questions with no simple answers, like: What is the learning curve? How long does the development take? What is the performance of the app? Is the development tool buggy? How busy is the developer community?
+
+If the tool used by the developers both satisfies all the customer’s requirements and is advised to be used by the development team itself, it can greatly boost the development speed. They will be familiar with all the pitfalls. Components and design patterns from past projects may be reused. You might find out, that the software licences are still valid and you have enough hardware to test on. All these factors may help to decrease the development time and costs and still satisfying your customer.
+How complex will the app be?
+Complexity of the application can help to determine which tool and programming language to choose. Simple, straight-forward applications can take advantage of the rapid prototyping provided by hybrid mobile applications and tools using scripting languages. Larger and more complex projects should be programmed in a strongly-typed programming language featuring object-oriented programming and separation of code into modules. However, all these features are nowadays embodied in TypeScript as well.
+Is there a source of 3rd party libraries? How rich is it?
+Even if a tool does not implement certain features, it can often be substituted by a 3rd party library. Tools with rich environment of 3rd party libraries often come also with tools enabling easy plugin management. Examples of these can be: Hyperloop by Appcelerator, npm for Apache Cordova and NativeScript plugins, Nuget for Xamarin packages or motion-toolbox for RubyMotion gems.
+What IDEs do they use?
+Although this may not be as critical, the familiarity with an IDE or other productivity-boosting software may increase the development speed. Also, reusing an already licensed software will cut the costs.
+Do you have specialists for individual mobile operating systems?
+As mentioned already multiple times in this thesis, each mobile OS has a different way of handling the app lifecycle. There are differences in communication with the kernel, interactions between apps and handling navigation. There is inconsistency in available APIs, sensors, widgets and varying guidelines to UX and UI design. Some development tools shield you off these differences, focusing on the least common denominator. Others let you leverage the platform-specific features to the full extent.
+
+Having developers specialized for individual operating systems allows you to use the platform-specific approach. While most development tools allow platform-specific overrides, it is default only for RubyMotion and Xamarin (partially also for Appcelerator, React Native and NativeScript). The former approach, where platform-specifics are shielded off (known also as the WORA approach) is used by all other tools, as well as Xamarin.Forms.
+What is the performance of the resulting apps?
+What is the size of the resulting apps?
+What is the learning curve?
+How long does it take to create a simple app? How long does it take to master the tool?
+How often is the tool updated? How long does it take to react to a new OS release?
+How comprehensive is the documentation?
+How large and how busy is the community?
+How buggy is the tool? How are bugs handled?
+What are some prominent apps developed using the tool?
+
+
 
 
 \begin{thebibliography}{99}
