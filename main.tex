@@ -538,7 +538,6 @@ The evaluation of development tools is performed on on a Windows machine for And
 		\textbf{Xamarin}\\
 		\midrule
 		Microsoft Visual Studio Enterprise 2015, Update 3 \\
-		Microsoft .NET Framework Version 4.6.0 \\
 		Xamarin for Visual Studio 4.2, Xamarin.Android 7.0, Xamarin.iOS 10.0 \\
 		Tools for Universal Windows Apps 14.0 \\
 		\midrule
@@ -551,12 +550,15 @@ The evaluation of development tools is performed on on a Windows machine for And
 		\midrule
 		\textbf{React Native}\\
 		\midrule
+		IntelliJ WebStorm 2016.3 \\
 		React Native v 0.41\\	
 		\midrule	
 	\end{tabular}
 \end{table}
 
 \subsection{Results}
+
+
 
 
 
@@ -893,19 +895,22 @@ Following questions have either low impact on the application development or rel
 	Having developers specialized for individual operating systems allows you to use the platform-specific approach. While most development tools allow platform-specific overrides, it is default only for RubyMotion and Xamarin (partially also for Appcelerator, React Native and NativeScript). The former approach, where platform-specifics are shielded off (known also as the WORA approach) is used by all other tools, as well as Xamarin.Forms.
 	
 	\item \textbf{What is the size of the resulting apps? }
-	In the early days of Swift, there were many reports that the apps are much larger than apps written in Objective-C\cite{swiftIsBig}. This was due to the fact that Swift was not included in iOS, thus Swift runtine, libraries and API had to be bundled within the app. This is true also of many multi-platform development tools. They often bundle their own runtine, custom libraries, UI styles and APIs together with the application itself, making its installation size bigger. It could be worthwile to investigate, how large the resulting apps are for individual frameworks.
+	In the early days of Swift, there were many reports that the apps are much larger than apps written in Objective-C\cite{swiftIsBig}. This was due to the fact that Swift was not included in iOS, thus Swift runtine, libraries and API had to be bundled within the app. This is true also of many multi-platform development tools. They often bundle their own runtine, custom libraries, UI styles and APIs together with the application itself, making its installation size bigger. It could be worthwhile to investigate, how large the resulting apps are for individual frameworks.
 	
 	\item \textbf{What is the learning curve? How long does it take to create a simple app? How long does it take to master the tool?}
+	Some programming languages are inherently easier to learn, while others require much greater effort. There are tools which require a lot of initial configuration and settings and then there are frameworks which are fully functional out-of-the-box. Part of the frameworks mentioned in this thesis lie great emphasis on architecture of the code base, yet other allow the developer to patch the code as he/she pleases. Depending on what type of application you wish to achieve, there are tools which are more or less suitable for your project.
 	
 	\item \textbf{How often is the tool updated? How long does it take to react to a new OS release?}
+	As mentioned in the beginning of this thesis, each mobile operating system has already multiple versions. Each version brings new API, increases performance, while may cut off part of redundant functionality from the past. If you app should stay competitive and fresh, it should be prepared for those changes. Try to search how long does it approximately take for a framework to support new OS versions. Some provide 0-day compatibility, while others may require several months to be fully prepared for the new version.
 	
-	\item \textbf{How comprehensive is the documentation?}
-	
-	\item \textbf{How large and how busy is the community?}
+	\item \textbf{How comprehensive is the documentation? Are tutorials, courses or books available?}
+	To learn something new, each of us needs a source of knowledge. It is almost impossible to learn a new framework without the knowledge how to use it. Thorough documentation is crucial, yet there are tools which provide specification only for basic use cases. However, good courses or books can be even better, quick-starting your project.
 
 	\item \textbf{How buggy is the tool? How are bugs handled?}
+	There is no perfect piece of software - bugs are simply everywhere. However, some tools are more stable than others. Very important is also the attitude towards bug solving. Open-source rely on the community support. Some commercial tools are also very open about their bug-solving policy, allowing to track all reported, confirmed and solved bugs. However, there still can be found a few shady examples, which believe that pretending no bug exists will solve the problem.
 	
 	\item \textbf{What are some prominent apps developed using the tool?}
+	If you still are not sure which tool is most suitable for your case, try to look at some apps that were written in that tool. If you find multiple similar apps, it probably means the tool is best suited for your use case.
 \end{enumerate}
 
 
