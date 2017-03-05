@@ -804,7 +804,7 @@ This is the first and most important set of questions. Majority of the questions
 This set of questions contains conditions that are important for some applications, while irrelevant to others. Failing a condition in this category may seriously affect the development process, but a sort of workaround is usually possible.
 
 \begin{enumerate}
-	\item \textbf{How would you characterize the complexity of your app? (TBD)}
+	\item \textbf{How would you characterize the complexity of your app? (Add +5 if the framework has desired performance. Add 0, if the performance is higher. Subtract -5 if the performance is lower.)}
 	Complexity of the application can help to determine which tool and programming language to choose. Simple, straight-forward applications can take advantage of the rapid prototyping provided by hybrid mobile applications and tools using scripting languages. Larger and more complex projects should be programmed in a strongly-typed programming language featuring object-oriented programming and separation of code into modules.
 	
 	\item \textbf{Is designer or previewer tool available? (Evaluation matrix, 5 points) }
@@ -929,6 +929,128 @@ However, during the year several requirements were changed, added or removed. To
 
 The project manager of FloLogic wanted to know, whether Xamarin is still a suitable choice, since the development team was struggling with implementation of individual requirements. He provided the current requirements and compared them against individual sets of questions in this methodology. The same questions were then answered by one of FloLogic developers, to provide a slightly different point of view. The results can be found below.
 
+\begin{table}
+	\centering
+	\caption{FloLogic - Primary questions}
+	\begin{tabular}{p{5.5cm} | p{3.5cm} | p{3.5cm}}
+		\toprule		
+		\textbf{Question} &	\textbf{Project manager’s answer} & \textbf{Developer’s answer} \\
+		\midrule
+		Which mobile operating systems do you want to target? &	Android, iOS & Android, iOS \\
+		Which desktop operating systems do you have available for development? & macOS, Windows & Linux, macOS, Windows, web environment \\
+		What is the size of your team? & Up to 5 developers & Up to 5 developers \\
+		How much are you willing to pay for software licences per developer per year? & \$0 & \$0 \\
+		Do you want the app to have native look and feel, or same across individual platforms? & Same & Same \\
+		Do you require multithreading? & Yes & Nice to have \\
+		Will you use multimedia sensors and APIs (camera, microphone, video and audio player) & No & No \\
+		Will you use location sensors (GPS, gyroscope, accelerometer)? & No & No \\
+		Do you want to get information about device status? & No & Yes \\
+		Will you use a background process? & No & Yes \\
+		Will you use PUSH notifications? & Yes & Yes \\
+		Do you need to invoke native libraries or create custom plugins? & No & No \\
+		Would you like to use app monitoring and get crash analytics? & Nice to have & Nice to have \\		
+		\midrule
+	\end{tabular}
+\end{table}
+
+As the reader can see, the answers of the project manager and developer have differed in a few points, namely:
+\begin{itemize}
+	\item Desktop operating systems - the developer has stated that even though the company does not currently possess any Linux machines, Ubuntu can be installed on any Windows PC. He mentioned also the possibility to develop in a web environment, which was refused by the project manager due to security considerations.
+	\item Multithreading - according to the developer, multithreading is not really necessary, since the only possible point of its use are calls to the cloud server, which can be handled by asynchronous callbacks. The UI is rather static, so slight lags should not impact the user experience. Moreover, the absence of true multithreading can be compensated with web workers in most JavaScript-based tools, or by Lua’s co-routines.
+	\item Device status information - the developer expressed the need to check network availability, connection stability, as well as the version of operating system.
+	\item Background process - according to the developer, background processes, although unavailable on iOS, are much more reliable on Android, then PUSH notifications. He would therefore prefer a tool allowing the creation of background services.
+\end{itemize}
+
+Only 4 tools have managed to pass the primary set of questions according to the project manager’s answers. The developer was more demanding, leaving space only to 3 tools. Here are the results with following score:
+
+\begin{table}
+	\centering
+	\caption{FloLogic - Primary questions results}
+	\begin{tabular}{p{4cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm}}
+		\toprule		
+		\textbf{Tool:} & \textbf{Kivy} & \textbf{Kony} & \textbf{PhoneGap} & \textbf{React Native} \\
+		\midrule
+		Project manager’s score: & 28 & 42 & 40 & 35 \\
+		Developer’s score: & 42 & - & 56 & 49 \\			
+		\midrule
+	\end{tabular}
+\end{table}
+
+As the reader can see, Xamarin was eliminated from further consideration already in the first set of questions. Both Xamarin and Xamarin.Forms target native look and feel of applications. Although it is possible to bypass this with various workarounds (as the FloLogic development team has proven), it takes more than a month, compared to a couple of days done in other tools. 
+Let us continue with the second set of questions, which were answered by both the project manager and the developer:
+
+\begin{table}
+	\centering
+	\caption{FloLogic - Secondary questions}
+	\begin{tabular}{p{5.5cm} | p{3.5cm} | p{3.5cm}}
+		\toprule		
+		\textbf{Question} &	\textbf{Project manager’s answer} & \textbf{Developer’s answer} \\
+		\midrule
+		How complex is your application? & Business-grade & Business-grade \\
+		Would you like to use a designer or preview tool? & Nice to have & No \\
+		Do you need different layout for tablet and phone? & No & No \\
+		Will you use some platform-specific overrides? & No & No \\
+		Will you access the file system? & No & No \\
+		Do you need any client-side database? & No & No \\
+		Will you use Bluetooth, NFC, finger- or barcode scanner? & No & No \\
+		Do you require integration with virtual assistants? & No & No \\
+		Do you need debugging tools? & Yes & Yes \\
+		Will you use unit tests? & Yes & Nice to have \\
+		Would you like to use automated UI tests? & Nice to have & No \\
+		Would you like to use app profiling? & Nice to have & Yes \\		
+		\midrule
+	\end{tabular}
+\end{table}
+
+Even in the second set some answers differ. The developer was confident enough to create user interfaces purely in code, without the need of a designer tool. Also, the preferences for individual testing techniques differed from the project manager to the developer. After answering the secondary questions, the score table looks like the following:
+
+\begin{table}
+	\centering
+	\caption{FloLogic - Secondary questions results}
+	\begin{tabular}{p{4cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm}}
+		\toprule		
+		\textbf{Tool:} & \textbf{Kivy} & \textbf{Kony} & \textbf{PhoneGap} & \textbf{React Native} \\
+		\midrule		
+		Project manager’s score: & 40 & 79 & 47 & 62 \\
+		Developer’s score: & 42 & - & 56 & 59 \\
+		\midrule
+	\end{tabular}
+\end{table}
+
+Already now, the winner is very distinguishable. Kony leads with 79 points, with React Native being far on the second place. The project manager of FloLogic was familiar with React Native, but Kony was new to him. He wanted to take also tertiary questions in order to see, whether Ract Native comes closer to Kony, or whether the gap widens. Here are the answers for the last set of questions:
+
+\begin{table}
+	\centering
+	\caption{FloLogic - Tertiary questions}
+	\begin{tabular}{p{9.5cm} | p{3cm}}
+		\toprule		
+		\textbf{Question} &	\textbf{Project manager’s answer} \\
+		\midrule		
+		Which programming languages do you have experience with? & AngularJS, C\#, JS, Java, Ruby \\
+		Do you require MBaaS features or cloud connection? & Yes \\
+		Do you need embedded web browser? & No \\
+		Would you like to access the contact list, call or send SMS? & No \\
+		Is a testing environment for multiple devices required? & Nice to have \\
+		Do you need continuous integration features? & Nice to have \\
+		Would you like to test in closed groups? & No \\
+		Do you need OpenGL support? & No \\
+		Would you like to develop games? & No \\
+		Is the app targeted for augmented or virtual reality? & No \\			
+		\midrule
+	\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{FloLogic - Tertiary questions results}
+\begin{tabular}{p{4cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm}}
+	\toprule		
+	\textbf{Tool:} & \textbf{Kivy} & \textbf{Kony} & \textbf{PhoneGap} & \textbf{React Native} \\
+	\midrule		
+	Project manager’s score: & 34 & 88 & 47 & 65 \\	
+	\midrule
+\end{tabular}
+\end{table}
 
 
 \begin{thebibliography}{99}
