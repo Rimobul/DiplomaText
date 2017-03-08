@@ -558,7 +558,40 @@ The evaluation of development tools is performed on on a Windows machine for And
 
 \subsection{Results}
 
+This subsection summarizes the results of evaluated apps. Apache Cordova was implemented via Visual Studio plugin and tested on Android, iOS and Windows. The main development machine was Windows. No special architectural style or design patterns were used.
 
+On the other hand, React Native was developed almost entirely on macOS in WebStorm. Although there exists a custom UWP plugin for React Native, running an app on Windows device was not achieved. Therefor, React Native was evaluated only on Android and iOS. For more complicated projects, the Redux architecture was used. 
+
+Similar to Apache Cordova, Xamarin was also primarily developed on Windows desktop and tested on Android, iOS and Windows mobile. To get closer to the UI development experience of the other evaluated frameworks, Xamarin.Forms in combination with MVVM was chosen.
+
+\subsubsection{Setup}
+Considering Apache Cordova, the initial setup for Android and Windows is rather easy since it is a plugin within Visual Studio. The built-in installation process automatically downloads and installs Node.js with Cordova CLI and Git CLI. It also prepares Apache Ant, Oracle Java JDK and Android SDK to enable Android development. Tools for Windows mobile development are not installed automatically. However, they can be added by ticking the checkboxes for Universal Windows Platform tools for Cordova and Windows 10 Mobile Emulator. 
+
+Since iOS apps can be built only on a Mac, a separate setup is needed. Visual Studio provides the possibility to build the application remotely, so only few programs need to be installed - namely Node.js, Xcode and Xcode command-line tools. After enabling remote agent on Mac, Visual Studio can connect to it and build the iOS app remotely.
+
+Regarding React Native, the attempt to run a Windows app with the React Native Windows plugin failed. With no reason to develop on a Windows machine, the development process was moved to a Mac. Similar to Apache Cordova, React Native required Node.js as well. In addition to the required React Native CLI, the installation of Watchman was recommended. For Android, Java Development Kit had to be installed. Next, a custom installation of Android Studio was performed, adding Android SDK, Android SDK Platform, Intel HAXM and Android Virtual Device. Since React Native does not support Android Nougat\footnote{As of early 2017}, Android Marshmallow SDK had to be downloaded as well (with several required sub-features). At last, the Android setup was finished by specifying the ANDROID\_HOME environment variable.
+
+Compared to Android, iOS installation was incomparably easier. Besides the common tools for React Native development, only Xcode was required. In addition to that, WebStorm was installed as well, because of its superior IDE capabilities for JavaScript development.
+
+Xamarin brings us back to Windows. Although Xamarin development is possible on Mac as well (with Xamarin Studio or Visual Studio for Mac), building a Windows app is possible only on Windows. Installing Xamarin is, again, easy via a Visual Studio plugin. By default, the plugin installs Xamarin, Android NDK, Android SDK, Java JDK, Google Android Emulator and Intel HAXM. In addition to that the user may choose to install Universal Windows Platform tools for Xamarin and Windows 10 Mobile Emulator. 
+
+Again, installation on Mac has to be done separately. ???
+
+\subsubsection{Hello World}
+There were no issues with the first, very simplistic app. All tested frameworks passed the test flawlessly. There was just a small problem with jQuery for Windows in Apache Cordova project. Therefore, pure JavaScript was used for all Cordova apps.
+
+\subsubsection{Persistent storage}
+For persistent storage, SQLite database was chosen for Xamarin and Apache Cordova, while React Native app was integrated with Realm. 
+
+\subsubsection{Camera and location}
+
+\subsubsection{Custom UI element and native code}
+
+\subsubsection{PUSH notifications}
+
+\subsubsection{Tablet optimization}
+
+\subsubsection{Summary}
 
 
 
