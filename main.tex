@@ -494,15 +494,14 @@ This is the list of use case scenarios, that will be implemented by each develop
 	\item \textbf{Custom UI element and using native code }- the next scenario explores the possibility of using a custom UI element. We will try to implement a circular progress bar. This component already exists in custom native libraries [REF], so we will try to add them and use in a multi-platform application.
 	\item \textbf{Push notifications }- in the fifth scenario we will try to take advantage of the notification API of each platform. We will research the possibility to display push notifications sent from a web application. Because each platform handles the notifications differently, we will use only basic notifications without advanced features.
 	\item \textbf{Tablet optimization} - the sixth use case will test the ability of the development framework or platform to adjust the UI elements for various screen sizes.
-	\item \textbf{Advanced hardware \& graphics usage }- in the last use case we will try to use other hardware peripheries, such as accelerometers, gyroscopes or fingerprint sensors. We will test multi-threaded applications as well as 3D graphics (such as OpenGL).
 \end{enumerate}
 
 Note, that the use cases cover only those aspects of multi-platform development, that can be achieved on all target operating systems (Android, iOS and Windows). Therefore, we will not test platform-specific features, such as fragments, widgets, life tiles, etc.
 
 \subsection{Hardware and software configuration}
-The evaluation of development tools is performed on on a Windows machine for Android and Windows Phone. For iOS, the built (or whole development) is done on an iMac device. The specifications can be found in table XX.
+The evaluation of development tools is performed on on a Windows machine for Android and Windows Phone. For iOS, the built (or whole development) is done on an iMac device. The specifications can be found in following tables.
 
-\begin{table}
+\begin{table}[!h]
 	\centering
 	\caption{Desktop configuration}
 	\begin{tabular}{p{2cm} | p{4.5cm} p{4.5cm}}
@@ -516,7 +515,7 @@ The evaluation of development tools is performed on on a Windows machine for And
 	\end{tabular}
 \end{table}
 
-\begin{table}
+\begin{table}[!h]
 	\centering
 	\caption{Mobile configuration}
 	\begin{tabular}{p{2cm} | p{3.5cm} p{3.5cm} p{3.5cm}}
@@ -530,7 +529,7 @@ The evaluation of development tools is performed on on a Windows machine for And
 	\end{tabular}
 \end{table}
 
-\begin{table}
+\begin{table}[!h]
 	\centering
 	\caption{Development tools configuration}
 	\begin{tabular}{l}
@@ -590,8 +589,14 @@ Similarly to Cordova, also React Native had to work with base-64 binary objects.
 The last tested framework, Xamarin, implemented SQLite as well. The SQLite library for .NET provides the same amount of abstraction and Realm does for React Native, yet provides the full potential of SQL statements and functions just as pure SQLite for Apache Cordova. Its implementation is superior to both alternatives. Moreover, C\# has a larger variety of supported types, thus being able to manipulate with binary objects directly.
 
 \subsubsection{Camera and location}
+For a long time, Apache Cordova was the most popular multi-platform development tool, and it still belongs into top 3. It is therefore no surprise that it has a vast amount of 3rd party plugins and extensions, which help other developers achieve almost any desired functionality. For both camera and geolocation, Cordova offers official plugins, which worked flawlessly on all three platforms.
+
+React Native offers geolocation functionality by default and it works perfectly both on Android and iOS. However, there is no official support for camera usage. Either a custom binding into native code (React bridge) has to be created, or a 3rd party library can be used. For our evaluation, custom library\footnote{https://github.com/lwansbrough/react-native-camera} was chosen, but unsuccessfully. The camera plugin did not work on neither of the tested platforms.
+
+Xamarin for Android and Xamarin for iOS allow programmers to access the camera and geolocation just the way they would do it in a native Java or ObjectiveC application. However, Xamarin.Forms is an abstraction over platform-specific code and does not provide camera or geolocation functionality out of the box. Both of them can achieved either by custom implementation (injecting the platform-specific code into a common interface) or by using a 3rd party plugin. There are multiple GitHub repositories and NuGet packages offering extensibility to Xamarin.Forms, one of which was used also in this thesis\footnote{https://github.com/jamesmontemagno/Xamarin.Plugins}. On all three tested platforms both Media and Geolocator plugin worked without any issue. 
 
 \subsubsection{Custom UI element and native code}
+For all frameworks, a circular progress bar was chosen as a custom UI element. Since hybrid apps are just web apps wrapped in a native web view, creating a custom UI element is done via HTML, CSS and JavaScript, just like in any regular web page. 
 
 \subsubsection{PUSH notifications}
 
@@ -656,7 +661,7 @@ If not explicitly said otherwise, each question in the first three sets can be a
 	
 Similarly, each feature or condition can be fulfilled by the framework in one of three ways: yes, partially and no. Yes means the feature is fully supported by the development tool. Partially means the feature can be implemented, but it comes with a hiccup. The option "partially" usually comes with a note further describing the limitation. No means the feature is completely absent in the framework. Combination of possible answers and requirement implementations results in an evaluation matrix:
 	
-\begin{table}
+\begin{table}[!h]
 	\centering
 	\caption{Evaluation matrix}
 	\begin{tabular}{p{3cm} | p{3cm} | p{3cm} | p{3cm}}
@@ -679,7 +684,7 @@ For the purpose of brevity, we will compare only four tools - Codename One, Ioni
 
 First, we will prepare a table. The columns will be filled with the names of the development tools. The rows will be used for adding points.
 
-\begin{table}
+\begin{table}[!h]
 	\centering
 	\caption{Sample evaluation - step 1}
 	\begin{tabular}{p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}}
@@ -693,7 +698,7 @@ First, we will prepare a table. The columns will be filled with the names of the
 	
 Then we continue through the methodology and examine all necessary questions. We will write the answers in the form of points each tool scored.
 
-\begin{table}
+\begin{table}[!h]
 	\centering
 	\caption{Sample evaluation - step 2}
 	\begin{tabular}{p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}}
@@ -712,7 +717,7 @@ Then we continue through the methodology and examine all necessary questions. We
 
 The first requirement for our sample project is to target Android, iOS and Windows. Since this question belongs to the first set, we operate with the step of 7 points. Let us apply the evaluation matrix from table 13. BlackBerry is not relevant to our project, so we choose the "No" row. As we can see, all frameworks gain 0 points for BlackBerry implementation - regardless of whether they support it or not. However, for Android, iOS and Windows we apply the "Yes" row. All frameworks, which support a platform gain +7 points per platform. There is no framework that would partially support a platform, so none gets 0 points for Android, iOS or Windows. However, ViziApps does not support development for Windows platform. Failing any "Yes" question in the first set results in immediate exclusion of a development tool from further evaluation. Thus we continue only with 3 frameworks in the next step.
 
-\begin{table}
+\begin{table}[!h]
 	\centering
 	\caption{Sample evaluation - step 3}
 	\begin{tabular}{p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}}
@@ -733,7 +738,7 @@ The first requirement for our sample project is to target Android, iOS and Windo
 
 UI responsiveness to various screen sizes is a question from the second set. Once again, we look at the "Yes" row of the evaluation matrix. Questions from the second set are evaluated by 5 points. Immediately, we can see that Codename One does not support various screen layouts. For the second set of questions, the punishment for failing a condition are not that harsh. We do not remove Codename One from further evaluation, but we subtract 5 points from its score. Ionic and NeoMAD, on the other hand, both provide functional layout adjustments, so they both gain 5 points. We proceed to the last, voluntary feature.
 
-\begin{table}
+\begin{table}[!h]
 	\centering
 	\caption{Sample evaluation - step 4}
 	\begin{tabular}{p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}}
@@ -756,7 +761,7 @@ UI responsiveness to various screen sizes is a question from the second set. Onc
 
 Implementing Bluetooth is not a necessary condition, thus we use the "Nice to have" row from the evaluation matrix. Bluetooth capability belongs to the third set of questions, rated with 3 points. Neither Codename One, nor NeoMAD provide an out-of-the box support for Bluetooth. A 3rd party library, or custom implementation has to be used instead. Thus, they gain 0 points. Ionic, which comes with Bluetooth support directly, gains 3 points. When all questions have been answered, we can continue to the final evaluation
 
-\begin{table}
+\begin{table}[!h]
 	\centering
 	\caption{Sample evaluation - step 5}
 	\begin{tabular}{p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}}
@@ -968,7 +973,7 @@ However, during the year several requirements were changed, added or removed. To
 
 The project manager of FloLogic wanted to know, whether Xamarin is still a suitable choice, since the development team was struggling with implementation of individual requirements. He provided the current requirements and compared them against individual sets of questions in this methodology. The same questions were then answered by one of FloLogic developers, to provide a slightly different point of view. The results can be found below.
 
-\begin{table}
+\begin{table}[!h]
 	\centering
 	\caption{FloLogic - Primary questions}
 	\begin{tabular}{p{5.5cm} | p{3.5cm} | p{3.5cm}}
@@ -1002,7 +1007,7 @@ As the reader can see, the answers of the project manager and developer have dif
 
 Only 4 tools have managed to pass the primary set of questions according to the project manager’s answers. The developer was more demanding, leaving space only to 3 tools. Here are the results with following score:
 
-\begin{table}
+\begin{table}[!h]
 	\centering
 	\caption{FloLogic - Primary questions results}
 	\begin{tabular}{p{4cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm}}
@@ -1018,7 +1023,7 @@ Only 4 tools have managed to pass the primary set of questions according to the 
 As the reader can see, Xamarin was eliminated from further consideration already in the first set of questions. Both Xamarin and Xamarin.Forms target native look and feel of applications. Although it is possible to bypass this with various workarounds (as the FloLogic development team has proven), it takes more than a month, compared to a couple of days done in other tools. 
 Let us continue with the second set of questions, which were answered by both the project manager and the developer:
 
-\begin{table}
+\begin{table}[!h]
 	\centering
 	\caption{FloLogic - Secondary questions}
 	\begin{tabular}{p{5.5cm} | p{3.5cm} | p{3.5cm}}
@@ -1043,7 +1048,7 @@ Let us continue with the second set of questions, which were answered by both th
 
 Even in the second set some answers differ. The developer was confident enough to create user interfaces purely in code, without the need of a designer tool. Also, the preferences for individual testing techniques differed from the project manager to the developer. After answering the secondary questions, the score table looks like the following:
 
-\begin{table}
+\begin{table}[!h]
 	\centering
 	\caption{FloLogic - Secondary questions results}
 	\begin{tabular}{p{4cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm}}
@@ -1058,7 +1063,7 @@ Even in the second set some answers differ. The developer was confident enough t
 
 Already now, the winner is very distinguishable. Kony leads with 79 points, with React Native being far on the second place. The project manager of FloLogic was familiar with React Native, but Kony was new to him. He wanted to take also tertiary questions in order to see, whether Ract Native comes closer to Kony, or whether the gap widens. Here are the answers for the last set of questions:
 
-\begin{table}
+\begin{table}[!h]
 	\centering
 	\caption{FloLogic - Tertiary questions}
 	\begin{tabular}{p{9.5cm} | p{3cm}}
@@ -1079,7 +1084,7 @@ Already now, the winner is very distinguishable. Kony leads with 79 points, with
 	\end{tabular}
 \end{table}
 
-\begin{table}
+\begin{table}[!h]
 \centering
 \caption{FloLogic - Tertiary questions results}
 \begin{tabular}{p{4cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm}}
@@ -1091,13 +1096,15 @@ Already now, the winner is very distinguishable. Kony leads with 79 points, with
 \end{tabular}
 \end{table}
 
+The manager was surprised with the results and displayed deep interest in the Kony framework. He expressed himself that he would discuss the results with the product owner. However, he added he is rather sceptical about changing the framework after more than a year of development and starting from scratch.
+
 \subsection{Project W}
 
 The next project belongs to an indie startup which tries to fill the "App gap" in Windows market. They realize that Windows is not particularly strong in the mobile field, but thanks to the concepts of Universal Windows Platform they would like to create an app that runs on smartphones, tablets and desktops as well. Although this methodology does not focus on multi-platform desktop development tools, some frameworks mentioned in this thesis allow it as well.
 
 The goal of Project W is to create an app that helps the user to track his/her daily water intake. Unlike similar apps, this app calculates the required water intake dynamically based on local weather, user statistics and data from other health-tracking apps the user might have installed. The answers for the first set of questions can be found below.
 
-\begin{table}
+\begin{table}[!h]
 	\centering
 	\caption{Project W - Primary questions}
 	\begin{tabular}{p{7.5cm} | p{5cm}}
@@ -1106,9 +1113,11 @@ The goal of Project W is to create an app that helps the user to track his/her d
 		\midrule
 		Which mobile operating systems do you want to target? &	Android, iOS, Windows \\
 		Which desktop operating systems do you have available for development? & Windows (maybe macOS) \\
+		Do you require iOS builds without the need of a Mac? & Nice to have \\
 		What is the size of your team? & Indie \\
 		How much are you willing to pay for software licences per developer per year? & \$0 \\
 		Do you want the app to have native look and feel, or same across individual platforms? & Native look and feel \\
+		Do you want to code a single UI layer for all operating systems, or a custom layer for each mobile OS? & Single \\
 		Do you require multithreading? & Nice to have \\
 		Will you use multimedia sensors and APIs (camera, microphone, video and audio player) & No  \\
 		Will you use location sensors (GPS, gyroscope, accelerometer)? & GPS \\
@@ -1121,6 +1130,95 @@ The goal of Project W is to create an app that helps the user to track his/her d
 	\end{tabular}
 \end{table}
 
+The startup has quite limited resources. Although they would like to create apps for iOS, they currently do not own a Mac. They had planned to buy one, but as soon as they heard some tools allow iOS builds without a Mac, they showed deep interest for this possibility. Even with this limitation, 6 frameworks have passed the primary questions.
+
+\begin{table}[!h]
+	\centering
+	\caption{Project W - Primary questions results}
+	\begin{tabular}{p{2cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm}}
+		\toprule		
+		\textbf{Tool:} & \textbf{Embarcadero} & \textbf{Ionic} & \textbf{Monaca} & \textbf{NativeScript} & \textbf{Tabris.js} & \textbf{Xamarin} \\
+		\midrule
+		Score: & 56 & 42 & 42 & 42 & 56 & 49 \\		
+		\midrule
+	\end{tabular}
+\end{table}
+
+We can see that all selected frameworks have fairly equal score, with Embarcadero and Tabris.js slightly standing out. It is interesting though that the filtered tools contain all types of approaches - hybrid, interpreted and even cross-platform. In this case, passing another set of questions is absolutely necessary.
+
+\begin{table}[!h]
+	\centering
+	\caption{Project W - Secondary questions}
+	\begin{tabular}{p{7.5cm} | p{5cm}}
+		\toprule		
+		\textbf{Question} &	\textbf{Answer} \\
+		\midrule
+		How complex is your application? & Native-like \\
+		Would you like to use a designer or preview tool? & Nice to have \\
+		Do you need different layout for tablet and phone? & Yes \\
+		Will you use some platform-specific overrides? & No \\
+		Will you access the file system? & No \\
+		Do you need any client-side database? & SQLite or Realm \\
+		Will you use Bluetooth, NFC, finger- or barcode scanner? & Barcode scanner \\
+		Do you require integration with virtual assistants? & No \\
+		Do you need debugging tools? & Yes \\
+		Will you use unit tests? & Nice to have \\
+		Would you like to use automated UI tests? & Nice to have \\
+		Would you like to use app profiling? & No \\		
+		\midrule
+	\end{tabular}
+\end{table}
+
+Although the Project W application will be rather simple considering the UI, it will have a lot of backend functionality, synchronization with other apps and API calls - thus it was categorized as a native-like app. The developers also wanted to use a built-in barcode scanner, so the app could scan bottled waters, juices, etc. With these additional requirements, the score table has changed considerably.
+
+\begin{table}[!h]
+	\centering
+	\caption{Project W - Secondary questions results}
+	\begin{tabular}{p{2cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm}}
+		\toprule		
+		\textbf{Tool:} & \textbf{Embarcadero} & \textbf{Ionic} & \textbf{Monaca} & \textbf{NativeScript} & \textbf{Tabris.js} & \textbf{Xamarin} \\
+		\midrule
+		Score: & 86 & 72 & 57 & 52 & 66 & 94 \\		
+		\midrule
+	\end{tabular}
+\end{table}
+
+Embarcadero is still at the forefront, but Xamarin surpassed it together with Tabris.js, which is now in the 4th place. Both Monaca and NativeScript seem to be insufficient for this app. The developers were curious, whether the last set of questions will have similarly dramatic effect on the score of individual frameworks.
+
+\begin{table}[!h]
+	\centering
+	\caption{Project W - Tertiary questions}
+	\begin{tabular}{p{7.5cm} | p{5cm}}
+		\toprule		
+		\textbf{Question} &	\textbf{Answer} \\
+		\midrule		
+		Which programming languages do you have experience with? & C\#, JavaScript \\
+		Do you require MBaaS features or cloud connection? & Yes \\
+		Do you need embedded web browser? & No \\
+		Would you like to access the contact list, call or send SMS? & No \\
+		Is a testing environment for multiple devices required? & No \\
+		Do you need continuous integration features? & Nice to have \\
+		Would you like to test in closed groups? & Yes \\
+		Do you need OpenGL support? & No \\
+		Would you like to develop games? & No \\
+		Is the app targeted for augmented or virtual reality? & No \\			
+		\midrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+	\centering
+	\caption{Project W - Tertiary questions results}
+	\begin{tabular}{p{2cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm}}
+		\toprule		
+		\textbf{Tool:} & \textbf{Embarcadero} & \textbf{Ionic} & \textbf{Monaca} & \textbf{NativeScript} & \textbf{Tabris.js} & \textbf{Xamarin} \\
+		\midrule
+		Score: & 80 & 72 & 60 & 52 & 63 & 100 \\		
+		\midrule
+	\end{tabular}
+\end{table}
+
+As we can see, Embarcadero has lost 6 points, while Xamarin has only strengthened its position at exactly 100 points. It is clear now that Xamarin is the most suitable framework for Project W. The developers have admitted they heard of Xamarin a lot and considered it even before passing through this methodology. With Xamarin, they can develop not only for mobile, but also Windows desktop (with Universal Windows Platform) and Mac (with Xamarin.Mac). The only platform Xamarin does not target is Linux.
 
 \begin{thebibliography}{99}
 	\bibitem{cptBenchmarking2014} \textit{Cross-Platform Tool Benchmarking 2014} [online]. [cit. 2017-02-19]. In: http://www.research2guidance.com/r2g/Cross-Platform-Tool-Benchmarking-Report-2014.pdf
