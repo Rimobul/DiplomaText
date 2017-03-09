@@ -578,10 +578,16 @@ Xamarin brings us back to Windows. Although Xamarin development is possible on M
 Again, installation on Mac has to be done separately. ???
 
 \subsubsection{Hello World}
-There were no issues with the first, very simplistic app. All tested frameworks passed the test flawlessly. There was just a small problem with jQuery for Windows in Apache Cordova project. Therefore, pure JavaScript was used for all Cordova apps.
+There were no issues with the first, very simplistic app. All tested frameworks passed the test almost flawlessly. The only problem was with jQuery for Windows in Apache Cordova project. For some reason, jQuery was added twice, thus the application did not work. Therefore, pure JavaScript was used for all Cordova apps.
 
 \subsubsection{Persistent storage}
 For persistent storage, SQLite database was chosen for Xamarin and Apache Cordova, while React Native app was integrated with Realm. 
+
+Apache Cordova has multiple possibilities of storing data, such as file system storage or the web-browser-based Local storage and Indexed DB. However, only SQLite plugin provides true database features and is consistent across all tested platforms. The plugin worked properly when storing strings, floats and datetimes as well as automatically incrementing the primary key. However, since JavaScript cannot work with binary data, they had to be converted to base-64, even though the SQLite database was able to store it like a BLOB. Another issue on Windows was with toolset version 141, which had do be manually downgraded to 140. After that everything went smoothly.
+
+Similarly to Cordova, also React Native had to work with base-64 binary objects. Moreover, the Realm implementation for React Native is not yet able to automatically generate IDs \footnote{as of early 2017}, thus random GUID was used the primary key. Although Realm provides greater abstraction over SQLite (which forces programmers to use pure SQL), it does have considerably less functionality. Yet, for small databases that is more than sufficient.
+
+The last tested framework, Xamarin, implemented SQLite as well. The SQLite library for .NET provides the same amount of abstraction and Realm does for React Native, yet provides the full potential of SQL statements and functions just as pure SQLite for Apache Cordova. Its implementation is superior to both alternatives. Moreover, C\# has a larger variety of supported types, thus being able to manipulate with binary objects directly.
 
 \subsubsection{Camera and location}
 
