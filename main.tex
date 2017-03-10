@@ -77,9 +77,9 @@ From the products which passed the filter, we will pick a few ones and test thei
 The methodology itself will consist of several parts. The first part will validate projects and requirements, to which the methodology is relevant. The second part will be the core of the methodology, helping the user determine the right multi-platform development tool. The last part will contain suggestions for additional research which can be performed by the user if the methodological results were indefinite.
 
 \subsection{Remarks}
-The reader may be familiar with the term “cross-platform” development. This term is interchangeable with “multi-platform” \footnote{https://en.wikipedia.org/wiki/Cross-platform}, which is used in this thesis. Both cross-platform and multi-platform software development refer to the process of creating a piece of software that can be run on multiple platforms.
+The reader may be familiar with the term “cross-platform” development. This term is interchangeable with “multi-platform” \cite{wikiCrossPlatform}, which is used in this thesis. Both cross-platform and multi-platform software development refer to the process of creating a piece of software that can be run on multiple platforms.
 
-Considering the Windows operating system, Microsoft had several products for mobile devices. From 2000 to 2010 they delivered several versions of the Windows Mobile product line. It was succeeded by Windows Phone 7, 8 and 8.1. In 2015, Microsoft introduced their Windows 10 operating system with common core for desktop, tablet, smartphone and IoT development \footnote{https://developer.microsoft.com/en-us/windows}. The version for smartphones is called Windows 10 Mobile \footnote{https://en.wikipedia.org/wiki/Windows\_10\_Mobile}, similar to the old product line from the previous decade, although being an iteration of Windows Phone 8.1. To avoid long and confusing names and distinguish the mobile and desktop versions, we will call the Microsoft operating system for smartphones simply Windows. In a more narrow context, under Windows we will understand Windows 10 Mobile and the previous version, Windows Phone 8.1, which has forward-compatible applications \footnote{https://blogs.windows.com/buildingapps/2014/12/17/bring-your-windows-phone-silverlight-apps-to-windows-runtime-xaml-prepare-for-universal-app-development-in-windows-10/}. 
+Considering the Windows operating system, Microsoft had several products for mobile devices. From 2000 to 2010 they delivered several versions of the Windows Mobile product line. It was succeeded by Windows Phone 7, 8 and 8.1. In 2015, Microsoft introduced their Windows 10 operating system with common core for desktop, tablet, smartphone and IoT development \cite{windowsDevCenter}. The version for smartphones is called Windows 10 Mobile \cite{wikiWindowsMobile}, similar to the old product line from the previous decade, although being an iteration of Windows Phone 8.1. To avoid long and confusing names and distinguish the mobile and desktop versions, we will call the Microsoft operating system for smartphones simply Windows. In a more narrow context, under Windows we will understand Windows 10 Mobile and the previous version, Windows Phone 8.1, which has forward-compatible applications \cite{blogsWindows8to10}. 
 Regarding tables and charts, if not stated otherwise, the data are presented for the year 2016.
 
 
@@ -96,7 +96,7 @@ In order to create a methodology for choosing the right mobile multi-platform de
 \caption{World-wide smartphone sales [https://en.wikipedia.org/wiki/Mobile\_operating\_system\#/]}
 \end{figure}
 
-By the end of millennium, mobile phones were almost in every family in the western hemisphere \footnote{http://data.worldbank.org/indicator/IT.CEL.SETS.P2?view=map\&year=2000}. However, they were still used mainly for telephony and sending SMS, with occasional MMS in the first years of 2000s. There were only few devices, which tried to combine mobile phones with PDAs - small personal computers, targeted mainly for business and enterprise environments. They were running on operating systems such as Palm OS, BlackBerry OS and Windows CE, which later evolved into smartphone operating systems.
+By the end of millennium, mobile phones were almost in every family in the western hemisphere \cite{worldBank}. However, they were still used mainly for telephony and sending SMS, with occasional MMS in the first years of 2000s. There were only few devices, which tried to combine mobile phones with PDAs - small personal computers, targeted mainly for business and enterprise environments. They were running on operating systems such as Palm OS, BlackBerry OS and Windows CE, which later evolved into smartphone operating systems.
 
 These hybrids of mobile phones and PDAs were the first predecessors of today’s smartphones. Probably, the most known series are Nokia 9000 Communicator devices. In 2000, Ericsson released E380, which was the first device marketed as “smartphone”. It was also the first device running Symbian OS, the dominant mobile operating system until 2010.
 
@@ -130,7 +130,7 @@ As of the August 2016, the following smartphone operating systems are still bein
 \end{itemize}
 
 \subsection{Smartphone OS usage market share}
-The following table shows the percentage of smartphone users for each smartphone OS (for the year 2016) \footnote{https://www.netmarketshare.com/operating-system-market-share.aspx?qprid=8\&qpcustomd=1}:
+The following table shows the percentage of smartphone users for each smartphone OS (for the year 2016) \cite{mosMarketShare}:
 
 \begin{table}[hb]
 	\centering
@@ -149,7 +149,7 @@ The following table shows the percentage of smartphone users for each smartphone
 	\end{tabular}
 \end{table}
 
-The approximate number of active devices is based on the figure that there is about 2.1 billion smartphones in use worldwide \footnote{http://www.statista.com/statistics/330695/number-of-smartphone-users-worldwide/}. With more than a billion active devices, Android is clearly the most used mobile operating system. iOS is also very strong, having more than a quarter of the market share. The other platforms are far behind. Windows users are just a tenth compared to Apple’s iPhone and iPad users. The portion BlackBerry’s RIM users is just slightly above 1\%. Symbian, having a similar share although being discontinued, is still used by more than 20 million users.
+The approximate number of active devices is based on the figure that there is about 2.1 billion smartphones in use worldwide \cite{noOfSmartphones}. With more than a billion active devices, Android is clearly the most used mobile operating system. iOS is also very strong, having more than a quarter of the market share. The other platforms are far behind. Windows users are just a tenth compared to Apple’s iPhone and iPad users. The portion BlackBerry’s RIM users is just slightly above 1\%. Symbian, having a similar share although being discontinued, is still used by more than 20 million users.
 
 \subsection{Smartphone OS sales market share}
 The smartphone sales market share can help us predict the future growth or decline of a certain platform. As seen in the graph XX earlier in this chapter, there was a dramatic shift in 2010 and 2011, when Android surpassed Symbian in the percentage of sold smartphones.
@@ -212,30 +212,30 @@ For certain businesses, the global data may not be relevant, since regionally th
 \subsection{Smartphone app stores revenues}
 The sheer numbers of mobile platform users or device sales is one thing. But many developers - and almost all businesses - are motivated by something else entirely. Money may be a very decisive factor in choosing, which platforms will be targeted and which will be omitted. 
 
-For some time now, it is common knowledge that Android users are not as willing to pay for apps as their iOS colleagues \footnote{https://www.macobserver.com/tmo/article/new\_report\_shows\_ios\_users\_spend\_money\_like\_to\_check\_weather}. This has been true also in recent years. Although the number of downloaded apps in Google Play is twice as high compared to Apple’s App Store, iOS is creating 70\% more revenue compared to Android \footnote{http://www.latinpost.com/articles/110519/20160121/ios-vs-android-market-share-revenue-one-win-for-each-app-store-in-2015.htm}. 
+For some time now, it is common knowledge that Android users are not as willing to pay for apps as their iOS colleagues \cite{iosUsersPay}. This has been true also in recent years. Although the number of downloaded apps in Google Play is twice as high compared to Apple’s App Store, iOS is creating 70\% more revenue compared to Android \cite{iosAndroidStore}. 
 
-These data are backed also by a survey performed by InMobi \footnote{http://www.lifehacker.com.au/2016/03/how-much-do-mobile-developers-make-per-app/}. While on average an Android developer\footnote{The survey does not distinguish between individual developers, developer groups or companies - all three are represented by the term "developer"} makes \$4900 per month, an iOS developer earns \$8100. However, there is a much more interesting discovery made by the survey. Developers targeting Windows earn the most - on average \$11400 per month.
+These data are backed also by a survey performed by InMobi \cite{lifehackerRevenues}. While on average an Android developer\footnote{The survey does not distinguish between individual developers, developer groups or companies - all three are represented by the term "developer"} makes \$4900 per month, an iOS developer earns \$8100. However, there is a much more interesting discovery made by the survey. Developers targeting Windows earn the most - on average \$11400 per month.
 
 \begin{figure}
 	\centering\includegraphics[width=0.5\textwidth]{Figures/appRevenues.png}
 	\caption{Average app revenues from individual app stores, per month}
 \end{figure}
 
-The article explains this by the small amount of apps found on Windows Store. Smaller market means less competition and this has dual effect on the market. The discoverability factor of your application is much higher and the chance there will be a free alternative is much smaller. With no competition, a developer is free to increase the cost of an application \footnote{http://www.statista.com/statistics/276623/number-of-apps-available-in-leading-app-stores}.
+The article explains this by the small amount of apps found on Windows Store. Smaller market means less competition and this has dual effect on the market. The discoverability factor of your application is much higher and the chance there will be a free alternative is much smaller. With no competition, a developer is free to increase the cost of an application \cite{appsInStores}.
 
 \begin{figure}
 	\centering\includegraphics[width=0.8\textwidth]{Figures/appsInStores.png}
 	\caption{Estimated number of apps in individual app stores.}
 \end{figure}
 
-However, some \footnote{http://betanews.com/2016/02/29/windows-phone-developer-revenue/} suggest the survey numbers may be skewed due to smaller sample of Windows developers. Even if the Windows monthly revenue is not accurate, the numbers make it still a very interesting platform. This cannot be said of other platforms. From the ones not discontinued, BlackBerry is the strongest one. However, its revenues do not figure in many recent surveys. In older articles, BlackBerry app development seems to be the least rewarding \footnote{http://bgr.com/2013/11/26/blackberry-10-developer-revenues/}. 
+However, some \cite{betanewsWinRevenue} suggest the survey numbers may be skewed due to smaller sample of Windows developers. Even if the Windows monthly revenue is not accurate, the numbers make it still a very interesting platform. This cannot be said of other platforms. From the ones not discontinued, BlackBerry is the strongest one. However, its revenues do not figure in many recent surveys. In older articles, BlackBerry app development seems to be the least rewarding \cite{bgrBBRevenues}. 
 
 \subsection{Operating systems targeted by developers}
 There is one more factor that may decide about the future of a mobile operating system, and that is the number of developers creating new apps. A rich and healthy application store environment may help to attract new customers. 
 
-As we have seen in figure 4, both Google Play and Apple App Store are very rich application markets. The numbers exceeding 2 million may even be discouraging for some developers, since they present both low discoverability and high competition. This can be vastly different in Windows and Amazon Stores, where the numbers are smaller by 2/3. For BlackBerry, the number is even smaller. And unlike other stores, BlackBerry World does not seem to grow with a comparable rate \footnote{https://en.wikipedia.org/wiki/BlackBerry\_World\#Milestones}. 
+As we have seen in figure 4, both Google Play and Apple App Store are very rich application markets. The numbers exceeding 2 million may even be discouraging for some developers, since they present both low discoverability and high competition. This can be vastly different in Windows and Amazon Stores, where the numbers are smaller by 2/3. For BlackBerry, the number is even smaller. And unlike other stores, BlackBerry World does not seem to grow with a comparable rate \cite{wikiBBWorld}. 
 
-So, how many developers create apps for the individual operating systems? According to VisionMobile \footnote{https://www.developereconomics.com/reports/} more than two thirds develop for Android. About one half creates applications for iOS and only one quarter for Windows.
+So, how many developers create apps for the individual operating systems? According to VisionMobile \cite{devEconomics} more than two thirds develop for Android. About one half creates applications for iOS and only one quarter for Windows.
 
 \begin{table}
 	\centering
@@ -292,13 +292,13 @@ When put in relation with the market shares and revenues, we can get some intere
 Another interesting pair to compare is BlackBerry and Windows. Both have small user bases and low sales. But while BlackBerry has small revenues and only 1\% of developers targeting it as primary platform, Windows has the highest revenues and 9\% of developers targeting it as primary platform and 27\% developing also Windows apps. This can be seen also on their app stores - Windows Store has 3-times more applications than BlackBerry World and is still growing, while the latter stagnates for several years. With Windows 10 unifying the development for desktop, tablet and mobile, the numbers can grow even faster and eventually, it might be the developers who will save the Windows mobile platform.
 
 \subsection{Tablets}
-So far the thesis has been concerned mainly by smartphones. Yet, there is another major group of mobile devices - tablets. In the current market, the lines between individual device categories is often blurred. Between smartphones and tablets there are phablets and the gray zone between tablets and notebooks is composed of netbooks, ultrabooks and tablets with detachable keyboard. Moreover, with the introduction of Continuum for Windows \footnote{https://support.microsoft.com/en-us/help/17280/windows-10-mobile-continuum}, it is hard to tell whether there is a border at all.
+So far the thesis has been concerned mainly by smartphones. Yet, there is another major group of mobile devices - tablets. In the current market, the lines between individual device categories is often blurred. Between smartphones and tablets there are phablets and the gray zone between tablets and notebooks is composed of netbooks, ultrabooks and tablets with detachable keyboard. Moreover, with the introduction of Continuum for Windows \cite{microsoftContinuum}, it is hard to tell whether there is a border at all.
 
-Yet, the development environment for iOS distinguishes between apps for iPhone and iPad \footnote{http://www.appcoda.com/ios-univeral-app-tutorial/} and also Android has special guidelines for adjusting apps for tablets [https://developer.android.com/guide/practices/tablets-and-handsets.html]. Therefore, let us take a look at the OS market shares of tablets as well.
+Yet, the development environment for iOS distinguishes between apps for iPhone and iPad \cite{appcodaiPad} and also Android has special guidelines for adjusting apps for tablets \cite{androidTablet}. Therefore, let us take a look at the OS market shares of tablets as well.
 
 \begin{table}
 	\centering
-	\caption{Global market share of tablet operating systems [https://www.statista.com/statistics/272446/global-market-share-held-by-tablet-operating-systems/]}
+	\caption{Global market share of tablet operating systems \cite{tabletMarketShare}}
 	\begin{tabular}{l l l l l}		
 		\toprule
 		 & 2013 & 2014 & 2015 & 2016 \\
@@ -310,7 +310,7 @@ Yet, the development environment for iOS distinguishes between apps for iPhone a
 	\end{tabular}
 \end{table}
 
-Inferring from smartphone market shares, it is no surprise that Android is the most used operating system, followed by iOS and Windows respectively. BlackBerry PlayBook does not figure in the statistics at all. However, very interesting is Windows on tablets compared to smartphones. While the Windows smartphone share was below 3\% and decreasing, in tablet world Windows is on the rise. It is estimated, that by 2020 Windows will have almost 20\% of the market share, similar to iPads \footnote{https://www.idc.com/getdoc.jsp?containerId=prUS41699516}. Already now, Windows is the dominant operating system, when it comes to 2in1 devices, like detachable tablets \footnote{http://www.idc.com/getdoc.jsp?containerId=prUS41072516}. With the introduction of the Windows universal platform development paradigm, Windows starts to be supported also by tools, which had not taken it into consideration before \footnote{https://www.codenameone.com/blog/cross-platform-mobile-still-better-than-native-in-age-of-flat-design.html}. 
+Inferring from smartphone market shares, it is no surprise that Android is the most used operating system, followed by iOS and Windows respectively. BlackBerry PlayBook does not figure in the statistics at all. However, very interesting is Windows on tablets compared to smartphones. While the Windows smartphone share was below 3\% and decreasing, in tablet world Windows is on the rise. It is estimated, that by 2020 Windows will have almost 20\% of the market share, similar to iPads \cite{idcTabletShare}. Already now, Windows is the dominant operating system, when it comes to 2in1 devices, like detachable tablets \cite{idcDetachableTablets}. With the introduction of the Windows universal platform development paradigm, Windows starts to be supported also by tools, which had not taken it into consideration before \cite{codenameOneNaive}. 
 
 \subsection{Conclusion}
 Based on the previous factors, we can filter out three mobile operating systems, which will be relevant to our methodology - Android, iOS and Windows. The support of two of them - Android and iOS - will be a crucial factor, when selecting suitable development tools. 
@@ -449,7 +449,7 @@ As the reader can see, the table still feature several development tools using t
 
 Some MBaaS providers allow creating offline apps - their tools have been added to the table. They can be easily distinguished by the word "yes" in the MBaaS column. Similarly, all tools based or supporting Apache Cordova builds and plugins have the word "yes" in the Cordova column.
 
-Naturally, all tools support app development for Android and iOS. It is worth noting that more than a half supports also Windows mobile development, with 3 more planning to do so in the near future \footnote{https://www.codenameone.com/blog/windows-phone-8-1-uwp-support.html, https://www.nativescript.org/blog/nativescript-runtime-preview-for-windows-10 and https://blogs.windows.com/buildingapps/2016/04/13/react-native-on-the-universal-windows-platform/\#cFzRYQ06Y3lx1Yo8.97}. BlackBerry support is much sparses, with only 4 tools fully supporting RIM builds. 3 others have partial or unofficial BlackBerry support.
+Naturally, all tools support app development for Android and iOS. It is worth noting that more than a half supports also Windows mobile development, with 3 more planning to do so in the near future \cite{codenameOneWinSupport} \cite{nativeScriptWinSupport} \cite{reactNativeWinSupport}. BlackBerry support is much sparses, with only 4 tools fully supporting RIM builds. 3 others have partial or unofficial BlackBerry support.
 
 It is clear that the most popular programming language is JavaScript. Most tools take either hybrid or interpreted approach. Only a handful of them are cross-compiled.
 
@@ -1232,9 +1232,36 @@ As we can see, Embarcadero has lost 6 points, while Xamarin has only strengthene
 	\bibitem{evaluationOfCP} FRIBERG, Joy. \textit{Evaluation of cross-platform development for mobile devices} [online]. Department of Computer and Information Science , Linköpings universitet, 2014 [cit. 2017-02-19]. In: https://www.diva-portal.org/smash/get/diva2:691708/FULLTEXT01.pdf
 	\bibitem{aarhus}NIELSEN, Bobby. \textit{Cross Platform Mobile Development} [online]. Department of Computer Science, University of Aarhus, 2015 [cit. 2017-02-19]. In: https://pdfs.semanticscholar.org/de11/7b518d31ebcad7a864f9b16d1bcd53365d6a.pdf
 	\bibitem{apacheCordova} Apache Cordova. \textit{Apache Cordova} [online]. [cit. 2017-02-26]. In: https://cordova.apache.org/	
-	\bibitem{cordovaVsCodename} COMPARING PHONEGAP/CORDOVA AND CODENAME ONE. \textit{Codename One} [online]. [cit. 2017-02-26]. Dostupné z: https://www.codenameone.com/blog/comparing-phonegap-cordova-and-codename-one.html	
-	\bibitem{ionicGetStarted} Get started with Ionic Framework. \textit{Ionic} [online]. [cit. 2017-02-26]. Dostupné z: http://ionicframework.com/getting-started/	
-	\bibitem{npmReactNativeWindows} React-native-windows. \textit{Npm} [online]. [cit. 2017-02-26]. Dostupné z: https://www.npmjs.com/package/react-native-windows
+	\bibitem{cordovaVsCodename} COMPARING PHONEGAP/CORDOVA AND CODENAME ONE. \textit{Codename One} [online]. [cit. 2017-02-26]. Available at: https://www.codenameone.com/blog/comparing-phonegap-cordova-and-codename-one.html	
+	\bibitem{ionicGetStarted} Get started with Ionic Framework. \textit{Ionic} [online]. [cit. 2017-02-26]. Available at: http://ionicframework.com/getting-started/	
+	\bibitem{npmReactNativeWindows} React-native-windows. \textit{Npm} [online]. [cit. 2017-02-26]. Available at: https://www.npmjs.com/package/react-native-windows
+	\bibitem{wikiCrossPlatform} Cross-platform. In: \textit{Wikipedia: the free encyclopedia} [online]. San Francisco (CA): Wikimedia Foundation, 2001- [cit. 2017-03-10]. Available at: https://en.wikipedia.org/wiki/Cross-platform
+	\bibitem{windowsDevCenter} Windows. \textit{Windows Dev Center} [online]. [cit. 2017-03-10]. Available at: https://developer.microsoft.com/en-us/windows
+	\bibitem{wikiWindowsMobile} Windows 10 Mobile. In: \textit{Wikipedia: the free encyclopedia} [online]. San Francisco (CA): Wikimedia Foundation, 2001- [cit. 2017-03-10]. Available at: https://en.wikipedia.org/wiki/Windows\_10\_Mobile
+	\bibitem{blogsWindows8to10} Bring your Windows Phone Silverlight apps to Windows Runtime XAML; prepare for universal app development in Windows 10. \textit{Windows blogs} [online]. [cit. 2017-03-10]. Available at: https://blogs.windows.com/buildingapps/2014/12/17/bring-your-windows-phone-silverlight-apps-to-windows-runtime-xaml-prepare-for-universal-app-development-in-windows-10/
+	\bibitem{worldBank} Mobile cellular subscriptions (per 100 people). \textit{The World Bank} [online]. [cit. 2017-03-10]. Available at: http://data.worldbank.org/indicator/IT.CEL.SETS.P2?view=map\&year=2000
+	\bibitem{mosMarketShare} Mobile/Tablet Operating System Market Share. \textit{NetMarketShare} [online]. [cit. 2017-03-10]. Dostupné z: https://www.netmarketshare.com/operating-system-market-share.aspx?qprid=8\&qpcustomd=1
+	\bibitem{noOfSmartphones} Number of smartphone users worldwide from 2014 to 2020 (in billions). \textit{Statista} [online]. [cit. 2017-03-10]. Available at: http://www.statista.com/statistics/330695/number-of-smartphone-users-worldwide/
+	\bibitem{iosUsersPay} New Report Shows iOS Users Spend Money, Like to Check Weather. \textit{The Mac Observer} [online]. [cit. 2017-03-10]. Dostupné z: https://www.macobserver.com/tmo/article/new\_report\_shows\_ios\_users\_spend\_money\_like\_to\_check\_weather
+	\bibitem{iosAndroidStore} IOS vs Android Market Share \& Revenue: One Win for Each App Store in 2015. \textit{Latin Post} [online]. [cit. 2017-03-10]. Dostupné z: http://www.latinpost.com/articles/110519/20160121/ios-vs-android-market-share-revenue-one-win-for-each-app-store-in-2015.htm
+	\bibitem{lifehackerRevenues} How Much Do Mobile Developers Make Per App? \textit{Lifehacker} [online]. [cit. 2017-03-10]. Dostupné z: http://www.lifehacker.com.au/2016/03/how-much-do-mobile-developers-make-per-app/
+	\bibitem{appsInStores} Number of apps available in leading app stores as of June 2016. \textit{Statista} [online]. [cit. 2017-03-10]. Dostupné z: https://www.statista.com/statistics/276623/number-of-apps-available-in-leading-app-stores/
+	\bibitem{betanewsWinRevenue} Developers earn more on Windows Phone than Android or iOS. \textit{Betanews} [online]. [cit. 2017-03-10]. Dostupné z: http://betanews.com/2016/02/29/windows-phone-developer-revenue/
+	\bibitem{bgrBBRevenues} One chart shows why BlackBerry 10 has struggled to attract developers. \textit{BGR} [online]. [cit. 2017-03-10]. Dostupné z: http://bgr.com/2013/11/26/blackberry-10-developer-revenues/
+	\bibitem{wikiBBWorld} BlackBerry World. In: \textit{Wikipedia: the free encyclopedia} [online]. San Francisco (CA): Wikimedia Foundation, 2001- [cit. 2017-03-10]. Dostupné z: https://en.wikipedia.org/wiki/BlackBerry\_World\#Milestones
+	\bibitem{devEconomics} Reports. \textit{Developer Economics} [online]. [cit. 2017-03-10]. Dostupné z: https://www.developereconomics.com/reports/
+	\bibitem{microsoftContinuum} Welcome to Continuum for phone. \textit{Microsoft Support} [online]. [cit. 2017-03-10]. Dostupné z: https://support.microsoft.com/en-us/help/17280/windows-10-mobile-continuum
+	\bibitem{appcodaiPad} IOS Programming Tutorial: Creating a Universal App. \textit{Appcoda} [online]. [cit. 2017-03-10]. Dostupné z: http://www.appcoda.com/ios-univeral-app-tutorial/
+	\bibitem{androidTablet} Supporting Tablets and Handsets. \textit{Android Developer} [online]. [cit. 2017-03-10]. Dostupné z: https://developer.android.com/guide/practices/tablets-and-handsets.html
+	\bibitem{tabletMarketShare} Tablet operating systems' market share worldwide from 2013 to 2020. \textit{Statista} [online]. [cit. 2017-03-10]. Dostupné z: https://www.statista.com/statistics/272446/global-market-share-held-by-tablet-operating-systems/
+	\bibitem{idcTabletShare} Worldwide Tablet Market Expected to Rebound in 2018 as Windows Opens Doors for Growth and iPads Come Out of a Slump, According to IDC. \textit{IDC} [online]. [cit. 2017-03-10]. Dostupné z: https://www.idc.com/getdoc.jsp?containerId=prUS41699516
+	\bibitem{idcDetachableTablets} Detachable Tablets Set To Grow From 8\% of the Tablet Market in 2015 to 30\% in 2020, According to IDC. \textit{IDC} [online]. [cit. 2017-03-10]. Dostupné z: http://www.idc.com/getdoc.jsp?containerId=prUS41072516
+	\bibitem{codenameOneNaive} CROSS PLATFORM MOBILE STILL BETTER THAN NAIVE IN AGE OF FLAT DESIGN. \textit{Codename One} [online]. [cit. 2017-03-10]. Dostupné z: https://www.codenameone.com/blog/cross-platform-mobile-still-better-than-native-in-age-of-flat-design.html
+	\bibitem{codenameOneWinSupport} WINDOWS PHONE 8.1 \& UWP SUPPORT. \textit{Codename One} [online]. [cit. 2017-03-10]. Dostupné z: https://www.codenameone.com/blog/windows-phone-8-1-uwp-support.html
+	\bibitem{nativeScriptWinSupport} NativeScript Runtime Preview for Windows 10. \textit{NativeScript} [online]. [cit. 2017-03-10]. Dostupné z: https://www.nativescript.org/blog/nativescript-runtime-preview-for-windows-10
+	\bibitem{reactNativeWinSupport} React Native on the Universal Windows Platform. \textit{Windows blogs} [online]. [cit. 2017-03-10]. Dostupné z: https://blogs.windows.com/buildingapps/2016/04/13/react-native-on-the-universal-windows-platform/\#cFzRYQ06Y3lx1Yo8.97
+		
+	
 	
 	\bibitem{swiftIsBig} http://blog.diogot.com/blog/2014/09/29/swift-embedded-runtime-library-increases-app-size/
 	\bibitem{xamarin} SOME XAMARIN BOOK
