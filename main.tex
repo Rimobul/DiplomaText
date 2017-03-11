@@ -93,7 +93,7 @@ In order to create a methodology for choosing the right mobile multi-platform de
 
 \begin{figure}[!ht]
 \centering\includegraphics[width=0.8\textwidth]{Figures/World_Wide_Smartphone_Sales_Share.png}
-\caption{World-wide smartphone sales [https://en.wikipedia.org/wiki/Mobile\_operating\_system\#/]}
+\caption{World-wide smartphone sales \cite{wikiSmartphoneSales}}
 \end{figure}
 
 By the end of millennium, mobile phones were almost in every family in the western hemisphere \cite{worldBank}. However, they were still used mainly for telephony and sending SMS, with occasional MMS in the first years of 2000s. There were only few devices, which tried to combine mobile phones with PDAs - small personal computers, targeted mainly for business and enterprise environments. They were running on operating systems such as Palm OS, BlackBerry OS and Windows CE, which later evolved into smartphone operating systems.
@@ -156,7 +156,7 @@ The smartphone sales market share can help us predict the future growth or decli
 
 \begin{table}
 	\centering
-	\caption{Smartphone OS sales, various reports from http://www.gartner.com/technology/home.jsp}
+	\caption{Smartphone OS sales, various reports from \cite{gartner}}
 	\begin{tabular}{l l l l l l l l}
 		\toprule
 		Year & RIM & Symbian & iOS & Android & Bada & Windows & Other\\
@@ -206,7 +206,7 @@ For certain businesses, the global data may not be relevant, since regionally th
 
 \begin{figure}
 	\centering\includegraphics[width=0.8\textwidth]{Figures/regionalMarketShares.png}
-	\caption{Regional market shares [http://www.kantarworldpanel.com/global/smartphone-os-market-share/intro]}
+	\caption{Regional market shares \cite{kantarOSSales}}
 \end{figure}
 
 \subsection{Smartphone app stores revenues}
@@ -591,9 +591,9 @@ The last tested framework, Xamarin, implemented SQLite as well. The SQLite libra
 \subsubsection{Camera and location}
 For a long time, Apache Cordova was the most popular multi-platform development tool, and it still belongs into top 3. It is therefore no surprise that it has a vast amount of 3rd party plugins and extensions, which help other developers achieve almost any desired functionality. For both camera and geolocation, Cordova offers official plugins, which worked flawlessly on all three platforms.
 
-React Native offers geolocation functionality by default and it works perfectly both on Android and iOS. However, there is no official support for camera usage. Either a custom binding into native code (React bridge) has to be created, or a 3rd party library can be used. For our evaluation, custom library\footnote{https://github.com/lwansbrough/react-native-camera} was chosen, but unsuccessfully. The camera plugin did not work on neither of the tested platforms.
+React Native offers geolocation functionality by default and it works perfectly both on Android and iOS. However, there is no official support for camera usage. Either a custom binding into native code (React bridge) has to be created, or a 3rd party library can be used. For our evaluation, custom library \cite{reactNativeCamera} was chosen, but unsuccessfully. The camera plugin did not work on neither of the tested platforms.
 
-Xamarin for Android and Xamarin for iOS allow programmers to access the camera and geolocation just the way they would do it in a native Java or ObjectiveC application. However, Xamarin.Forms is an abstraction over platform-specific code and does not provide camera or geolocation functionality out of the box. Both of them can achieved either by custom implementation (injecting the platform-specific code into a common interface) or by using a 3rd party plugin. There are multiple GitHub repositories and NuGet packages offering extensibility to Xamarin.Forms, one of which was used also in this thesis\footnote{https://github.com/jamesmontemagno/Xamarin.Plugins}. On all three tested platforms both Media and Geolocator plugin worked without any issue. 
+Xamarin for Android and Xamarin for iOS allow programmers to access the camera and geolocation just the way they would do it in a native Java or ObjectiveC application. However, Xamarin.Forms is an abstraction over platform-specific code and does not provide camera or geolocation functionality out of the box. Both of them can achieved either by custom implementation (injecting the platform-specific code into a common interface) or by using a 3rd party plugin. There are multiple GitHub repositories and NuGet packages offering extensibility to Xamarin.Forms, one of which was used also in this thesis \cite{xamarinPlugins}. On all three tested platforms both Media and Geolocator plugin worked without any issue. 
 
 \subsubsection{Custom UI element and native code}
 For all frameworks, a circular progress bar was chosen as a custom UI element. Since hybrid apps are just web apps wrapped in a native web view, creating a custom UI element is done via HTML, CSS and JavaScript, just like in any regular web page. 
@@ -1220,52 +1220,79 @@ Embarcadero is still at the forefront, but Xamarin surpassed it together with Ta
 
 As we can see, Embarcadero has lost 6 points, while Xamarin has only strengthened its position at exactly 100 points. It is clear now that Xamarin is the most suitable framework for Project W. The developers have admitted they heard of Xamarin a lot and considered it even before passing through this methodology. With Xamarin, they can develop not only for mobile, but also Windows desktop (with Universal Windows Platform) and Mac (with Xamarin.Mac). The only platform Xamarin does not target is Linux.
 
-\begin{thebibliography}{99}
-	\bibitem{cptBenchmarking2014} \textit{Cross-Platform Tool Benchmarking 2014} [online]. [cit. 2017-02-19]. In: http://www.research2guidance.com/r2g/Cross-Platform-Tool-Benchmarking-Report-2014.pdf
-	\bibitem{taxonomyCP}EL-KASSAS, Wafaa S., Bassem A. ABDULLAH, Ahmed H. YOUSEF a Ayman M. WAHBA. \textit{Taxonomy of Cross-Platform Mobile Applications Development Approaches} [online]. Department of Computer and Systems Engineering, Faculty of Engineering, Ain Shams University, Egypt, 2015 [cit. 2017-02-19]. In: http://www.sciencedirect.com/science/article/pii/S2090447915001276
-	\bibitem{ribeiroDaSilva} DA SILVA, Ribeiro A. \textit{Survey on cross-platforms and languages for mobile apps}. 2012 eighth international conference on the Quality of Information and Communications Technology (QUATIC). \textbf{2012}, 255-60.
-	\bibitem{aComparativeStudy}DE ANDRADE, Paulo R. M. a Adriano B. ALBUQUERQUE. \textit{Cross Platform App: A comparative study} [online]. Postgraduate program in applied information University of Fortaleza - UNIFOR Fortaleza - CE, Brazil, 2015 [cit. 2017-02-19].
-	\bibitem{smutny}SMUTNÝ, P. \textit{Mobile development tools and cross-platform solutions.} 13th International Carpathian Control Conference (ICCC). 2012, 653–6.
-	\bibitem{definingTelerik} Defining a New Breed of Cross-Platform Mobile Apps. \textit{Telerik} [online]. 2015 [cit. 2017-02-19]. In: http://developer.telerik.com/featured/defining-a-new-breed-of-cross-platform-mobile-apps/
-	\bibitem{uppsala} FURUSKOG, Martin a Stuart WEMYSS. \textit{Cross-platform development of smartphone applications: An evaluation of React Native} [online]. Uppsala Universitet, 2016 [cit. 2017-02-19]. In: https://uu.diva-portal.org/smash/get/diva2:948617/FULLTEXT01.pdf
+\begin{thebibliography}{99}	
+	%A
+	\bibitem{apacheCordova} WARGO, John M. \textit{Apache Cordova 3 Programming}. First release. New Jersey 07458: Pearson Education, 2013. ISBN 978-0-321-95736-8.
 	\bibitem{rajTolety} RAJ, R a SB TOLETY. A study on approaches to build cross-platform mobile applications and criteria to select appropriate approach. \textit{2012 Annual IEEE India Conference (INDICON)}. 2012, 625–9.
-	\bibitem{evaluationOfCP} FRIBERG, Joy. \textit{Evaluation of cross-platform development for mobile devices} [online]. Department of Computer and Information Science , Linköpings universitet, 2014 [cit. 2017-02-19]. In: https://www.diva-portal.org/smash/get/diva2:691708/FULLTEXT01.pdf
-	\bibitem{aarhus}NIELSEN, Bobby. \textit{Cross Platform Mobile Development} [online]. Department of Computer Science, University of Aarhus, 2015 [cit. 2017-02-19]. In: https://pdfs.semanticscholar.org/de11/7b518d31ebcad7a864f9b16d1bcd53365d6a.pdf
-	\bibitem{apacheCordova} Apache Cordova. \textit{Apache Cordova} [online]. [cit. 2017-02-26]. In: https://cordova.apache.org/	
-	\bibitem{cordovaVsCodename} COMPARING PHONEGAP/CORDOVA AND CODENAME ONE. \textit{Codename One} [online]. [cit. 2017-02-26]. Available at: https://www.codenameone.com/blog/comparing-phonegap-cordova-and-codename-one.html	
-	\bibitem{ionicGetStarted} Get started with Ionic Framework. \textit{Ionic} [online]. [cit. 2017-02-26]. Available at: http://ionicframework.com/getting-started/	
-	\bibitem{npmReactNativeWindows} React-native-windows. \textit{Npm} [online]. [cit. 2017-02-26]. Available at: https://www.npmjs.com/package/react-native-windows
-	\bibitem{wikiCrossPlatform} Cross-platform. In: \textit{Wikipedia: the free encyclopedia} [online]. San Francisco (CA): Wikimedia Foundation, 2001- [cit. 2017-03-10]. Available at: https://en.wikipedia.org/wiki/Cross-platform
-	\bibitem{windowsDevCenter} Windows. \textit{Windows Dev Center} [online]. [cit. 2017-03-10]. Available at: https://developer.microsoft.com/en-us/windows
-	\bibitem{wikiWindowsMobile} Windows 10 Mobile. In: \textit{Wikipedia: the free encyclopedia} [online]. San Francisco (CA): Wikimedia Foundation, 2001- [cit. 2017-03-10]. Available at: https://en.wikipedia.org/wiki/Windows\_10\_Mobile
+	%B
+	\bibitem{wikiBBWorld} BlackBerry World. In: \textit{Wikipedia: the free encyclopedia} [online]. San Francisco (CA): Wikimedia Foundation, 2001- [cit. 2017-03-10]. Available at: https://en.wikipedia.org/wiki/BlackBerry\_World\#Milestones
 	\bibitem{blogsWindows8to10} Bring your Windows Phone Silverlight apps to Windows Runtime XAML; prepare for universal app development in Windows 10. \textit{Windows blogs} [online]. [cit. 2017-03-10]. Available at: https://blogs.windows.com/buildingapps/2014/12/17/bring-your-windows-phone-silverlight-apps-to-windows-runtime-xaml-prepare-for-universal-app-development-in-windows-10/
+	%C
+	\bibitem{cordovaVsCodename} COMPARING PHONEGAP/CORDOVA AND CODENAME ONE. \textit{Codename One} [online]. [cit. 2017-02-26]. Available at: https://www.codenameone.com/blog/comparing-phonegap-cordova-and-codename-one.html
+	\bibitem{wikiCrossPlatform} Cross-platform. In: \textit{Wikipedia: the free encyclopedia} [online]. San Francisco (CA): Wikimedia Foundation, 2001- [cit. 2017-03-10]. Available at: https://en.wikipedia.org/wiki/Cross-platform
+	\bibitem{aComparativeStudy}DE ANDRADE, Paulo R. M. a Adriano B. ALBUQUERQUE. \textit{Cross Platform App: A comparative study} [online]. Postgraduate program in applied information University of Fortaleza - UNIFOR Fortaleza - CE, Brazil, 2015 [cit. 2017-02-19].
+	\bibitem{uppsala} FURUSKOG, Martin a Stuart WEMYSS. \textit{Cross-platform development of smartphone applications: An evaluation of React Native} [online]. Uppsala Universitet, 2016 [cit. 2017-02-19]. In: https://uu.diva-portal.org/smash/get/diva2:948617/FULLTEXT01.pdf
+	\bibitem{aarhus}NIELSEN, Bobby. \textit{Cross Platform Mobile Development} [online]. Department of Computer Science, University of Aarhus, 2015 [cit. 2017-02-19]. In: https://pdfs.semanticscholar.org/de11/7b518d31ebcad7a864f9b16d1bcd53365d6a.pdf
+	\bibitem{codenameOneNaive} CROSS PLATFORM MOBILE STILL BETTER THAN NAIVE IN AGE OF FLAT DESIGN. \textit{Codename One} [online]. [cit. 2017-03-10]. Available at: https://www.codenameone.com/blog/cross-platform-mobile-still-better-than-native-in-age-of-flat-design.html
+	\bibitem{cptBenchmarking2014} \textit{Cross-Platform Tool Benchmarking 2014} [online]. [cit. 2017-02-19]. In: http://www.research2guidance.com/r2g/Cross-Platform-Tool-Benchmarking-Report-2014.pdf
+	%D
+	\bibitem{definingTelerik} Defining a New Breed of Cross-Platform Mobile Apps. \textit{Telerik} [online]. 2015 [cit. 2017-02-19]. In: http://developer.telerik.com/featured/defining-a-new-breed-of-cross-platform-mobile-apps/
+	\bibitem{idcDetachableTablets} Detachable Tablets Set To Grow From 8\% of the Tablet Market in 2015 to 30\% in 2020, According to IDC. \textit{IDC} [online]. [cit. 2017-03-10]. Available at: http://www.idc.com/getdoc.jsp?containerId=prUS41072516
+	\bibitem{betanewsWinRevenue} Developers earn more on Windows Phone than Android or iOS. \textit{Betanews} [online]. [cit. 2017-03-10]. Available at: http://betanews.com/2016/02/29/windows-phone-developer-revenue/
+	%E
+	\bibitem{evaluationOfCP} FRIBERG, Joy. \textit{Evaluation of cross-platform development for mobile devices} [online]. Department of Computer and Information Science , Linköpings universitet, 2014 [cit. 2017-02-19]. In: https://www.diva-portal.org/smash/get/diva2:691708/FULLTEXT01.pdf	
+	%F
+	%G
+	\bibitem{gartner} \textit{Gartner} [online]. [cit. 2017-03-11]. Available at: http://www.gartner.com/technology/home.jsp
+	\bibitem{ionicGetStarted} Get started with Ionic Framework. \textit{Ionic} [online]. [cit. 2017-02-26]. Available at: http://ionicframework.com/getting-started/
+	%H
+	\bibitem{lifehackerRevenues} How Much Do Mobile Developers Make Per App? \textit{Lifehacker} [online]. [cit. 2017-03-10]. Available at: http://www.lifehacker.com.au/2016/03/how-much-do-mobile-developers-make-per-app/
+	%I
+	\bibitem{appcodaiPad} IOS Programming Tutorial: Creating a Universal App. \textit{Appcoda} [online]. [cit. 2017-03-10]. Available at: http://www.appcoda.com/ios-univeral-app-tutorial/
+	\bibitem{iosAndroidStore} IOS vs Android Market Share \& Revenue: One Win for Each App Store in 2015. \textit{Latin Post} [online]. [cit. 2017-03-10]. Available at: http://www.latinpost.com/articles/110519/20160121/ios-vs-android-market-share-revenue-one-win-for-each-app-store-in-2015.htm
+	%J
+	%K
+	%L
+	%M
 	\bibitem{worldBank} Mobile cellular subscriptions (per 100 people). \textit{The World Bank} [online]. [cit. 2017-03-10]. Available at: http://data.worldbank.org/indicator/IT.CEL.SETS.P2?view=map\&year=2000
-	\bibitem{mosMarketShare} Mobile/Tablet Operating System Market Share. \textit{NetMarketShare} [online]. [cit. 2017-03-10]. Dostupné z: https://www.netmarketshare.com/operating-system-market-share.aspx?qprid=8\&qpcustomd=1
+	\bibitem{smutny}SMUTNÝ, P. \textit{Mobile development tools and cross-platform solutions.} 13th International Carpathian Control Conference (ICCC). 2012, 653–6.
+	\bibitem{xamarin} SHACKLES, Greg. \textit{Mobile development with C\#}. Sebastopol, CA: O'Reilly, c2012. ISBN 978-1-449-32023-2.
+	\bibitem{wikiSmartphoneSales} Mobile operating system. In: \textit{Wikipedia: the free encyclopedia} [online]. San Francisco (CA): Wikimedia Foundation, 2001- [cit. 2017-03-11]. Available at: https://en.wikipedia.org/wiki/Mobile\_operating\_system\#By\_operating\_system
+	\bibitem{mosMarketShare} Mobile/Tablet Operating System Market Share. \textit{NetMarketShare} [online]. [cit. 2017-03-10]. Available at: https://www.netmarketshare.com/operating-system-market-share.aspx?qprid=8\&qpcustomd=1
+	%N
+	\bibitem{nativeScriptWinSupport} NativeScript Runtime Preview for Windows 10. \textit{NativeScript} [online]. [cit. 2017-03-10]. Available at: https://www.nativescript.org/blog/nativescript-runtime-preview-for-windows-10
+	\bibitem{iosUsersPay} New Report Shows iOS Users Spend Money, Like to Check Weather. \textit{The Mac Observer} [online]. [cit. 2017-03-10]. Available at: https://www.macobserver.com/tmo/article/new\_report\_shows\_ios\_users\_spend\_money\_like\_to\_check\_weather
+	\bibitem{appsInStores} Number of apps available in leading app stores as of June 2016. \textit{Statista} [online]. [cit. 2017-03-10]. Available at: https://www.statista.com/statistics/276623/number-of-apps-available-in-leading-app-stores/
 	\bibitem{noOfSmartphones} Number of smartphone users worldwide from 2014 to 2020 (in billions). \textit{Statista} [online]. [cit. 2017-03-10]. Available at: http://www.statista.com/statistics/330695/number-of-smartphone-users-worldwide/
-	\bibitem{iosUsersPay} New Report Shows iOS Users Spend Money, Like to Check Weather. \textit{The Mac Observer} [online]. [cit. 2017-03-10]. Dostupné z: https://www.macobserver.com/tmo/article/new\_report\_shows\_ios\_users\_spend\_money\_like\_to\_check\_weather
-	\bibitem{iosAndroidStore} IOS vs Android Market Share \& Revenue: One Win for Each App Store in 2015. \textit{Latin Post} [online]. [cit. 2017-03-10]. Dostupné z: http://www.latinpost.com/articles/110519/20160121/ios-vs-android-market-share-revenue-one-win-for-each-app-store-in-2015.htm
-	\bibitem{lifehackerRevenues} How Much Do Mobile Developers Make Per App? \textit{Lifehacker} [online]. [cit. 2017-03-10]. Dostupné z: http://www.lifehacker.com.au/2016/03/how-much-do-mobile-developers-make-per-app/
-	\bibitem{appsInStores} Number of apps available in leading app stores as of June 2016. \textit{Statista} [online]. [cit. 2017-03-10]. Dostupné z: https://www.statista.com/statistics/276623/number-of-apps-available-in-leading-app-stores/
-	\bibitem{betanewsWinRevenue} Developers earn more on Windows Phone than Android or iOS. \textit{Betanews} [online]. [cit. 2017-03-10]. Dostupné z: http://betanews.com/2016/02/29/windows-phone-developer-revenue/
-	\bibitem{bgrBBRevenues} One chart shows why BlackBerry 10 has struggled to attract developers. \textit{BGR} [online]. [cit. 2017-03-10]. Dostupné z: http://bgr.com/2013/11/26/blackberry-10-developer-revenues/
-	\bibitem{wikiBBWorld} BlackBerry World. In: \textit{Wikipedia: the free encyclopedia} [online]. San Francisco (CA): Wikimedia Foundation, 2001- [cit. 2017-03-10]. Dostupné z: https://en.wikipedia.org/wiki/BlackBerry\_World\#Milestones
-	\bibitem{devEconomics} Reports. \textit{Developer Economics} [online]. [cit. 2017-03-10]. Dostupné z: https://www.developereconomics.com/reports/
-	\bibitem{microsoftContinuum} Welcome to Continuum for phone. \textit{Microsoft Support} [online]. [cit. 2017-03-10]. Dostupné z: https://support.microsoft.com/en-us/help/17280/windows-10-mobile-continuum
-	\bibitem{appcodaiPad} IOS Programming Tutorial: Creating a Universal App. \textit{Appcoda} [online]. [cit. 2017-03-10]. Dostupné z: http://www.appcoda.com/ios-univeral-app-tutorial/
-	\bibitem{androidTablet} Supporting Tablets and Handsets. \textit{Android Developer} [online]. [cit. 2017-03-10]. Dostupné z: https://developer.android.com/guide/practices/tablets-and-handsets.html
-	\bibitem{tabletMarketShare} Tablet operating systems' market share worldwide from 2013 to 2020. \textit{Statista} [online]. [cit. 2017-03-10]. Dostupné z: https://www.statista.com/statistics/272446/global-market-share-held-by-tablet-operating-systems/
-	\bibitem{idcTabletShare} Worldwide Tablet Market Expected to Rebound in 2018 as Windows Opens Doors for Growth and iPads Come Out of a Slump, According to IDC. \textit{IDC} [online]. [cit. 2017-03-10]. Dostupné z: https://www.idc.com/getdoc.jsp?containerId=prUS41699516
-	\bibitem{idcDetachableTablets} Detachable Tablets Set To Grow From 8\% of the Tablet Market in 2015 to 30\% in 2020, According to IDC. \textit{IDC} [online]. [cit. 2017-03-10]. Dostupné z: http://www.idc.com/getdoc.jsp?containerId=prUS41072516
-	\bibitem{codenameOneNaive} CROSS PLATFORM MOBILE STILL BETTER THAN NAIVE IN AGE OF FLAT DESIGN. \textit{Codename One} [online]. [cit. 2017-03-10]. Dostupné z: https://www.codenameone.com/blog/cross-platform-mobile-still-better-than-native-in-age-of-flat-design.html
-	\bibitem{codenameOneWinSupport} WINDOWS PHONE 8.1 \& UWP SUPPORT. \textit{Codename One} [online]. [cit. 2017-03-10]. Dostupné z: https://www.codenameone.com/blog/windows-phone-8-1-uwp-support.html
-	\bibitem{nativeScriptWinSupport} NativeScript Runtime Preview for Windows 10. \textit{NativeScript} [online]. [cit. 2017-03-10]. Dostupné z: https://www.nativescript.org/blog/nativescript-runtime-preview-for-windows-10
-	\bibitem{reactNativeWinSupport} React Native on the Universal Windows Platform. \textit{Windows blogs} [online]. [cit. 2017-03-10]. Dostupné z: https://blogs.windows.com/buildingapps/2016/04/13/react-native-on-the-universal-windows-platform/\#cFzRYQ06Y3lx1Yo8.97
-		
-	
-	
-	\bibitem{swiftIsBig} http://blog.diogot.com/blog/2014/09/29/swift-embedded-runtime-library-increases-app-size/
-	\bibitem{xamarin} SOME XAMARIN BOOK
-	
+	%O
+	\bibitem{bgrBBRevenues} One chart shows why BlackBerry 10 has struggled to attract developers. \textit{BGR} [online]. [cit. 2017-03-10]. Available at: http://bgr.com/2013/11/26/blackberry-10-developer-revenues/
+	%P
+	\bibitem{xamarinPlugins} Plugins for Xamarin and Windows Projects. \textit{GitHub} [online]. [cit. 2017-03-11]. Available at: https://github.com/jamesmontemagno/Xamarin.Plugins
+	%Q
+	%R
+	\bibitem{reactNativeCamera} React-native-camera. \textit{GitHub} [online]. [cit. 2017-03-11]. Available at: https://github.com/lwansbrough/react-native-camera
+	\bibitem{npmReactNativeWindows} React-native-windows. \textit{Npm} [online]. [cit. 2017-02-26]. Available at: https://www.npmjs.com/package/react-native-windows
+	\bibitem{reactNativeWinSupport} React Native on the Universal Windows Platform. \textit{Windows blogs} [online]. [cit. 2017-03-10]. Available at: https://blogs.windows.com/buildingapps/2016/04/13/react-native-on-the-universal-windows-platform/\#cFzRYQ06Y3lx1Yo8.97
+	\bibitem{devEconomics} Reports. \textit{Developer Economics} [online]. [cit. 2017-03-10]. Available at: https://www.developereconomics.com/reports/
+	%S
+	\bibitem{kantarOSSales} Smartphone OS sales market share. \textit{Kantar Worldpanel} [online]. [cit. 2017-03-11]. Available at: https://www.kantarworldpanel.com/global/smartphone-os-market-share/
+	\bibitem{androidTablet} Supporting Tablets and Handsets. \textit{Android Developer} [online]. [cit. 2017-03-10]. Available at: https://developer.android.com/guide/practices/tablets-and-handsets.html
+	\bibitem{ribeiroDaSilva} DA SILVA, Ribeiro A. \textit{Survey on cross-platforms and languages for mobile apps}. 2012 eighth international conference on the Quality of Information and Communications Technology (QUATIC). \textbf{2012}, 255-60.
+	\bibitem{swiftIsBig} Swift Embedded Runtime Library Increases App Size. \textit{Doing things the hard way…: But only once} [online]. [cit. 2017-03-11]. Available at: http://blog.diogot.com/blog/2014/09/29/swift-embedded-runtime-library-increases-app-size/
+	%T
+	\bibitem{tabletMarketShare} Tablet operating systems' market share worldwide from 2013 to 2020. \textit{Statista} [online]. [cit. 2017-03-10]. Available at: https://www.statista.com/statistics/272446/global-market-share-held-by-tablet-operating-systems/
+	\bibitem{taxonomyCP}EL-KASSAS, Wafaa S., Bassem A. ABDULLAH, Ahmed H. YOUSEF a Ayman M. WAHBA. \textit{Taxonomy of Cross-Platform Mobile Applications Development Approaches} [online]. Department of Computer and Systems Engineering, Faculty of Engineering, Ain Shams University, Egypt, 2015 [cit. 2017-02-19]. In: http://www.sciencedirect.com/science/article/pii/S2090447915001276	
+	%U
+	%V
+	%W
+	\bibitem{microsoftContinuum} Welcome to Continuum for phone. \textit{Microsoft Support} [online]. [cit. 2017-03-10]. Available at: https://support.microsoft.com/en-us/help/17280/windows-10-mobile-continuum	
+	\bibitem{windowsDevCenter} Windows. \textit{Windows Dev Center} [online]. [cit. 2017-03-10]. Available at: https://developer.microsoft.com/en-us/windows
+	\bibitem{wikiWindowsMobile} Windows 10 Mobile. In: \textit{Wikipedia: the free encyclopedia} [online]. San Francisco (CA): Wikimedia Foundation, 2001- [cit. 2017-03-10]. Available at: https://en.wikipedia.org/wiki/Windows\_10\_Mobile					
+	\bibitem{codenameOneWinSupport} WINDOWS PHONE 8.1 \& UWP SUPPORT. \textit{Codename One} [online]. [cit. 2017-03-10]. Available at: https://www.codenameone.com/blog/windows-phone-8-1-uwp-support.html
+	\bibitem{idcTabletShare} Worldwide Tablet Market Expected to Rebound in 2018 as Windows Opens Doors for Growth and iPads Come Out of a Slump, According to IDC. \textit{IDC} [online]. [cit. 2017-03-10]. Available at: https://www.idc.com/getdoc.jsp?containerId=prUS41699516
+	%X
+	%Y
+	%Z
 \end{thebibliography}
 
 
