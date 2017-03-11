@@ -38,11 +38,59 @@
 
 \EnglishKeywords{typography, \LaTeX, master thesis}
 
-\AddAcronym{DVD}{Digital Versatile Disc}
-\AddAcronym{TNT}{Trinitrotoluen}
-\AddAcronym{UML}{Unified Modeling Language}
-\AddAcronym{HTML}{Hyper Text Markup Language}
-\AddAcronym{TUG}{\TeX{} Users Group}
+\AddAcronym{2D}{2-dimensional}
+\AddAcronym{3D}{3-dimensional}
+\AddAcronym{AI}{Artificial Intelligence}
+\AddAcronym{API}{Application programming interface}
+\AddAcronym{BLOB}{Binary Large OBject}
+\AddAcronym{CI}{Continuous Integration}
+\AddAcronym{CLI}{Command-line Interface}
+\AddAcronym{CRM}{Customer Relationship Management}
+\AddAcronym{CSS}{Cascading Style Sheets}
+\AddAcronym{DB}{Database}
+\AddAcronym{DevOps}{software DEVelopment and information technology OPerationS}
+\AddAcronym{DOM}{Document Object Model}
+\AddAcronym{ERP}{Enterprise Resource Planning}
+\AddAcronym{GB}{GigaByte}
+\AddAcronym{GHz}{GigaHertz}
+\AddAcronym{GPS}{Global Positioning System}
+\AddAcronym{GUID}{Globally Unique Identifier}
+\AddAcronym{HAXM}{Hardware Accelerated eXecution Manager}
+\AddAcronym{HDD}{Harddisk Drive}
+\AddAcronym{HTML}{HyperText Markup Language}
+\AddAcronym{IDE}{Integrated Development Environment}
+\AddAcronym{IL}{Intermediate Language}
+\AddAcronym{IoT}{Internet of Things}
+\AddAcronym{IT}{Information technologies}
+\AddAcronym{JDK}{Java Development Kit}
+\AddAcronym{JS}{JavaScript}
+\AddAcronym{MB}{MegaByte}
+\AddAcronym{MBaaS}{Mobile Backend as a Service}
+\AddAcronym{MMS}{Multimedia Message Services}
+\AddAcronym{MVVM}{Modelview-View-Model (architecture)}
+\AddAcronym{NDK}{Native Development Kit}
+\AddAcronym{NFC}{Near Field Communication}
+\AddAcronym{OS}{Operating system}
+\AddAcronym{OTA}{Over-the-air}
+\AddAcronym{PC}{Personal Computer}
+\AddAcronym{PCL}{Portable Class Library}
+\AddAcronym{PDA}{Personal Digital Assistant}
+\AddAcronym{QR (code)}{Quick Response (code)}
+\AddAcronym{RIM}{Research in Motion - BlackBerry operating system}
+\AddAcronym{SD (card)}{Secure Digital (card)}
+\AddAcronym{SDK}{Software Development Kit}
+\AddAcronym{SMS}{Short Message Services}
+\AddAcronym{SQL}{Structured Query Language}
+\AddAcronym{SSD}{Solid State Drive}
+\AddAcronym{UI}{User Interface}
+\AddAcronym{UWP}{Universal Windows Platform}
+\AddAcronym{UX}{User Experience}
+\AddAcronym{VoIP}{Voice over Internet Protocol}
+\AddAcronym{WinRT}{Windows Runtime}
+\AddAcronym{WIP}{Work In Progress}
+\AddAcronym{WORA}{Write Once Run Anywhere}
+\AddAcronym{WYSIWYG}{What You See Is What You Get}
+\AddAcronym{XML}{eXtensible Markup Language}
 
 
 % Zacatek dokumentu
@@ -152,7 +200,7 @@ The following table shows the percentage of smartphone users for each smartphone
 The approximate number of active devices is based on the figure that there is about 2.1 billion smartphones in use worldwide \cite{noOfSmartphones}. With more than a billion active devices, Android is clearly the most used mobile operating system. iOS is also very strong, having more than a quarter of the market share. The other platforms are far behind. Windows users are just a tenth compared to Apple’s iPhone and iPad users. The portion BlackBerry’s RIM users is just slightly above 1\%. Symbian, having a similar share although being discontinued, is still used by more than 20 million users.
 
 \subsection{Smartphone OS sales market share}
-The smartphone sales market share can help us predict the future growth or decline of a certain platform. As seen in the graph XX earlier in this chapter, there was a dramatic shift in 2010 and 2011, when Android surpassed Symbian in the percentage of sold smartphones.
+The smartphone sales market share can help us predict the future growth or decline of a certain platform. As seen in Figure 1 earlier in this chapter, there was a dramatic shift in 2010 and 2011, when Android surpassed Symbian in the percentage of sold smartphones.
 
 \begin{table}
 	\centering
@@ -353,7 +401,7 @@ As we have seen above, there is no common development tool for all mobile platfo
 
 For many companies - or individual developers - it is too expensive to have an expert for each platform and each language. They have to struggle, to either omit certain platform, or learn new skills for each OS. However, certain aspects of every mobile application can be abstracted and standardized. And this is where multi platform development tools come into play. They take a single language, single development tools and abstract application aspects across all mobile operating systems to create a unified code based. The level of abstraction is a crucial factor which can help us differentiate between individual multiplatform tools. If the level of abstraction is high, we get a “Write once, run anywhere” approach, but lose the control over the specifics of individual platforms. If the level of abstraction is lower, we can access the platform specific features, but we have to implement them individually and the shared code base is smaller.
 
-There exist multiple ways how to divide and categorize multi-platform development tools. Research2guidance \cite{cptBenchmarking2014} classifies multi-platform tools according to how the app is created into following classes: Webb app toolkits, App factories, Cross-platform integrated development environments, Cross-platform integrated development environments for Enterprise, Cross-platform compilers, Cross-platform services. Silva’s division \cite{ribeiroDaSilva} is a bit different: App factory, Web-to-native wrapper, Runtime and Domain-specific language.
+There exist multiple ways how to divide and categorize multi-platform development tools. Research2guidance \cite{cptBenchmarking2014} classifies multi-platform tools according to how the app is created into following classes: Web app toolkits, App factories, Cross-platform integrated development environments, Cross-platform integrated development environments for Enterprise, Cross-platform compilers, Cross-platform services. Silva’s division \cite{ribeiroDaSilva} is a bit different: App factory, Web-to-native wrapper, Runtime and Domain-specific language.
 
 Probably the best known division is into following 3 categories \cite{aComparativeStudy} \cite{smutny} \cite{taxonomyCP}:
 \begin{itemize}
@@ -491,7 +539,7 @@ This is the list of use case scenarios, that will be implemented by each develop
 	\item \textbf{Hello world! }- the first scenario is the simplest one. The system will provide an almost blank application, with a single button. After clicking on the button, a “Hello world” text will be toggled.
 	\item \textbf{Persistent storage }- this scenario will test the ability of the development tool to store and load data into a persistent storage. The following types will be stored: string, float, binary data and a more complex object.
 	\item \textbf{Camera \& GPS }- the third scenario describes the most widely used hardware peripherals - camera and GPS. In this scenario, we will use the camera to take a photo and the GPS to add the coordinates of current location.
-	\item \textbf{Custom UI element and using native code }- the next scenario explores the possibility of using a custom UI element. We will try to implement a circular progress bar. This component already exists in custom native libraries [REF], so we will try to add them and use in a multi-platform application.
+	\item \textbf{Custom UI element and using native code }- the next scenario explores the possibility of using a custom UI element. We will try to implement a circular progress bar. If there is the possibility to render a native element from the multi-platform framework directly, we will use that. Otherwise, we will call a native random number generator and then fill the circular progress bar to generated percentage.
 	\item \textbf{Push notifications }- in the fifth scenario we will try to take advantage of the notification API of each platform. We will research the possibility to display push notifications sent from a web application. Because each platform handles the notifications differently, we will use only basic notifications without advanced features.
 	\item \textbf{Tablet optimization} - the sixth use case will test the ability of the development framework or platform to adjust the UI elements for various screen sizes.
 \end{enumerate}
@@ -549,7 +597,7 @@ The evaluation of development tools is performed on on a Windows machine for And
 		\midrule
 		\textbf{React Native}\\
 		\midrule
-		IntelliJ WebStorm 2016.3 \\
+		JetBrains WebStorm 2016.3 \\
 		React Native v 0.41\\	
 		\midrule	
 	\end{tabular}
@@ -870,7 +918,7 @@ This set of questions contains conditions that are important for some applicatio
 	Unlike the other sensors, Bluetooth, NFC and fingerprint scanners are not software-related, but depend on the hardware outfit. This makes their availability fragmented even within an operating system. Only a small portion of studied tools provide the functionality out-of-the box. The majority relies on 3rd party libraries, or custom wrappers invoking native functionality. This is true also for the barcode or QR scanner - although it is captured by camera, it is processed usually by the native API.
 	
 	\item \textbf{Is integration with assistant service (Alexa, Cortana, Google Assistant, Siri) possible? (Evaluation matrix, 5 points for each required and supported assistant)} 
-	Although the usage of AI-powered virtual assistance is still limited to several use cases and language, their possibilities are growing with each new update. Already now, virtual assistants are able to pick the best suited application for a particular request. If you want your application to be popular, it should communicate with the virtual assistant. Not all tools provide necessary support for this behaviour. [REF]
+	Although the usage of AI-powered virtual assistance is still limited to several use cases and language, their possibilities are growing with each new update. Already now, virtual assistants are able to pick the best suited application for a particular request. If you want your application to be popular, it should communicate with the virtual assistant. Not all tools provide necessary support for this behaviour.
 	
 	\item \textbf{Does the tool support debugging? (Evaluation matrix, 5 points) }
 	Debugging is one of the earliest tools that can help developers find and fix possible errors. It allows to closely examine every line of code. For any application that has medium to high complexity, debugging capability is a must.
@@ -904,7 +952,7 @@ Following questions have either low impact on the application development or rel
 	While contemporary smartphones are often more smart than phones, accessing the contacts list, making calls or texting is still used, from time to time. It is therefore a bit of relief that all examined development tools support this functionality, although some may require a 3rd party library.
 	
 	\item \textbf{Is a testing environment for multiple devices required? Does the tool feature any? (Evaluation matrix, 3 points) }
-	Even automated tests on an emulator or real device have one major shortfall - they test only a single screen size. Screen fragmentation is a long lasting and well known issue on Android devices, but with the support for older hardware it is relevant also in the iOS and Windows world. Amazon Web Services provide a service known as Device Farm [https://aws.amazon.com/device-farm/], which allows simultaneous UI testing on hundreds of physical Android and iOS devices in the cloud. Similar services are offered also by BitBar [http://bitbar.com/testing/], Firebase [https://firebase.google.com/docs/test-lab/] and TestObject [https://testobject.com/]. Some of the multi-platform development tools featured in this thesis provide also a cloud testing service, arguably with better integration with their product line (e.g. Telerik and Xamarin). If your app has the potential of being installed by millions of users, testing it on a Device Farm, or similar service, may be highly beneficial.
+	Even automated tests on an emulator or real device have one major shortfall - they test only a single screen size. Screen fragmentation is a long lasting and well known issue on Android devices, but with the support for older hardware it is relevant also in the iOS and Windows world. Amazon Web Services provide a service known as Device Farm \cite{awsDeviceFarm}, which allows simultaneous UI testing on hundreds of physical Android and iOS devices in the cloud. Similar services are offered also by BitBar \cite{bitbar}, Firebase \cite{firebase} and TestObject \cite{testObject}. Some of the multi-platform development tools featured in this thesis provide also a cloud testing service, arguably with better integration with their product line (e.g. Telerik and Xamarin). If your app has the potential of being installed by millions of users, testing it on a Device Farm, or similar service, may be highly beneficial.
 	
 	\item \textbf{Does the tool allow continuous integration, if necessary? (Evaluation matrix, 3 points) }
 	Continuous integration is a crucial part of DevOps, enabling small but valuable and rapid updates of an product or service. The whole process consists of various steps, like from coding, collaboration, versioning, unit and automatic testing to packaging, releasing and configuration management. A tool that can be easily incorporated into the process can result in shorter development cycles and higher customer satisfaction.
@@ -1224,7 +1272,9 @@ As we can see, Embarcadero has lost 6 points, while Xamarin has only strengthene
 	%A
 	\bibitem{apacheCordova} WARGO, John M. \textit{Apache Cordova 3 Programming}. First release. New Jersey 07458: Pearson Education, 2013. ISBN 978-0-321-95736-8.
 	\bibitem{rajTolety} RAJ, R a SB TOLETY. A study on approaches to build cross-platform mobile applications and criteria to select appropriate approach. \textit{2012 Annual IEEE India Conference (INDICON)}. 2012, 625–9.
+	\bibitem{awsDeviceFarm} \textit{AWS Device Farm} [online]. [cit. 2017-03-11]. Available at: https://aws.amazon.com/device-farm/	
 	%B
+	\bibitem{bitbar} \textit{Bitbar}. [online]. [cit. 2017-03-11]. Available at: http://bitbar.com/testing/	
 	\bibitem{wikiBBWorld} BlackBerry World. In: \textit{Wikipedia: the free encyclopedia} [online]. San Francisco (CA): Wikimedia Foundation, 2001- [cit. 2017-03-10]. Available at: https://en.wikipedia.org/wiki/BlackBerry\_World\#Milestones
 	\bibitem{blogsWindows8to10} Bring your Windows Phone Silverlight apps to Windows Runtime XAML; prepare for universal app development in Windows 10. \textit{Windows blogs} [online]. [cit. 2017-03-10]. Available at: https://blogs.windows.com/buildingapps/2014/12/17/bring-your-windows-phone-silverlight-apps-to-windows-runtime-xaml-prepare-for-universal-app-development-in-windows-10/
 	%C
@@ -1242,6 +1292,7 @@ As we can see, Embarcadero has lost 6 points, while Xamarin has only strengthene
 	%E
 	\bibitem{evaluationOfCP} FRIBERG, Joy. \textit{Evaluation of cross-platform development for mobile devices} [online]. Department of Computer and Information Science , Linköpings universitet, 2014 [cit. 2017-02-19]. In: https://www.diva-portal.org/smash/get/diva2:691708/FULLTEXT01.pdf	
 	%F
+	\bibitem{firebase} \textit{Firebase Test Lab for Android} [online]. [cit. 2017-03-11]. Available at: https://firebase.google.com/docs/test-lab/	
 	%G
 	\bibitem{gartner} \textit{Gartner} [online]. [cit. 2017-03-11]. Available at: http://www.gartner.com/technology/home.jsp
 	\bibitem{ionicGetStarted} Get started with Ionic Framework. \textit{Ionic} [online]. [cit. 2017-02-26]. Available at: http://ionicframework.com/getting-started/
@@ -1281,7 +1332,9 @@ As we can see, Embarcadero has lost 6 points, while Xamarin has only strengthene
 	\bibitem{swiftIsBig} Swift Embedded Runtime Library Increases App Size. \textit{Doing things the hard way…: But only once} [online]. [cit. 2017-03-11]. Available at: http://blog.diogot.com/blog/2014/09/29/swift-embedded-runtime-library-increases-app-size/
 	%T
 	\bibitem{tabletMarketShare} Tablet operating systems' market share worldwide from 2013 to 2020. \textit{Statista} [online]. [cit. 2017-03-10]. Available at: https://www.statista.com/statistics/272446/global-market-share-held-by-tablet-operating-systems/
-	\bibitem{taxonomyCP}EL-KASSAS, Wafaa S., Bassem A. ABDULLAH, Ahmed H. YOUSEF a Ayman M. WAHBA. \textit{Taxonomy of Cross-Platform Mobile Applications Development Approaches} [online]. Department of Computer and Systems Engineering, Faculty of Engineering, Ain Shams University, Egypt, 2015 [cit. 2017-02-19]. In: http://www.sciencedirect.com/science/article/pii/S2090447915001276	
+	\bibitem{taxonomyCP}EL-KASSAS, Wafaa S., Bassem A. ABDULLAH, Ahmed H. YOUSEF a Ayman M. WAHBA. \textit{Taxonomy of Cross-Platform Mobile Applications Development Approaches} [online]. Department of Computer and Systems Engineering, Faculty of Engineering, Ain Shams University, Egypt, 2015 [cit. 2017-02-19]. In: http://www.sciencedirect.com/science/article/pii/S2090447915001276
+	\bibitem{testObject} \textit{TestObject} [online]. [cit. 2017-03-11]. Available at: https://testobject.com/
+		
 	%U
 	%V
 	%W
