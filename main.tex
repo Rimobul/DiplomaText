@@ -1033,7 +1033,7 @@ In order to test the methodology out, it has been subjected to several verificat
 \subsection{FloLogic}
 The first project is called FloLogic. It consists of a mobile application and cloud backend, monitoring and controlling a water valve. The project was started more than a year ago. The original specification required to use Xamarin, because the product owner had an MSDN subscription. Other requirements included:
 \begin{enumerate}
-	\item Focus on iOS and Android, with later implementation for Windows Phones and Windows 10 devices
+	\item Focus on iOS and Android, with later implementation for Windows Phones
 	\item Implementation of a Microsoft Azure cloud service, communicating with the mobile app and the water valve
 	\item Integration of a highly reliable PUSH notification system
 \end{enumerate}
@@ -1074,17 +1074,22 @@ As the reader can see, the answers of the project manager and developer have dif
 	\item Background process - according to the developer, background processes, although unavailable on iOS, are much more reliable on Android, then PUSH notifications. He would therefore prefer a tool allowing the creation of background services.
 \end{itemize}
 
-Only 4 tools have managed to pass the primary set of questions according to the project manager’s answers. The developer was more demanding, leaving space only to 3 tools. Here are the results with following score:
+Only 5 tools have managed to pass the primary set of questions according to the project manager’s answers. The developer was more demanding, leaving space only to 4 tools. Here are the results with following score:
 
 \begin{table}[!h]
 	\centering
 	\caption{FloLogic - Primary questions results}
-	\begin{tabular}{p{4cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm}}
+	\begin{tabular}{p{4cm} | p{3cm} | p{3cm} | p{3cm}}
 		\toprule		
-		\textbf{Tool:} & \textbf{Kivy} & \textbf{Kony} & \textbf{PhoneGap} & \textbf{React Native} \\
+		\textbf{Tool:} & \textbf{Kivy} & \textbf{Kony} & \textbf{NativeScript} \\
 		\midrule
-		Project manager’s score: & 28 & 42 & 40 & 35 \\
-		Developer’s score: & 42 & - & 56 & 49 \\			
+		Manager’s score: & 28 & 42 & 42 \\
+		Developer’s score: & 28 & - & 49 \\ 
+		\midrule
+		\textbf{Tool:} & \textbf{PhoneGap} & \textbf{React Native} & \\
+		\midrule
+		Manager’s score: & 35 & 35 & \\
+		Developer’s score: & 42 & 35 & \\			
 		\midrule
 	\end{tabular}
 \end{table}
@@ -1119,18 +1124,23 @@ Even in the second set some answers differ. The developer was confident enough t
 
 \begin{table}[!h]
 	\centering
-	\caption{FloLogic - Secondary questions results}
-	\begin{tabular}{p{4cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm}}
+	\caption{FloLogic - Secondary questions results}	
+	\begin{tabular}{p{4cm} | p{3cm} | p{3cm} | p{3cm}}
 		\toprule		
-		\textbf{Tool:} & \textbf{Kivy} & \textbf{Kony} & \textbf{PhoneGap} & \textbf{React Native} \\
-		\midrule		
-		Project manager’s score: & 40 & 79 & 47 & 62 \\
-		Developer’s score: & 42 & - & 56 & 59 \\
+		\textbf{Tool:} & \textbf{Kivy} & \textbf{Kony} & \textbf{NativeScript} \\
+		\midrule
+		Manager’s score: & 38 & 72 & 62 \\
+		Developer’s score: & 38 & - & 64 \\ 
+		\midrule
+		\textbf{Tool:} & \textbf{PhoneGap} & \textbf{React Native} & \\
+		\midrule
+		Manager’s score: & 40 & 50 & \\
+		Developer’s score: & 42 & 45 & \\			
 		\midrule
 	\end{tabular}
 \end{table}
 
-Already now, the winner is very distinguishable. Kony leads with 79 points, with React Native being far on the second place. The project manager of FloLogic was familiar with React Native, but Kony was new to him. He wanted to take also tertiary questions in order to see, whether Ract Native comes closer to Kony, or whether the gap widens. Here are the answers for the last set of questions:
+Already now, the winner is very distinguishable. Kony leads with 72 points, with NativeScript being not that far on the second place. The project manager of FloLogic was familiar with React Native, but both Native Script and Kony were new to him. He wanted to take also tertiary questions in order to see, whether Ract Native comes closer to Kony, or whether the gap widens. Here are the answers for the last set of questions:
 
 \begin{table}[!h]
 	\centering
@@ -1156,13 +1166,17 @@ Already now, the winner is very distinguishable. Kony leads with 79 points, with
 \begin{table}[!h]
 \centering
 \caption{FloLogic - Tertiary questions results}
-\begin{tabular}{p{4cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm}}
-	\toprule		
-	\textbf{Tool:} & \textbf{Kivy} & \textbf{Kony} & \textbf{PhoneGap} & \textbf{React Native} \\
-	\midrule		
-	Project manager’s score: & 34 & 88 & 47 & 65 \\	
-	\midrule
-\end{tabular}
+	\begin{tabular}{p{4cm} | p{3cm} | p{3cm} | p{3cm}}
+		\toprule		
+		\textbf{Tool:} & \textbf{Kivy} & \textbf{Kony} & \textbf{NativeScript} \\
+		\midrule
+		Manager’s score: & 20 & 69 & 59 \\
+		\midrule
+		\textbf{Tool:} & \textbf{PhoneGap} & \textbf{React Native} & \\
+		\midrule
+		Manager’s score: & 28 & 38 & \\		
+		\midrule
+	\end{tabular}
 \end{table}
 
 The manager was surprised with the results and displayed deep interest in the Kony framework. He expressed himself that he would discuss the results with the product owner. However, he added he is rather sceptical about changing the framework after more than a year of development and starting from scratch.
@@ -1176,7 +1190,7 @@ The goal of Project W is to create an app that helps the user to track his/her d
 \begin{table}[!h]
 	\centering
 	\caption{Project W - Primary questions}
-	\begin{tabular}{p{7.5cm} | p{5cm}}
+	\begin{tabular}{p{9cm} | p{4.5cm}}
 		\toprule		
 		\textbf{Question} &	\textbf{Answer}\\
 		\midrule
@@ -1199,21 +1213,29 @@ The goal of Project W is to create an app that helps the user to track his/her d
 	\end{tabular}
 \end{table}
 
-The startup has quite limited resources. Although they would like to create apps for iOS, they currently do not own a Mac. They had planned to buy one, but as soon as they heard some tools allow iOS builds without a Mac, they showed deep interest for this possibility. Even with this limitation, 6 frameworks have passed the primary questions.
+The startup has quite limited resources. Although they would like to create apps for iOS, they currently do not own a Mac. They had planned to buy one, but as soon as they heard some tools allow iOS builds without a Mac, they showed deep interest for this possibility. Even with this limitation, 7 frameworks have passed the primary questions.
 
 \begin{table}[!h]
 	\centering
 	\caption{Project W - Primary questions results}
-	\begin{tabular}{p{2cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm}}
+	\begin{tabular}{p{4cm} | p{3cm} | p{3cm} | p{3cm}}
 		\toprule		
-		\textbf{Tool:} & \textbf{Embarcadero} & \textbf{Ionic} & \textbf{Monaca} & \textbf{NativeScript} & \textbf{Tabris.js} & \textbf{Xamarin} \\
+		\textbf{Tool:} & \textbf{Embarcadero} & \textbf{Ionic} & \textbf{Monaca} \\ 
 		\midrule
-		Score: & 56 & 42 & 42 & 42 & 56 & 49 \\		
+		Score: & 56 & 42 & 42 \\ 
+		\midrule
+		\textbf{Tool:} & \textbf{NativeScript} & \textbf{React Native} & \textbf{Tabris.js} \\
+		\midrule
+		Score: & 42 & 28 & 56 \\
+		\midrule
+		\textbf{Tool:}& \textbf{Xamarin} & & \\	
+		\midrule
+		Score: & 49 & & \\	
 		\midrule
 	\end{tabular}
 \end{table}
 
-We can see that all selected frameworks have fairly equal score, with Embarcadero and Tabris.js slightly standing out. It is interesting though that the filtered tools contain all types of approaches - hybrid, interpreted and even cross-platform. In this case, passing another set of questions is absolutely necessary.
+We can see that all selected frameworks have fairly equal score (except of React Native), with Embarcadero and Tabris.js slightly standing out. It is interesting though that the filtered tools contain all types of approaches - hybrid, interpreted and even cross-platform. In this case, passing another set of questions is absolutely necessary.
 
 \begin{table}[!h]
 	\centering
@@ -1243,16 +1265,24 @@ Although the Project W application will be rather simple considering the UI, it 
 \begin{table}[!h]
 	\centering
 	\caption{Project W - Secondary questions results}
-	\begin{tabular}{p{2cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm}}
+	\begin{tabular}{p{4cm} | p{3cm} | p{3cm} | p{3cm}}
 		\toprule		
-		\textbf{Tool:} & \textbf{Embarcadero} & \textbf{Ionic} & \textbf{Monaca} & \textbf{NativeScript} & \textbf{Tabris.js} & \textbf{Xamarin} \\
+		\textbf{Tool:} & \textbf{Embarcadero} & \textbf{Ionic} & \textbf{Monaca} \\ 
 		\midrule
-		Score: & 86 & 72 & 57 & 52 & 66 & 94 \\		
+		Score: & 86 & 72 & 57 \\ 
+		\midrule
+		\textbf{Tool:} & \textbf{NativeScript} & \textbf{React Native} & \textbf{Tabris.js} \\
+		\midrule
+		Score: & 52 & 48 & 66 \\
+		\midrule
+		\textbf{Tool:}& \textbf{Xamarin} & & \\	
+		\midrule
+		Score: & 94 & & \\	
 		\midrule
 	\end{tabular}
 \end{table}
 
-Embarcadero is still at the forefront, but Xamarin surpassed it together with Tabris.js, which is now in the 4th place. Both Monaca and NativeScript seem to be insufficient for this app. The developers were curious, whether the last set of questions will have similarly dramatic effect on the score of individual frameworks.
+Embarcadero is still at the forefront, but Xamarin surpassed it together with Tabris.js, which is now in the 4th place. React Native, Monaca and NativeScript seem to be insufficient for this app. The developers were curious, whether the last set of questions will have similarly dramatic effect on the score of individual frameworks.
 
 \begin{table}[!h]
 	\centering
@@ -1278,11 +1308,19 @@ Embarcadero is still at the forefront, but Xamarin surpassed it together with Ta
 \begin{table}[!h]
 	\centering
 	\caption{Project W - Tertiary questions results}
-	\begin{tabular}{p{2cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm}}
+	\begin{tabular}{p{4cm} | p{3cm} | p{3cm} | p{3cm}}
 		\toprule		
-		\textbf{Tool:} & \textbf{Embarcadero} & \textbf{Ionic} & \textbf{Monaca} & \textbf{NativeScript} & \textbf{Tabris.js} & \textbf{Xamarin} \\
+		\textbf{Tool:} & \textbf{Embarcadero} & \textbf{Ionic} & \textbf{Monaca} \\ 
 		\midrule
-		Score: & 80 & 72 & 60 & 52 & 63 & 100 \\		
+		Score: & 80 & 72 & 60 \\ 
+		\midrule
+		\textbf{Tool:} & \textbf{NativeScript} & \textbf{React Native} & \textbf{Tabris.js} \\
+		\midrule
+		Score: & 52 & 48 & 63 \\
+		\midrule
+		\textbf{Tool:}& \textbf{Xamarin} & & \\	
+		\midrule
+		Score: & 100 & & \\	
 		\midrule
 	\end{tabular}
 \end{table}
@@ -1291,7 +1329,97 @@ As we can see, Embarcadero has lost 6 points, while Xamarin has only strengthene
 
 \subsection{Sensus}
 
+The last tested project is called Sensus. This is again a Xamarin project targeted for Android and Windows. The project is extension to an existing family of .NET projects for web and desktop environments. Xamarin was chosen in the hope to re-use some common libraries. In Sensus, high importanse is put on bluetooth and QR code scanner functionality. The following tables show the scrum master's answers to all three sets of questions:
 
+\begin{table}[!h]
+	\centering
+	\caption{Sensus - Primary questions}
+	\begin{tabular}{p{7.5cm} | p{5cm}}
+		\toprule		
+		\textbf{Question} &	\textbf{Answer}\\
+		\midrule
+		Which mobile operating systems do you want to target? &	Android, Windows \\
+		Which desktop operating systems do you have available for development? & Linux, Windows \\
+		What is the size of your team? & Up to 10 developers \\
+		How much are you willing to pay for software licences per developer per year? & \$500 \\
+		Do you want the app to have native look and feel, or same across individual platforms? & Same \\
+		Do you require multithreading? & Yes \\
+		Will you use multimedia sensors and APIs (camera, microphone, video and audio player) & Camera  \\
+		Will you use location sensors (GPS, gyroscope, accelerometer)? & GPS \\
+		Do you want to get information about device status? & Nice to have \\
+		Will you use a background process? & No \\
+		Will you use PUSH notifications? & No \\
+		Do you need to invoke native libraries or create custom plugins? & No \\
+		Would you like to use app monitoring and get crash analytics? & No \\		
+		\midrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+	\centering
+	\caption{Sensus - Secondary questions}
+	\begin{tabular}{p{7.5cm} | p{5cm}}
+		\toprule		
+		\textbf{Question} &	\textbf{Answer} \\
+		\midrule
+		How complex is your application? & Business-grade \\
+		Would you like to use a designer or preview tool? & No \\
+		Do you need different layout for tablet and phone? & Nice to have \\
+		Will you use some platform-specific overrides? & Yes \\
+		Will you access the file system? & No \\
+		Do you need any client-side database? & SQLite \\
+		Will you use Bluetooth, NFC, finger- or barcode scanner? & Bluetooth, QR scanner \\
+		Do you require integration with virtual assistants? & No \\
+		Do you need debugging tools? & Yes \\
+		Will you use unit tests? & Yes \\
+		Would you like to use automated UI tests? & Yes \\
+		Would you like to use app profiling? & Nice to have \\		
+		\midrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+	\centering
+	\caption{Sensus - Tertiary questions}
+	\begin{tabular}{p{9.5cm} | p{3cm}}
+		\toprule		
+		\textbf{Question} &	\textbf{Answer} \\
+		\midrule		
+		Which programming languages do you have experience with? & AngularJS, C\#, JS, Java \\
+		Do you require MBaaS features or cloud connection? & No \\
+		Do you need embedded web browser? & No \\
+		Would you like to access the contact list, call or send SMS? & No \\
+		Is a testing environment for multiple devices required? & Nice to have \\
+		Do you need continuous integration features? & Nice to have \\
+		Would you like to test in closed groups? & No \\
+		Do you need OpenGL support? & No \\
+		Would you like to develop games? & No \\
+		Is the app targeted for augmented or virtual reality? & No \\			
+		\midrule
+	\end{tabular}
+\end{table}
+
+As the reader will notice, the same set of frameworks which satisfied the requirements of FloLogic were selected also for Sensus. This is remarkable, since the answers were substantially different. However, while Kony was the most suitable framework for FloLogic, NativeScript leads in case of Sensus, with PhoneGap being second.
+
+\begin{table}[!h]
+	\centering
+	\caption{Sensus - Questions results}
+	\begin{tabular}{p{4cm} | p{3cm} | p{3cm} | p{3cm}}
+		\toprule		
+		\textbf{Tool:} & \textbf{Kivy} & \textbf{Kony} & \textbf{NativeScript} \\ 
+		\midrule
+		Score: & 45 & 55 & 80 \\ 
+		\midrule
+		\textbf{Tool:} & \textbf{PhoneGap} & \textbf{React Native} & \\
+		\midrule
+		Score: & 68 & 59 & \\
+		\midrule
+	\end{tabular}
+\end{table}
+
+The scrum master was very surprised why Xamarin was not even listed among the selected frameworks. Under closer inspection, we can see it was removed by the requirement of having the same look and feel on all targeted platforms.
+
+The scrum master confirmed the development team struggled with this issue for a long time. However, he noted that they eventually managed to achieve this goal. Moreover, the ability to re-use existing C\# libraries outweighted the negatives of implementing custom UI layer. The scrum master suggested the condition of having the same UI across platforms to be less strict. He also pointed out the methodology does not take into account existing code libraries, which might be a decisive factor for some projects. Other than that, he rated the methodology as comprehensive enough and stated that the resulting frameworks might be more suitable for the Sensus project, if there were no custom C\# libraries.
 
 \section{Conclusion}
 
