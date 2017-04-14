@@ -25,11 +25,11 @@
 
 % Zadame soubor s digitalizovanou podobou prohlaseni autora zaverecne prace.
 % Pokud toto makro zapoznamkujeme sazi se cisty text prohlaseni.
-\AuthorDeclarationImageFile{Figures/AuthorDeclaration.jpg}
+%\AuthorDeclarationImageFile{Figures/AuthorDeclaration.jpg}
 
 % Zadame soubor s digitalizovanou podobou souhlasu spolupracujici prav. nebo fyz. osoby.
 % Pokud toto makro zapoznamkujeme sazi se cisty text souhlasu.
-\CooperatingPersonsDeclarationImageFile{Figures/CoopPersonDeclaration.jpg}
+%\CooperatingPersonsDeclarationImageFile{Figures/CoopPersonDeclaration.jpg}
 
 \CzechAbstract{Táto práca sa snaží vyriešiť problém vyberania najvhodnejšieho vývojového nástroja pre multi-platformnú mobilnú aplikáciu. Zameriava sa na frameworky umožňujúce všeobecný vývoj  aplikácií pre Android, iOS a, voliteľne aj, Windows. Práca analyzuje rozhodujúce faktory pri výbere vývojových nástrojov z teoretického aj praktického hľadiska. Praktická časť analýzy spočíva v demonštratívnej implementácii prípadov užitia, ktoré sú kritické pri vývoji mobilných aplikácií. Všetky prípady užitia sú implementované v 3 rozličných nástrojoch - Apache Cordova, React Native a Xamarin. Táto analýza vyústila v zostavení série metodických krokov, ktoré sprevádzajú svojho používateľa procesom výberu najvhodnejšieho mobilného multi-platformového vývojového nástroja. Metodika bola úspešne overená na skupine existujúcich alebo plánovaných mobilných aplikácií. Hlavným prínosom tejto práce je jednoduchý, no zároveň veľmi presný spôsob ohodnotenia vhodnosti ľubovoľného mobilného multi-platformového frameworku pre takmer akýkoľvek projekt.}
 
@@ -101,7 +101,7 @@
 \MakeTitlePages
 
 % Pokud mame v zaverecne praci vypisy kodu, jinak odstranit.
-\lstlistoflistings
+%\lstlistoflistings
 
 \section{Introduction}
 Competition is a natural trait of any market. It offers customers with the possibility to choose between multiple variants. At the same time, it forces the producers to innovate and outweigh disadvantages of their products with bonus features. 
@@ -684,6 +684,11 @@ The architect, business analyst or product owner should be aware also of the lon
 
 Another important factor is to collect as much data about the available resources as possible. Enough information about the size, expertise and maturity of the development team can reduce both time and costs dramatically. Also, mapping already available software and hardware can help to keep the budget.
 
+\begin{figure}
+	\centering\fbox{\includegraphics[width=0.8\textwidth]{Figures/welcome.png}}
+	\caption{Welcome page of the methodology web app}
+\end{figure}
+
 \subsection{Methodologically unsuitable projects}
 
 Before proceeding with the methodology itself, several eliminating questions should be answered. If the answer is “yes” to one or multiple questions, given project cannot be correctly assessed by this methodology.
@@ -715,8 +720,18 @@ Before proceeding with the methodology itself, several eliminating questions sho
 \end{itemize}
 
 
+\begin{figure}
+	\centering\fbox{\includegraphics[width=0.8\textwidth]{Figures/questions.png}}
+	\caption{Questions page of the methodology web app}
+\end{figure}
+
 \subsection{Recommended way of using the methodology}
 If the project has passed all questions from chapter 5.2, it means it is suitable to be subjected to the methodology. The whole methodology consists of 4 sets of questions. Each set has decreasing importance. The first set of questions is the most important. Tools not fulfilling requirements posed in this set violate the project's specification radically. Such tools should be removed from further evaluation.
+
+\begin{figure}
+	\centering\includegraphics[width=0.45\textwidth]{Figures/Methodology.png}
+	\caption{Recommended way of using the methodology}
+\end{figure}
 	
 It is possible that for certain projects the most suitable multi-platform development tool will be clear already after the first set of questions. However, usually the first set of question selects a small group of frameworks with similar capabilities. To distinguish which of them is the most appropriate for a certain project, the second set of questions should be taken. This set contains conditions which are fairly common in mobile app development. Failing one or two requirements in the second set is not as critical as in the first set. Usually, there exists a work-around, but it may increase the project cost, development time or negatively impact app's performance.
 	
@@ -852,6 +867,12 @@ Implementing Bluetooth is not a necessary condition, thus we use the "Nice to ha
 After counting all the points, we can see that Ionic is the most suitable framework for our particular project, with NeoMAD being close in second place. Codename One is far behind and ViziApps did not even make it through the first round. However, for other projects the results can be totally different. If the reader was not still decided whether to use Ionic or NeoMAD, he/she can research further facts, such as how good is the documentation, how buggy is the tool or what other apps have been created using the particular framework.
 
 \subsection{Primary questions}
+
+\begin{figure}
+	\centering\includegraphics[width=0.8\textwidth]{Figures/ActivityDiagram7.png}
+	\caption{Evaluation process for primary questions}
+\end{figure}
+
 This is the first and most important set of questions. Majority of the questions are crucial to all applications. Questions that are irrelevant to your project should be skipped. All tools that do not satisfy at least one condition in this first category should be removed. There might be some tools that have partial or planned support for some of the conditions. It depends on your particular use case whether this limitation can be accepted or not. 
 
 \begin{enumerate}
@@ -912,6 +933,12 @@ This is the first and most important set of questions. Majority of the questions
 \end{enumerate}
 
 \subsection{Secondary questions}
+
+\begin{figure}
+	\centering\includegraphics[width=0.8\textwidth]{Figures/ActivityDiagram5.png}
+	\caption{Evaluation process for secondary questions}
+\end{figure}
+
 This set of questions contains conditions that are important for some applications, while irrelevant to others. Failing a condition in this category may seriously affect the development process, but a sort of workaround is usually possible.
 
 \begin{enumerate}
@@ -952,7 +979,15 @@ This set of questions contains conditions that are important for some applicatio
 	Neither unit tests, nor manual tests are able to discover low-level or long-running issues, like memory leaks or taking up too much resources. If high quality and high performance are important for your project, you should definitely use a tool or IDE that provides app profiling.
 \end{enumerate}
 
+
+
 \subsection{Tertiary questions}
+
+\begin{figure}
+	\centering\includegraphics[width=0.8\textwidth]{Figures/ActivityDiagram3.png}
+	\caption{Evaluation process for tertiary questions}
+\end{figure}
+
 Following questions have either low impact on the application development or relate to a very small niche of projects and a workaround is possible. Yet, they still may balance the scales in one way or another. They serve as a finishing touch after the coarse separation in first two categories.
 
 \begin{enumerate}
@@ -988,6 +1023,12 @@ Following questions have either low impact on the application development or rel
 	\item \textbf{Does the tool support augmented or virtual reality, if necessary? (Evaluation matrix, 3 points) }
 	Although augmented and virtual reality applications are dominated by games, various utility and even business apps are getting still more popular as well. Implementing one of these technologies might be exactly the thing that will set your app apart from the competition.
 \end{enumerate}
+
+
+\begin{figure}
+	\centering\fbox{\includegraphics[width=0.8\textwidth]{Figures/morequestions.png}}
+	\caption{Tertiary questions page of the methodology web app}
+\end{figure}
 
 \subsection{Supplementary questions}
 
@@ -1025,6 +1066,11 @@ This last set of questions does not provide simple answers. However, they may he
 	\item \textbf{What are some prominent apps developed using the tool?}
 	If you still are not sure which tool is most suitable for your case, try to look at some apps that were written in that tool. If you find multiple similar apps, it probably means the tool is best suited for your use case.
 \end{enumerate}
+
+\begin{figure}
+	\centering\fbox{\includegraphics[width=0.8\textwidth]{Figures/evaluation.png}}
+	\caption{Evaluation page of the methodology web app}
+\end{figure}
 
 
 \section{Methodology verification}
