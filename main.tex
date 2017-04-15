@@ -533,6 +533,21 @@ Although interpreted frameworks may seem similar to hybrid tools due to the use 
 
 JavaScript interpreted approach has been present for a while, thanks to Appcelerator. However, only in recent years it got more traction with the declining popularity of PhoneGap and the rise of tools like Fuse, NativeScript, Tabris.js and, most prominently, React Native. The only interpreted framework tool studied in this thesis, which does not use JavaScript, is Codename One with its Java implementation.
 
+\begin{table}[!h]
+	\centering
+	\caption{Apache Cordova - Persistent storage demonstration apps}
+	\label{table:uis}
+	\begin{tabular}{p{5cm} | p{5cm} | p{5cm} }
+		\toprule		
+		\includegraphics[width=0.3\textwidth]{Figures/cordova2android.PNG}
+		& \includegraphics[width=0.3\textwidth]{Figures/cordova2ios.PNG}
+		& \includegraphics[width=0.3\textwidth]{Figures/cordova2windows.PNG}
+		\\
+		Android & iOS & Windows \\
+		\midrule
+	\end{tabular}
+\end{table}
+
 \subsection{Use case definition}
 This is the list of use case scenarios, that will be implemented by each developer tool:
 
@@ -546,6 +561,21 @@ This is the list of use case scenarios, that will be implemented by each develop
 \end{enumerate}
 
 Note, that the use cases cover only those aspects of multi-platform development, that can be achieved on all target operating systems (Android, iOS and Windows). Therefore, we will not test platform-specific features, such as fragments, widgets, life tiles, etc.
+
+\begin{table}[!h]
+	\centering
+	\caption{Xamarin - Camera and GPS demonstration apps}
+	\label{table:uis}
+	\begin{tabular}{p{5cm} | p{5cm} | p{5cm} }
+		\toprule		
+		\includegraphics[width=0.3\textwidth]{Figures/xamarin3android.PNG}
+		& \includegraphics[width=0.3\textwidth]{Figures/xamarin3ios.jpg}
+		& \includegraphics[width=0.3\textwidth]{Figures/xamarin3windows.PNG}
+		\\
+		Android & iOS & Windows \\
+		\midrule
+	\end{tabular}
+\end{table}
 
 \subsection{Hardware and software configuration}
 The evaluation of development tools is performed on on a Windows machine for Android and Windows Phone. For iOS, the built (or whole development) is done on an iMac device. The specifications can be found in following tables.
@@ -604,6 +634,35 @@ The evaluation of development tools is performed on on a Windows machine for And
 	\end{tabular}
 \end{table}
 
+\begin{table}[!h]
+	\centering
+	\caption{4th use case in individual frameworks}
+	\label{table:uis}
+	\begin{tabular}{p{3cm} | p{4cm} | p{4cm} | p{4cm} }
+		\toprule			
+		& Android & iOS & Windows \\
+		\midrule
+		Apache Cordova	
+		& \includegraphics[width=0.22\textwidth]{Figures/cordova4android.PNG}
+		& \includegraphics[width=0.22\textwidth]{Figures/cordova4ios.png}
+		& \includegraphics[width=0.22\textwidth]{Figures/cordova4windows.PNG}
+		\\
+		\midrule
+		React Native	
+		& \includegraphics[width=0.22\textwidth]{Figures/react4android.PNG}
+		& \includegraphics[width=0.22\textwidth]{Figures/react4ios.jpg}
+		&
+		\\
+		\midrule
+		Xamarin	
+		& \includegraphics[width=0.22\textwidth]{Figures/xamarin4android.PNG}
+		& \includegraphics[width=0.22\textwidth]{Figures/xamarin4ios.jpg}
+		& \includegraphics[width=0.22\textwidth]{Figures/xamarin4windows.PNG}
+		\\
+		\midrule
+	\end{tabular}
+\end{table}
+
 \subsection{Results}
 
 This subsection summarizes the results of evaluated apps. Apache Cordova was implemented via Visual Studio plugin and tested on Android, iOS and Windows. The main development machine was Windows. No special architectural style or design patterns were used.
@@ -637,6 +696,20 @@ Similarly to Cordova, also React Native had to work with base-64 binary objects.
 
 The last tested framework, Xamarin, implemented SQLite as well. The SQLite library for .NET provides the same amount of abstraction and Realm does for React Native, yet provides the full potential of SQL statements and functions just as pure SQLite for Apache Cordova. Its implementation is superior to both alternatives. Moreover, C\# has a larger variety of supported types, thus being able to manipulate with binary objects directly.
 
+\begin{table}[!h]
+	\centering
+	\caption{React Native - Tablet layout optimization}
+	\label{table:uis}
+	\begin{tabular}{p{5cm} | p{5cm}  }
+		\toprule		
+		\includegraphics[width=0.3\textwidth]{Figures/react6android.PNG}
+		& \includegraphics[width=0.3\textwidth]{Figures/react6ios.jpg}
+		\\
+		Android & iOS \\
+		\midrule
+	\end{tabular}
+\end{table}
+
 \subsubsection{Camera and location}
 For a long time, Apache Cordova was the most popular multi-platform development tool, and it still belongs into top 3. It is therefore no surprise that it has a vast amount of 3rd party plugins and extensions, which help other developers achieve almost any desired functionality. For both camera and geolocation, Cordova offers official plugins, which worked flawlessly on all three platforms.
 
@@ -663,6 +736,20 @@ Considering the development in the mobile frameworks themselves... [TBD].
 To demonstrate that the UI optimization for various screen sizes can be achieved by common techniques used in responsive web design, a simple demonstration web page from W3Schools was used \footnote{Can be found at: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css\_templates\_blog\&stacked=h}.
 
 [TBD]
+
+\begin{table}[!h]
+	\centering
+	\caption{Xamarin - Tablet layout optimization on Windows devices}
+	\label{table:uis}
+	\begin{tabular}{p{5cm} | p{11cm}  }
+		\toprule		
+		\includegraphics[width=0.3\textwidth]{Figures/xamarin6windows.PNG}
+		& \includegraphics[width=0.7\textwidth]{Figures/xamarin6winx.PNG}
+		\\
+		Windows 10 Mobile & Windows 10 Desktop \\
+		\midrule
+	\end{tabular}
+\end{table}
 
 \subsubsection{Summary}
 When summed together, it can be said that Apache Cordova is a very mature framework with great support and lots of 3rd party libraries and various guides and tutorials. It is very easy to learn and use it, especially for developers familiar with modern web technologies. Thanks to its rich set of plugins, almost any desired functionality is achievable. And the use of HTML, CSS and JavaScript the UI design and development is also straightforward. However, Apache Cordova is suitable only for small apps, which are not performance-demanding. Because the app runs in a browser, parts of native functionality is simply unavailable. The resulting applications are often bloated and rather slow. Last, but not least, the apps do not look native. This can be solved by using Ionic, which produces native-looking apps from Angular. However, it does not solve the other issues. 
