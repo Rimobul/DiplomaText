@@ -114,16 +114,20 @@ Implementing the same app over and over again using different languages and APIs
 
 Some of these tools offer code-free programming. Others provider optimization of web applications for mobile browsers. There are solutions for truly native apps developed with a single code base, or hybrid apps that are programmed as web apps, but have access to device hardware. And for game developers, there are multiple frameworks and engines for both 2D and 3D development. 
 
-However, choosing the right development tool can be a difficult task. Often, many products seem to provide the same functionality. The devil is always in the details, and discovering a missing framework capability in the middle of development process can result in wasting of several months of work. The purpose of this thesis is to create a methodology, that will guide the developers, architects and managers and help them to find the most suitable development tools, that will fulfill all their criteria.
+However, choosing the right development tool can be a difficult task. Often, many products seem to provide the same functionality. The devil is always in the details, and discovering a missing framework capability in the middle of development process can result in wasting of several months of work. 
 
-\subsection{Thesis overview}
+\subsection{Thesis goals and overview}
+The purpose of this thesis is to create a methodology, that will guide the developers, architects or managers and help them to find the most suitable development tools, that will fulfil all their requirements. This ultimate goal will be achieved by reaching several partial sub-goals.
+
 Because there are so many different multi-platform development solutions and not all of them can be covered, we will make the target group a little narrower. In the first chapters, this thesis will try to determine which operating systems are still relevant for the multi-platform development. We will analyze the global mobile operating systems market, smartphone sales, application revenues and developers’ focus. 
 
-After that we will take the relevant operating systems and focus only on multi-platform development tools which enable creating apps for the most used OSs. Since we want to focus on the possibility of using device hardware and native API, we will ignore all web-based solutions and game engines. The thesis will omit also all tools which do not enable general development options (e.g. tools focused only on a single company or activity).
+After that we will take the relevant operating systems and focus only on multi-platform development tools which enable creating apps for the most used mobile operating systems. Since we want to focus on the possibility of using device hardware and native API, we will ignore all web-based solutions and game engines. The thesis will omit also all tools which do not enable general development options (e.g. tools focused only on a single company or activity).
 
 From the products which passed the filter, we will pick a few ones and test their usability on a couple of pre-defined use cases. The thesis will discuss and compare the implementation details, strengths, weaknesses and limitations of individual development tools. The results of these implementations, as well as theoretical research, will be helpful in establishing a set of factors crucial in the creation of the resulting methodology.
 
 The methodology itself will consist of several parts. The first part will validate projects and requirements, to which the methodology is relevant. The second part will be the core of the methodology, helping the user determine the right multi-platform development tool. The last part will contain suggestions for additional research which can be performed by the user if the methodological results were indefinite.
+
+As soon as the methodology is designed, it will be subjected to a series of real-world projects. The results produced by the methodology will be compared with real implementation or expected results. Finally, feedback to the methodology and its benefits will be assessed. 
 
 \subsection{Remarks}
 The reader may be familiar with the term “cross-platform” development. This term is interchangeable with “multi-platform” \cite{wikiCrossPlatform}, which is used in this thesis. Both cross-platform and multi-platform software development refer to the process of creating a piece of software that can be run on multiple platforms.
@@ -1146,6 +1150,12 @@ Following questions have either low impact on the application development or rel
 
 This last set of questions does not provide simple answers. However, they may help in investigating the differences between two frameworks that still have similar amount of points, even after passing the first three sets of questions.
 
+\begin{figure}
+	\centering\fbox{\includegraphics[width=0.8\textwidth]{Figures/evaluation.png}}
+	\caption{Evaluation page of the methodology web app}
+	\label{figure:webEvaluation}
+\end{figure}
+
 \begin{enumerate}
 	\item \textbf{Do the developers have experience with a multi-platform development tool? }
 	If the answer to this question is yes, then you should consider consulting your development team. Their past experience might be very helpful in resolving the questions with no simple answers, like: What is the learning curve? How long does the development take? What is the performance of the app? Is the development tool buggy? How busy is the developer community?
@@ -1178,12 +1188,6 @@ This last set of questions does not provide simple answers. However, they may he
 	\item \textbf{What are some prominent apps developed using the tool?}
 	If you still are not sure which tool is most suitable for your case, try to look at some apps that were written in that tool. If you find multiple similar apps, it probably means the tool is best suited for your use case.
 \end{enumerate}
-
-\begin{figure}
-	\centering\fbox{\includegraphics[width=0.8\textwidth]{Figures/evaluation.png}}
-	\caption{Evaluation page of the methodology web app}
-	\label{figure:webEvaluation}
-\end{figure}
 
 
 \section{Methodology verification}
@@ -1595,6 +1599,28 @@ As the reader will notice, the same set of frameworks which satisfied the requir
 The scrum master was very surprised why Xamarin was not even listed among the selected frameworks. Under closer inspection, we can see it was removed by the requirement of having the same look and feel on all targeted platforms.
 
 The scrum master confirmed the development team struggled with this issue for a long time. However, he noted that they eventually managed to achieve this goal. Moreover, the ability to re-use existing C\# libraries outweighted the negatives of implementing custom UI layer. The scrum master suggested the condition of having the same UI across platforms to be less strict. He also pointed out the methodology does not take into account existing code libraries, which might be a decisive factor for some projects. Other than that, he rated the methodology as comprehensive enough and stated that the resulting frameworks might be more suitable for the Sensus project, if there were no custom C\# libraries.
+
+\subsection{Methodology feedback}
+
+After passing the methodology questions, each person was asked to give feedback to the methodology itself.
+
+The project manager of FloLogic assessed the metholody as very comprehensive, clear and easy to use. He admitted that Xamarin may not be the optimal framework for FloLogic's use case. Both Kony and NativeScript, which scored the highest in his answers, were new to hime. He suggested adding several more questions, like:
+
+\begin{itemize}
+	\item Do the developers have previous experience with a tool?
+	\item How long does it take to learn and master the framework?
+	\item How reliable is the tool? How many bugs does it have?
+	\item How often is it updated?
+\end{itemize}
+
+After being informed that all of these questions are part of the supplementary questions set, he expressed himself as being very satisfied with the methodology.
+
+The FloLogic developer was also quick to agree with Xamarin not being suitable for the project. He has heard of NativeScript never before, but he knew React Native's Facebook Messanger application. React Native was the second most suitable framework in his answers. He expressed his concerns about this framework, being very performance-demanding and thus slow on older phones. After a short benchmark research, which revealed that NativeScript should perform better than React Native, but not as good as Xamarin, he suggested increasing the importance of performance factors in the methodology. He also wanted to add a question about the comprehensivness of documentation. However, this question is already part of the supplementary set.
+
+The developer of Project W has also complimented the methodology as being very thorough and well-structured. She has confirmed planning to use Xamarin for their project, which also came out of the methodology with the highest score. Although she was disappointed a little, that Xamarin required a Mac to build iOS applications, she expressed that it makes the most sense to use a C\#-based framework, since they want to target Windows Phone primarily, anyway.
+
+In case of the Sensus project, it's scrum master confirmed as well that the team was struggling a lot with providing platform-agnostic UI, while using Xamarin. He assessed the questions as being very good and the result - NativeScript or PhoneGap - as being fair enough. However, he stressed the importance of existing libraries re-use, which is not taken into consideration in the methodology. He suggested that some questions should be less decisive (the possibility of creating a platform-specific or platform-agnostic UI), while others should be put more into the forefront (code re-use and integration with existing libraries). He wanted to know, whether there are no other frameworks using C\#. When informed of InstantDeveloper, he pointed out that this might have been a better choice.
+
 
 \section{Conclusion}
 
