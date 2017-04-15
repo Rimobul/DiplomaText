@@ -17,7 +17,7 @@
 \SubmissionDate{28th April 2017}
 
 % Pokud nechceme nikomu dekovat makro zapoznamkujeme.
-\Thanks{Rád bych na tomto místě poděkoval všem, kteří mi s prací pomohli, protože bez nich by tato práce nevznikla.}
+\Thanks{I would like to thank RNDr. Jaroslav Žáček, Ph.D., my supervisor, for his valuable advice. I am also very grateful to SDE Software Solutions for enabling me to use their iMac and iPhone, evaluating and giving feedback to my methodology. Special thanks goes to Ing. Jana Belešová for her constant support and lending me her Windows 10 Mobile device. }
 
 % Zadame cestu a jmeno souboru ci nekolika souboru s digitalizovanou podobou zadani prace.
 % Pokud toto makro zapoznamkujeme sazi se stranka s upozornenim.
@@ -143,6 +143,7 @@ In order to create a methodology for choosing the right mobile multi-platform de
 \begin{figure}[!ht]
 \centering\includegraphics[width=0.8\textwidth]{Figures/World_Wide_Smartphone_Sales_Share.png}
 \caption{World-wide smartphone sales \cite{wikiSmartphoneSales}}
+\label{figure:wikiSmrtphoneSales}
 \end{figure}
 
 By the end of millennium, mobile phones were almost in every family in the western hemisphere \cite{worldBank}. However, they were still used mainly for telephony and sending SMS, with occasional MMS in the first years of 2000s. There were only few devices, which tried to combine mobile phones with PDAs - small personal computers, targeted mainly for business and enterprise environments. They were running on operating systems such as Palm OS, BlackBerry OS and Windows CE, which later evolved into smartphone operating systems.
@@ -179,11 +180,12 @@ As of the August 2016, the following smartphone operating systems are still bein
 \end{itemize}
 
 \subsection{Smartphone OS usage market share}
-The following table shows the percentage of smartphone users for each smartphone OS (for the year 2016) \cite{mosMarketShare}:
+Table \ref{table:phonemarketshare} shows the percentage of smartphone users for each smartphone OS (for the year 2016) \cite{mosMarketShare}.
 
 \begin{table}[hb]
 	\centering
 	\caption{Smartphone OS usage market share}
+	\label{table:phonemarketshare}
 	\begin{tabular}{l r r}
 		\toprule		
 		Platform & Market share (\%) & Devices (approximate, in millions) \\
@@ -201,7 +203,7 @@ The following table shows the percentage of smartphone users for each smartphone
 The approximate number of active devices is based on the figure that there is about 2.1 billion smartphones in use worldwide \cite{noOfSmartphones}. With more than a billion active devices, Android is clearly the most used mobile operating system. iOS is also very strong, having more than a quarter of the market share. The other platforms are far behind. Windows users are just a tenth compared to Apple’s iPhone and iPad users. The portion BlackBerry’s RIM users is just slightly above 1\%. Symbian, having a similar share although being discontinued, is still used by more than 20 million users.
 
 \subsection{Smartphone OS sales market share}
-The smartphone sales market share can help us predict the future growth or decline of a certain platform. As seen in Figure 1 earlier in this chapter, there was a dramatic shift in 2010 and 2011, when Android surpassed Symbian in the percentage of sold smartphones.
+The smartphone sales market share can help us predict the future growth or decline of a certain platform. As seen in Figure \ref{figure:wikiSmrtphoneSales} earlier in this chapter, there was a dramatic shift in 2010 and 2011, when Android surpassed Symbian in the percentage of sold smartphones.
 
 \begin{table}
 	\centering
@@ -231,6 +233,7 @@ For certain businesses, the global data may not be relevant, since regionally th
 \begin{table}
 	\centering
 	\caption{Regional smartphone sales in 2016}
+	\label{table:regionalSmartphoneSales}
 	\begin{tabular}{l l l l l l}
 		\toprule
 		\% & Android & BlackBerry & iOS & Windows & Other \\
@@ -256,6 +259,7 @@ For certain businesses, the global data may not be relevant, since regionally th
 \begin{figure}
 	\centering\includegraphics[width=0.8\textwidth]{Figures/regionalMarketShares.png}
 	\caption{Regional market shares \cite{kantarOSSales}}
+	\label{figure:regionalMarketShares}
 \end{figure}
 
 \subsection{Smartphone app stores revenues}
@@ -268,6 +272,7 @@ These data are backed also by a survey performed by InMobi \cite{lifehackerReven
 \begin{figure}
 	\centering\includegraphics[width=0.5\textwidth]{Figures/appRevenues.png}
 	\caption{Average app revenues from individual app stores, per month}
+	\label{figure:appRevenues}
 \end{figure}
 
 The article explains this by the small amount of apps found on Windows Store. Smaller market means less competition and this has dual effect on the market. The discoverability factor of your application is much higher and the chance there will be a free alternative is much smaller. With no competition, a developer is free to increase the cost of an application \cite{appsInStores}.
@@ -275,6 +280,7 @@ The article explains this by the small amount of apps found on Windows Store. Sm
 \begin{figure}
 	\centering\includegraphics[width=0.8\textwidth]{Figures/appsInStores.png}
 	\caption{Estimated number of apps in individual app stores.}
+	\label{figure:appsInStoress}
 \end{figure}
 
 However, some \cite{betanewsWinRevenue} suggest the survey numbers may be skewed due to smaller sample of Windows developers. Even if the Windows monthly revenue is not accurate, the numbers make it still a very interesting platform. This cannot be said of other platforms. From the ones not discontinued, BlackBerry is the strongest one. However, its revenues do not figure in many recent surveys. In older articles, BlackBerry app development seems to be the least rewarding \cite{bgrBBRevenues}. 
@@ -375,10 +381,11 @@ There are two more operating systems - BlackBerry and Symbian - that have around
 \section{Mobile multi-platform development tools}
 For each software platform there exists one or two official tools, languages, APIs and supporting software making up a development stack. And then there exists a ton of various modifications, customizations, frameworks and corporate tools to enhance and speed up the development for a narrow range of implementation problems.
 
-The same is true for mobile development. There are the official development tools \cite{taxonomyCP}:
+The same is true for mobile development. The official development tools \cite{taxonomyCP} can be found in table \ref{table:officialDevelopmentTools}.
 \begin{table}[!ht]
 	\centering
 	\caption{Official mobile OS development tools}
+	\label{table:officialDevelopmentTools}
 	\begin{tabular}{p{2cm} p{2cm} p{2cm} p{2.5cm} p{2.5cm} p{2.5cm}}
 		\toprule
 		Platform & IDE & Language & User interface & Desktop development & App market\\
@@ -395,7 +402,7 @@ That were the official tools, initially created by the owner companies to enable
 
 It seems, we have found the perfect cross-platform tool. As the reader will learn later, C++ can really be used for cross-platform development, but it is not that straightforward. The C++ support for Android and iOS is limited. And each platform has a different application lifecycle, different hardware peripheries, different APIs and libraries. In the end, developing in C++ would result in developing 4 different applications - but in a much more difficult way.
 
-In the list above, there is one more language known for its “multiplatformicity” - Java. However, its “Write once, run anywhere” is not so true in the mobile world. While BlackBerry was forced by its declining market share to support Android apps written in Java, iOS and Windows are not so supportive. Yet, even for Java there are tools which enable it to spread even to those platforms. So, let us discover those cross-platform development options up close.
+In the table \ref{table:officialDevelopmentTools}, there is one more language known for its “multiplatformicity” - Java. However, its “Write once, run anywhere” is not so true in the mobile world. While BlackBerry was forced by its declining market share to support Android apps written in Java, iOS and Windows are not so supportive. Yet, even for Java there are tools which enable it to spread even to those platforms. So, let us discover those cross-platform development options up close.
 
 \subsection{Multi-platform development approaches}
 As we have seen above, there is no common development tool for all mobile platforms. Even if we ignored the differences in programming languages, there are still various paradigms in application lifecycle, access to native APIs, interactions between processes, etc.
@@ -456,11 +463,12 @@ As mentioned in earlier chapters, as of 2016, there exists more than a hundred d
 	Examples: AppPress, Dojo, Bootstrap Mobile, jQuery Mobile, Sencha Touch
 \end{enumerate}
 
-The complete table of all mobile multi-platform development tools which passed all criteria can be found below. Out of more than 100 tools, only 25 fulfilled all necessary criteria. More information about the rejected tools can be found in \cite{aarhus}. 
+The complete table of all mobile multi-platform development tools which passed all criteria can be found in table \ref{table:frameworks}. Out of more than 100 tools, only 25 fulfilled all necessary criteria. More information about the rejected tools can be found in \cite{aarhus}. 
 
 \begin{sidewaystable}
 	\centering
 	\caption{Selected multi-platform development tools}
+	\label{table:frameworks}
 	\begin{tabular}{l l l r r r r}
 		\toprule
 		Product & Language & Approach & MBaaS & Apache Cordova & Windows & BlackBerry \\
@@ -536,7 +544,7 @@ JavaScript interpreted approach has been present for a while, thanks to Appceler
 \begin{table}[!h]
 	\centering
 	\caption{Apache Cordova - Persistent storage demonstration apps}
-	\label{table:uis}
+	\label{table:cordova2}
 	\begin{tabular}{p{5cm} | p{5cm} | p{5cm} }
 		\toprule		
 		\includegraphics[width=0.3\textwidth]{Figures/cordova2android.PNG}
@@ -565,7 +573,7 @@ Note, that the use cases cover only those aspects of multi-platform development,
 \begin{table}[!h]
 	\centering
 	\caption{Xamarin - Camera and GPS demonstration apps}
-	\label{table:uis}
+	\label{table:xamarin3}
 	\begin{tabular}{p{5cm} | p{5cm} | p{5cm} }
 		\toprule		
 		\includegraphics[width=0.3\textwidth]{Figures/xamarin3android.PNG}
@@ -578,11 +586,12 @@ Note, that the use cases cover only those aspects of multi-platform development,
 \end{table}
 
 \subsection{Hardware and software configuration}
-The evaluation of development tools is performed on on a Windows machine for Android and Windows Phone. For iOS, the built (or whole development) is done on an iMac device. The specifications can be found in following tables.
+The evaluation of development tools is performed on on a Windows machine for Android and Windows Phone. For iOS, the built (or whole development) is done on an iMac device. The specifications can be found in tables \ref{table:desktopConfiguration}, \ref{table:mobileConfiguration} and \ref{table:developmentToolsConfiguration}.
 
 \begin{table}[!h]
 	\centering
 	\caption{Desktop configuration}
+	\label{table:desktopConfiguration}
 	\begin{tabular}{p{2cm} | p{4.5cm} p{4.5cm}}
 		\toprule
 		OS & Microsoft Windows 10 Home & macOS Sierra, v 10.12.3 \\
@@ -597,6 +606,7 @@ The evaluation of development tools is performed on on a Windows machine for And
 \begin{table}[!h]
 	\centering
 	\caption{Mobile configuration}
+	\label{table:mobileConfiguration}
 	\begin{tabular}{p{2cm} | p{3.5cm} p{3.5cm} p{3.5cm}}
 		\toprule
 		OS & Android Marshmallow 6.0.1 & iOS 10 & Windows 10 Mobile \\
@@ -611,6 +621,7 @@ The evaluation of development tools is performed on on a Windows machine for And
 \begin{table}[!h]
 	\centering
 	\caption{Development tools configuration}
+	\label{table:developmentToolsConfiguration}
 	\begin{tabular}{l}
 		\toprule
 		\textbf{Xamarin}\\
@@ -634,10 +645,18 @@ The evaluation of development tools is performed on on a Windows machine for And
 	\end{tabular}
 \end{table}
 
+\subsection{Results}
+
+This subsection summarizes the results of evaluated apps. Apache Cordova was implemented via Visual Studio plugin and tested on Android, iOS and Windows. The main development machine was Windows. No special architectural style or design patterns were used.
+
+On the other hand, React Native was developed almost entirely on macOS in WebStorm. Although there exists a custom UWP plugin for React Native, running an app on Windows device was not achieved. Therefor, React Native was evaluated only on Android and iOS. For more complicated projects, the Redux architecture was used. 
+
+Similar to Apache Cordova, Xamarin was also primarily developed on Windows desktop and tested on Android, iOS and Windows mobile. To get closer to the UI development experience of the other evaluated frameworks, Xamarin.Forms in combination with MVVM was chosen.
+
 \begin{table}[!h]
 	\centering
 	\caption{4th use case in individual frameworks}
-	\label{table:uis}
+	\label{table:frameworks4}
 	\begin{tabular}{p{3cm} | p{4cm} | p{4cm} | p{4cm} }
 		\toprule			
 		& Android & iOS & Windows \\
@@ -663,14 +682,6 @@ The evaluation of development tools is performed on on a Windows machine for And
 	\end{tabular}
 \end{table}
 
-\subsection{Results}
-
-This subsection summarizes the results of evaluated apps. Apache Cordova was implemented via Visual Studio plugin and tested on Android, iOS and Windows. The main development machine was Windows. No special architectural style or design patterns were used.
-
-On the other hand, React Native was developed almost entirely on macOS in WebStorm. Although there exists a custom UWP plugin for React Native, running an app on Windows device was not achieved. Therefor, React Native was evaluated only on Android and iOS. For more complicated projects, the Redux architecture was used. 
-
-Similar to Apache Cordova, Xamarin was also primarily developed on Windows desktop and tested on Android, iOS and Windows mobile. To get closer to the UI development experience of the other evaluated frameworks, Xamarin.Forms in combination with MVVM was chosen.
-
 \subsubsection{Setup}
 Considering Apache Cordova, the initial setup for Android and Windows is rather easy since it is a plugin within Visual Studio. The built-in installation process automatically downloads and installs Node.js with Cordova CLI and Git CLI. It also prepares Apache Ant, Oracle Java JDK and Android SDK to enable Android development. Tools for Windows mobile development are not installed automatically. However, they can be added by ticking the checkboxes for Universal Windows Platform tools for Cordova and Windows 10 Mobile Emulator. 
 
@@ -682,7 +693,7 @@ Compared to Android, iOS installation was incomparably easier. Besides the commo
 
 Xamarin brings us back to Windows. Although Xamarin development is possible on Mac as well (with Xamarin Studio or Visual Studio for Mac), building a Windows app is possible only on Windows. Installing Xamarin is, again, easy via a Visual Studio plugin. By default, the plugin installs Xamarin, Android NDK, Android SDK, Java JDK, Google Android Emulator and Intel HAXM. In addition to that the user may choose to install Universal Windows Platform tools for Xamarin and Windows 10 Mobile Emulator. 
 
-Again, installation on Mac has to be done separately. ???
+Again, installation on Mac has to be done separately. Visual Studio on Windows can reach out to a remote Mac, build there the iOS application and then display it back locally. Alternatively, Visual Studio can be installed on Mac, enabling development for Mac, iOS and Android. The code can be shared between Windows and Mac instances of Visual Studio via a remote repository.
 
 \subsubsection{Hello World}
 There were no issues with the first, very simplistic app. All tested frameworks passed the test almost flawlessly. The only problem was with jQuery for Windows in Apache Cordova project. For some reason, jQuery was added twice, thus the application did not work. Therefore, pure JavaScript was used for all Cordova apps.
@@ -699,7 +710,7 @@ The last tested framework, Xamarin, implemented SQLite as well. The SQLite libra
 \begin{table}[!h]
 	\centering
 	\caption{React Native - Tablet layout optimization}
-	\label{table:uis}
+	\label{table:react6}
 	\begin{tabular}{p{5cm} | p{5cm}  }
 		\toprule		
 		\includegraphics[width=0.3\textwidth]{Figures/react6android.PNG}
@@ -719,9 +730,9 @@ Xamarin for Android and Xamarin for iOS allow programmers to access the camera a
 
 \subsubsection{Custom UI element and native code}
 For all frameworks, a circular progress bar was chosen as a custom UI element. Since hybrid apps are just web apps wrapped in a native web view, creating a custom UI element is done via HTML, CSS and JavaScript, just like in any regular web page. Creating a custom circular progress bar in Apache Cordova took almost no time at all. 
-The more challenging part was creating a bridge between the native code and JavaScript, since this required creating a whole new Apache Cordova plugin - a process requiring several steps for each platform.
+The more challenging part was creating a bridge between the native code and JavaScript, since this required creating a whole new Apache Cordova plugin - a process requiring several steps for each platform. This was achieved only on Windows, by creating a simple functionality, which allowed converting lower case text into upper case. However, on Android and iOS only pre-built plugins worked. Therefore, Android and iOS apps call another plugin providing vibration capabilities.
 
-Also in React Native the custom element was done almost immediately, since a 3rd party plugin exists. Unlike Apache Cordova, also the bridge between React code and native code was done rather easily. Since the build process of React Native includes a generated native infrastructure, it is possible to extend the infrastructure with custom code. A simple React annotation than exposes the native classes and methods inside React Native.
+Also in React Native the custom element was done almost immediately, since a 3rd party plugin exists. Unlike Apache Cordova, also the bridge between React code and native code was done rather easily. Since the build process of React Native includes a generated native infrastructure, it is possible to extend the infrastructure with custom code. A simple React annotation in ObjectiveC or Java than exposes the native classes and methods inside React Native.
 
 The most complicated circular progress bar implementation was performed in Xamarin. Since the circular progress bar does not exist on any platform, it has to be implemented on each of them. Afterwards, a common element declaration is created in XAML in Xamarin.Forms. The last step is to tell Xamarin, how to render the common XAML declaration on individual frameworks - this is done via Custom Renderers. A Custom Renderer binds the common XAML element and its properties to the native element, its properties and rendering functionality.
 
@@ -733,14 +744,16 @@ To avoid the tedious task of creating a new PUSH notification service for each p
 Considering the development in the mobile frameworks themselves... [TBD].
 
 \subsubsection{Tablet optimization}
-To demonstrate that the UI optimization for various screen sizes can be achieved by common techniques used in responsive web design, a simple demonstration web page from W3Schools was used \footnote{Can be found at: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css\_templates\_blog\&stacked=h}.
+To demonstrate that the UI optimization for various screen sizes can be achieved by common techniques used in responsive web design, a simple demonstration web page from W3Schools was used \footnote{Can be found at: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css\_templates\_blog\&stacked=h} for Apache Cordova. The responsive app worked well on all three platforms, in both portrait and landscape modes. Plus, it displayed the expected behaviour on Windows 10 desktop.
 
-[TBD]
+The solution for responsiveness in React Native was, once again, a plugin. This plugin used the experimental EcmaScript 6 annotations. These annotations were then used as run-time conditions for React Native styles. Eventually, the whole process was not too dissimilar to media queries used in responsive CSS styles.
+
+In platform-specific Xamarin implementations, responsiveness is handled on each platform individually. However, Xamarin.Forms provides an abstraction to this - device idiom. The value of Device.Idiom can be either Phone, Tablet or Desktop. This provides a run-time condition checking, similar to React Native. The app can then decide whether to render a XAML page optimized for phones, or for tablets.
 
 \begin{table}[!h]
 	\centering
 	\caption{Xamarin - Tablet layout optimization on Windows devices}
-	\label{table:uis}
+	\label{table:xamarin6}
 	\begin{tabular}{p{5cm} | p{11cm}  }
 		\toprule		
 		\includegraphics[width=0.3\textwidth]{Figures/xamarin6windows.PNG}
@@ -752,11 +765,11 @@ To demonstrate that the UI optimization for various screen sizes can be achieved
 \end{table}
 
 \subsubsection{Summary}
-When summed together, it can be said that Apache Cordova is a very mature framework with great support and lots of 3rd party libraries and various guides and tutorials. It is very easy to learn and use it, especially for developers familiar with modern web technologies. Thanks to its rich set of plugins, almost any desired functionality is achievable. And the use of HTML, CSS and JavaScript the UI design and development is also straightforward. However, Apache Cordova is suitable only for small apps, which are not performance-demanding. Because the app runs in a browser, parts of native functionality is simply unavailable. The resulting applications are often bloated and rather slow. Last, but not least, the apps do not look native. This can be solved by using Ionic, which produces native-looking apps from Angular. However, it does not solve the other issues. 
+When summed together, it can be said that Apache Cordova is a very mature framework with great support and lots of 3rd party libraries, various guides and tutorials. It is very easy to learn and use it, especially for developers familiar with modern web technologies. Thanks to its rich set of plugins, almost any desired functionality is achievable. And the use of HTML, CSS and JavaScript the UI design and development is also straightforward. However, Apache Cordova is suitable only for small apps, which are not performance-demanding. Because the app runs in a browser, parts of native functionality is simply unavailable. The resulting applications are often bloated and rather slow. Last, but not least, the apps do not look native. This can be solved by using Ionic, which produces native-looking apps from Angular. However, it does not solve the other issues. 
 
 Considering React Native, it takes a little time to learn the way, how it works and how to implement Redux, the most commonly used React architecture. Yet, the same principles apply also for web development in ReactJS, so developers can reuse this knowledge. After getting past this initial hurdles, the development in React Native is extremely fast. Npm is growing everyday with new React Native packages. However, React Native is still in development and many of its features are not yet production-ready, e.g.: Windows development, or camera usage. Its speed performance and the resulting app size are also not optimal. Yet, it can be expected that once React Native is finished, all this issues will be solved, or at least mitigated. For fast prototyping and small to medium-sized apps, React Native might be the right framework in the near future. Its closest competitor, NativeScript, uses Angular and provides slightly better performance, yet at the cost of smaller popularity (thus smaller community and less 3rd party libraries). It might be possible that React Native and other JavaScript interpreted frameworks will once render hybrid frameworks obsolete.
 
-The last tested development tool, Xamarin, is the most difficult to learn, but is the most powerful at the same time. Unlike Apache Cordova or React Native, Xamarin provides only partial abstraction (in case of Xamarin.Forms) or almost no abstraction (in case of Xamarin.Android and Xamarin.iOS) over the native code. A lot of functionality that is quickly achievable in the other frameworks require more coding in Xamarin. Therefore, Xamarin is not suitable for prototyping and small projects. However, it provides the greatest control over native code, enables the usage of all native APIs and allows the usage of common design patterns and best practices. A vast amount of NuGet packages and 3rd party libraries and plugins can quickly enrich Xamarin with new functionality. Xamarin also produces apps with the smallest overhead and the best performance (there are benchmarks in which Xamarin surpassed even native Java on Android). Due to this factors, Xamarin is best suited for medium to large-scale applications, or applications with demanding and complicated functionality.
+The last tested development tool, Xamarin, is the most difficult to learn, but is the most powerful at the same time. Unlike Apache Cordova or React Native, Xamarin provides only partial abstraction (in case of Xamarin.Forms) or almost no abstraction (in case of Xamarin.Android and Xamarin.iOS) over the native code. A lot of functionality that is quickly achievable in the other frameworks require more coding in Xamarin. Therefore, Xamarin is not suitable for prototyping and small projects. However, it provides the best control over native code, enables the usage of all native APIs and allows the usage of common design patterns and best practices. A vast amount of NuGet packages, 3rd party libraries and plugins can quickly enrich Xamarin with new functionality. Xamarin also produces apps with the smallest overhead and the best performance (there are benchmarks in which Xamarin surpassed even native Java on Android). Due to these factors, Xamarin is best suited for medium to large-scale applications, or applications with demanding and complicated functionality.
 
 
 
@@ -774,6 +787,7 @@ Another important factor is to collect as much data about the available resource
 \begin{figure}
 	\centering\fbox{\includegraphics[width=0.8\textwidth]{Figures/welcome.png}}
 	\caption{Welcome page of the methodology web app}
+	\label{figure:webWelcome}
 \end{figure}
 
 \subsection{Methodologically unsuitable projects}
@@ -810,6 +824,7 @@ Before proceeding with the methodology itself, several eliminating questions sho
 \begin{figure}
 	\centering\fbox{\includegraphics[width=0.8\textwidth]{Figures/questions.png}}
 	\caption{Questions page of the methodology web app}
+	\label{figure:webQuestions}
 \end{figure}
 
 \subsection{Recommended way of using the methodology}
@@ -818,6 +833,7 @@ If the project has passed all questions from chapter 5.2, it means it is suitabl
 \begin{figure}
 	\centering\includegraphics[width=0.45\textwidth]{Figures/Methodology.png}
 	\caption{Recommended way of using the methodology}
+	\label{figure:activityMethodology}
 \end{figure}
 	
 It is possible that for certain projects the most suitable multi-platform development tool will be clear already after the first set of questions. However, usually the first set of question selects a small group of frameworks with similar capabilities. To distinguish which of them is the most appropriate for a certain project, the second set of questions should be taken. This set contains conditions which are fairly common in mobile app development. Failing one or two requirements in the second set is not as critical as in the first set. Usually, there exists a work-around, but it may increase the project cost, development time or negatively impact app's performance.
@@ -828,11 +844,12 @@ If there is no clear winner even after the third set of questions, then there is
 	
 If not explicitly said otherwise, each question in the first three sets can be answered in three different ways: yes, nice to have and no. Yes means the feature or condition mentioned in the question is necessary in the application and cannot be skipped. Nice to have describes a feature, which is not crucial for the application or has not been included in the requirements, but could improve the performance or UX of the project. No means the condition is irrelevant to the project.
 	
-Similarly, each feature or condition can be fulfilled by the framework in one of three ways: yes, partially and no. Yes means the feature is fully supported by the development tool. Partially means the feature can be implemented, but it comes with a hiccup. The option "partially" usually comes with a note further describing the limitation. No means the feature is completely absent in the framework. Combination of possible answers and requirement implementations results in an evaluation matrix:
+Similarly, each feature or condition can be fulfilled by the framework in one of three ways: yes, partially and no. Yes means the feature is fully supported by the development tool. Partially means the feature can be implemented, but it comes with a hiccup. The option "partially" usually comes with a note further describing the limitation. No means the feature is completely absent in the framework. Combination of possible answers and requirement implementations results in an evaluation matrix, as seen in table \ref{table:evaluationMatrix}.
 	
 \begin{table}[!h]
 	\centering
 	\caption{Evaluation matrix}
+	\label{table:evaluationMatrix}
 	\begin{tabular}{p{3cm} | p{3cm} | p{3cm} | p{3cm}}
 		\toprule
 		\textbf{The user wants it: / The framework has it:} & \textbf{Yes} & \textbf{Partially} & \textbf{No} \\
@@ -856,6 +873,7 @@ First, we will prepare a table. The columns will be filled with the names of the
 \begin{table}[!h]
 	\centering
 	\caption{Sample evaluation - step 1}
+	\label{table:sampleEvaluation1}
 	\begin{tabular}{p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}}
 		\toprule
 		& \textbf{Codename One} & \textbf{Ionic} & \textbf{NeoMAD} & \textbf{ViziApps} \\
@@ -870,6 +888,7 @@ Then we continue through the methodology and examine all necessary questions. We
 \begin{table}[!h]
 	\centering
 	\caption{Sample evaluation - step 2}
+	\label{table:sampleEvaluation2}
 	\begin{tabular}{p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}}
 		\toprule
 		& \textbf{Codename One} & \textbf{Ionic} & \textbf{NeoMAD} & \textbf{ViziApps} \\
@@ -889,6 +908,7 @@ The first requirement for our sample project is to target Android, iOS and Windo
 \begin{table}[!h]
 	\centering
 	\caption{Sample evaluation - step 3}
+	\label{table:sampleEvaluation3}
 	\begin{tabular}{p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}}
 		\toprule
 		& \textbf{Codename One} & \textbf{Ionic} & \textbf{NeoMAD} & \textbf{ViziApps} \\
@@ -910,6 +930,7 @@ UI responsiveness to various screen sizes is a question from the second set. Onc
 \begin{table}[!h]
 	\centering
 	\caption{Sample evaluation - step 4}
+	\label{table:sampleEvaluation4}
 	\begin{tabular}{p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}}
 		\toprule
 		& \textbf{Codename One} & \textbf{Ionic} & \textbf{NeoMAD} & \textbf{ViziApps} \\
@@ -933,6 +954,7 @@ Implementing Bluetooth is not a necessary condition, thus we use the "Nice to ha
 \begin{table}[!h]
 	\centering
 	\caption{Sample evaluation - step 5}
+	\label{table:sampleEvaluation5}
 	\begin{tabular}{p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}}
 		\toprule
 		& \textbf{Codename One} & \textbf{Ionic} & \textbf{NeoMAD} & \textbf{ViziApps} \\
@@ -958,6 +980,7 @@ After counting all the points, we can see that Ionic is the most suitable framew
 \begin{figure}
 	\centering\includegraphics[width=0.8\textwidth]{Figures/ActivityDiagram7.png}
 	\caption{Evaluation process for primary questions}
+	\label{figure:activityPrimary}
 \end{figure}
 
 This is the first and most important set of questions. Majority of the questions are crucial to all applications. Questions that are irrelevant to your project should be skipped. All tools that do not satisfy at least one condition in this first category should be removed. There might be some tools that have partial or planned support for some of the conditions. It depends on your particular use case whether this limitation can be accepted or not. 
@@ -1024,6 +1047,7 @@ This is the first and most important set of questions. Majority of the questions
 \begin{figure}
 	\centering\includegraphics[width=0.8\textwidth]{Figures/ActivityDiagram5.png}
 	\caption{Evaluation process for secondary questions}
+	\label{figure:activitySecondary}
 \end{figure}
 
 This set of questions contains conditions that are important for some applications, while irrelevant to others. Failing a condition in this category may seriously affect the development process, but a sort of workaround is usually possible.
@@ -1073,6 +1097,7 @@ This set of questions contains conditions that are important for some applicatio
 \begin{figure}
 	\centering\includegraphics[width=0.8\textwidth]{Figures/ActivityDiagram3.png}
 	\caption{Evaluation process for tertiary questions}
+	\label{figure:activityTertiary}
 \end{figure}
 
 Following questions have either low impact on the application development or relate to a very small niche of projects and a workaround is possible. Yet, they still may balance the scales in one way or another. They serve as a finishing touch after the coarse separation in first two categories.
@@ -1111,10 +1136,10 @@ Following questions have either low impact on the application development or rel
 	Although augmented and virtual reality applications are dominated by games, various utility and even business apps are getting still more popular as well. Implementing one of these technologies might be exactly the thing that will set your app apart from the competition.
 \end{enumerate}
 
-
 \begin{figure}
 	\centering\fbox{\includegraphics[width=0.8\textwidth]{Figures/morequestions.png}}
 	\caption{Tertiary questions page of the methodology web app}
+	\label{figure:webMoreQuestions}
 \end{figure}
 
 \subsection{Supplementary questions}
@@ -1157,6 +1182,7 @@ This last set of questions does not provide simple answers. However, they may he
 \begin{figure}
 	\centering\fbox{\includegraphics[width=0.8\textwidth]{Figures/evaluation.png}}
 	\caption{Evaluation page of the methodology web app}
+	\label{figure:webEvaluation}
 \end{figure}
 
 
@@ -1173,11 +1199,12 @@ The first project is called FloLogic. It consists of a mobile application and cl
 
 However, during the year several requirements were changed, added or removed. Together with other complications, this resulted in extending a project, originally estimated for 3 months, to more than a year. Changes included 3 different UI designs, starting with platform-agnostic UI to native-like platform-specific and then back to a unified UI. 
 
-The project manager of FloLogic wanted to know, whether Xamarin is still a suitable choice, since the development team was struggling with implementation of individual requirements. He provided the current requirements and compared them against individual sets of questions in this methodology. The same questions were then answered by one of FloLogic developers, to provide a slightly different point of view. The results can be found below.
+The project manager of FloLogic wanted to know, whether Xamarin is still a suitable choice, since the development team was struggling with implementation of individual requirements. He provided the current requirements and compared them against individual sets of questions in this methodology. The same questions were then answered by one of FloLogic developers, to provide a slightly different point of view. The results can be found in table \ref{table:flologicPrimary}.
 
 \begin{table}[!h]
 	\centering
 	\caption{FloLogic - Primary questions}
+	\label{table:flologicPrimary}
 	\begin{tabular}{p{5.5cm} | p{3.5cm} | p{3.5cm}}
 		\toprule		
 		\textbf{Question} &	\textbf{Project manager’s answer} & \textbf{Developer’s answer} \\
@@ -1207,11 +1234,12 @@ As the reader can see, the answers of the project manager and developer have dif
 	\item Background process - according to the developer, background processes, although unavailable on iOS, are much more reliable on Android, then PUSH notifications. He would therefore prefer a tool allowing the creation of background services.
 \end{itemize}
 
-Only 5 tools have managed to pass the primary set of questions according to the project manager’s answers. The developer was more demanding, leaving space only to 4 tools. Here are the results with following score:
+Only 5 tools have managed to pass the primary set of questions according to the project manager’s answers. The developer was more demanding, leaving space only to 4 tools. Table \ref{table:flologicResults1} shows the preliminary results.
 
 \begin{table}[!h]
 	\centering
 	\caption{FloLogic - Primary questions results}
+	\label{table:flologicResults1}
 	\begin{tabular}{p{4cm} | p{3cm} | p{3cm} | p{3cm}}
 		\toprule		
 		\textbf{Tool:} & \textbf{Kivy} & \textbf{Kony} & \textbf{NativeScript} \\
@@ -1228,11 +1256,12 @@ Only 5 tools have managed to pass the primary set of questions according to the 
 \end{table}
 
 As the reader can see, Xamarin was eliminated from further consideration already in the first set of questions. Both Xamarin and Xamarin.Forms target native look and feel of applications. Although it is possible to bypass this with various workarounds (as the FloLogic development team has proven), it takes more than a month, compared to a couple of days done in other tools. 
-Let us continue with the second set of questions, which were answered by both the project manager and the developer:
+Let us continue with the second set of questions, which were answered by both the project manager and the developer in table \ref{table:flologicSecondary}.
 
 \begin{table}[!h]
 	\centering
 	\caption{FloLogic - Secondary questions}
+	\label{table:flologicSecondary}
 	\begin{tabular}{p{5.5cm} | p{3.5cm} | p{3.5cm}}
 		\toprule		
 		\textbf{Question} &	\textbf{Project manager’s answer} & \textbf{Developer’s answer} \\
@@ -1253,11 +1282,12 @@ Let us continue with the second set of questions, which were answered by both th
 	\end{tabular}
 \end{table}
 
-Even in the second set some answers differ. The developer was confident enough to create user interfaces purely in code, without the need of a designer tool. Also, the preferences for individual testing techniques differed from the project manager to the developer. After answering the secondary questions, the score table looks like the following:
+Even in the second set some answers differ. The developer was confident enough to create user interfaces purely in code, without the need of a designer tool. Also, the preferences for individual testing techniques differed from the project manager to the developer. After answering the secondary questions, the score look like table \ref{table:flologicResults2}.
 
 \begin{table}[!h]
 	\centering
 	\caption{FloLogic - Secondary questions results}	
+	\label{table:flologicResults2}
 	\begin{tabular}{p{4cm} | p{3cm} | p{3cm} | p{3cm}}
 		\toprule		
 		\textbf{Tool:} & \textbf{Kivy} & \textbf{Kony} & \textbf{NativeScript} \\
@@ -1273,11 +1303,12 @@ Even in the second set some answers differ. The developer was confident enough t
 	\end{tabular}
 \end{table}
 
-Already now, the winner is very distinguishable. Kony leads with 72 points, with NativeScript being not that far on the second place. The project manager of FloLogic was familiar with React Native, but both Native Script and Kony were new to him. He wanted to take also tertiary questions in order to see, whether Ract Native comes closer to Kony, or whether the gap widens. Here are the answers for the last set of questions:
+Already now, the winner is very distinguishable. Kony leads with 72 points, with NativeScript being not that far on the second place. The project manager of FloLogic was familiar with React Native, but both Native Script and Kony were new to him. He wanted to take also tertiary questions in order to see, whether Ract Native comes closer to Kony, or whether the gap widens. Table \ref{table:flologicTertiary} displays the answers for the last set of questions.
 
 \begin{table}[!h]
 	\centering
 	\caption{FloLogic - Tertiary questions}
+	\label{table:flologicTertiary}
 	\begin{tabular}{p{9.5cm} | p{3cm}}
 		\toprule		
 		\textbf{Question} &	\textbf{Project manager’s answer} \\
@@ -1299,6 +1330,7 @@ Already now, the winner is very distinguishable. Kony leads with 72 points, with
 \begin{table}[!h]
 \centering
 \caption{FloLogic - Tertiary questions results}
+\label{table:flologicResults3}
 	\begin{tabular}{p{4cm} | p{3cm} | p{3cm} | p{3cm}}
 		\toprule		
 		\textbf{Tool:} & \textbf{Kivy} & \textbf{Kony} & \textbf{NativeScript} \\
@@ -1318,11 +1350,12 @@ The manager was surprised with the results and displayed deep interest in the Ko
 
 The next project belongs to an indie startup which tries to fill the "App gap" in Windows market. They realize that Windows is not particularly strong in the mobile field, but thanks to the concepts of Universal Windows Platform they would like to create an app that runs on smartphones, tablets and desktops as well. Although this methodology does not focus on multi-platform desktop development tools, some frameworks mentioned in this thesis allow it as well.
 
-The goal of Project W is to create an app that helps the user to track his/her daily water intake. Unlike similar apps, this app calculates the required water intake dynamically based on local weather, user statistics and data from other health-tracking apps the user might have installed. The answers for the first set of questions can be found below.
+The goal of Project W is to create an app that helps the user to track his/her daily water intake. Unlike similar apps, this app calculates the required water intake dynamically based on local weather, user statistics and data from other health-tracking apps the user might have installed. The answers to the first set of questions can be found in table \ref{table:wPrimary}.
 
 \begin{table}[!h]
 	\centering
 	\caption{Project W - Primary questions}
+	\label{table:wPrimary}
 	\begin{tabular}{p{9cm} | p{4.5cm}}
 		\toprule		
 		\textbf{Question} &	\textbf{Answer}\\
@@ -1351,6 +1384,7 @@ The startup has quite limited resources. Although they would like to create apps
 \begin{table}[!h]
 	\centering
 	\caption{Project W - Primary questions results}
+	\label{table:wResults1}
 	\begin{tabular}{p{4cm} | p{3cm} | p{3cm} | p{3cm}}
 		\toprule		
 		\textbf{Tool:} & \textbf{Embarcadero} & \textbf{Ionic} & \textbf{Monaca} \\ 
@@ -1373,6 +1407,7 @@ We can see that all selected frameworks have fairly equal score (except of React
 \begin{table}[!h]
 	\centering
 	\caption{Project W - Secondary questions}
+	\label{table:wSecondary}
 	\begin{tabular}{p{7.5cm} | p{5cm}}
 		\toprule		
 		\textbf{Question} &	\textbf{Answer} \\
@@ -1398,6 +1433,7 @@ Although the Project W application will be rather simple considering the UI, it 
 \begin{table}[!h]
 	\centering
 	\caption{Project W - Secondary questions results}
+	\label{table:wResults2}
 	\begin{tabular}{p{4cm} | p{3cm} | p{3cm} | p{3cm}}
 		\toprule		
 		\textbf{Tool:} & \textbf{Embarcadero} & \textbf{Ionic} & \textbf{Monaca} \\ 
@@ -1420,6 +1456,7 @@ Embarcadero is still at the forefront, but Xamarin surpassed it together with Ta
 \begin{table}[!h]
 	\centering
 	\caption{Project W - Tertiary questions}
+	\label{table:wTertiary}
 	\begin{tabular}{p{7.5cm} | p{5cm}}
 		\toprule		
 		\textbf{Question} &	\textbf{Answer} \\
@@ -1441,6 +1478,7 @@ Embarcadero is still at the forefront, but Xamarin surpassed it together with Ta
 \begin{table}[!h]
 	\centering
 	\caption{Project W - Tertiary questions results}
+	\label{table:wResults3}
 	\begin{tabular}{p{4cm} | p{3cm} | p{3cm} | p{3cm}}
 		\toprule		
 		\textbf{Tool:} & \textbf{Embarcadero} & \textbf{Ionic} & \textbf{Monaca} \\ 
@@ -1462,11 +1500,12 @@ As we can see, Embarcadero has lost 6 points, while Xamarin has only strengthene
 
 \subsection{Sensus}
 
-The last tested project is called Sensus. This is again a Xamarin project targeted for Android and Windows. The project is extension to an existing family of .NET projects for web and desktop environments. Xamarin was chosen in the hope to re-use some common libraries. In Sensus, high importanse is put on bluetooth and QR code scanner functionality. The following tables show the scrum master's answers to all three sets of questions:
+The last tested project is called Sensus. This is again a Xamarin project targeted for Android and Windows. The project is extension to an existing family of .NET projects for web and desktop environments. Xamarin was chosen in the hope to re-use some common libraries. In Sensus, high importanse is put on bluetooth and QR code scanner functionality. Tables \ref{table:sensusPrimary} - \ref{table:sensusTertiary} show the scrum master's answers to all three sets of questions.
 
 \begin{table}[!h]
 	\centering
 	\caption{Sensus - Primary questions}
+	\label{table:sensusPrimary}
 	\begin{tabular}{p{7.5cm} | p{5cm}}
 		\toprule		
 		\textbf{Question} &	\textbf{Answer}\\
@@ -1491,6 +1530,7 @@ The last tested project is called Sensus. This is again a Xamarin project target
 \begin{table}[!h]
 	\centering
 	\caption{Sensus - Secondary questions}
+	\label{table:sensusSecondary}
 	\begin{tabular}{p{7.5cm} | p{5cm}}
 		\toprule		
 		\textbf{Question} &	\textbf{Answer} \\
@@ -1514,6 +1554,7 @@ The last tested project is called Sensus. This is again a Xamarin project target
 \begin{table}[!h]
 	\centering
 	\caption{Sensus - Tertiary questions}
+	\label{table:sensusTertiary}
 	\begin{tabular}{p{9.5cm} | p{3cm}}
 		\toprule		
 		\textbf{Question} &	\textbf{Answer} \\
@@ -1537,6 +1578,7 @@ As the reader will notice, the same set of frameworks which satisfied the requir
 \begin{table}[!h]
 	\centering
 	\caption{Sensus - Questions results}
+	\label{table:sensusResults}
 	\begin{tabular}{p{4cm} | p{3cm} | p{3cm} | p{3cm}}
 		\toprule		
 		\textbf{Tool:} & \textbf{Kivy} & \textbf{Kony} & \textbf{NativeScript} \\ 
@@ -1601,7 +1643,7 @@ The scrum master confirmed the development team struggled with this issue for a 
 	\bibitem{mosMarketShare} Mobile/Tablet Operating System Market Share. \textit{NetMarketShare} [online]. [cit. 2017-03-10]. Available at: https://www.netmarketshare.com/operating-system-market-share.aspx?qprid=8\&qpcustomd=1
 	%N
 	\bibitem{nativeScriptWinSupport} NativeScript Runtime Preview for Windows 10. \textit{NativeScript} [online]. [cit. 2017-03-10]. Available at: https://www.nativescript.org/blog/nativescript-runtime-preview-for-windows-10
-	\bibitem{iosUsersPay} New Report Shows iOS Users Spend Money, Like to Check Weather. \textit{The Mac Observer} [online]. [cit. 2017-03-10]. Available at: https://www.macobserver.com/tmo/article/new\_report\_shows\_ios\_users\_spend\_money\_like\_to\_check\_weather
+	\bibitem{iosUsersPay} New Report Shows iOS Users Spend Money, Like to Check Weather. \textit{The Mac Observer} [online]. [cit. 2017-03-10]. Available at: https://www.macobserver.com/tmo/article/new\_report\_shows\_ios\_users\_spend\_money \_like\_to\_check\_weather
 	\bibitem{appsInStores} Number of apps available in leading app stores as of June 2016. \textit{Statista} [online]. [cit. 2017-03-10]. Available at: https://www.statista.com/statistics/276623/number-of-apps-available-in-leading-app-stores/
 	\bibitem{noOfSmartphones} Number of smartphone users worldwide from 2014 to 2020 (in billions). \textit{Statista} [online]. [cit. 2017-03-10]. Available at: http://www.statista.com/statistics/330695/number-of-smartphone-users-worldwide/
 	%O
