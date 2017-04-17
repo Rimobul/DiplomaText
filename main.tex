@@ -1200,7 +1200,15 @@ This last set of questions does not provide simple answers. However, they may he
 In order to test the methodology out, it has been subjected to several verifications on real projects. 
 
 \subsection{FloLogic}
-The first project is called FloLogic. It consists of a mobile application and cloud backend, monitoring and controlling a water valve. The project was started more than a year ago. The original specification required to use Xamarin, because the product owner had an MSDN subscription. Other requirements included:
+The first project is called FloLogic. It consists of a mobile application and cloud backend, monitoring and controlling a water valve. The project was started more than a year ago. 
+
+\begin{figure}[!h]
+	\centering\fbox{\includegraphics[width=0.9\textwidth]{Figures/flologic.png}}
+	\caption{FloLogic architecture}
+	\label{figure:flologic}
+\end{figure}
+
+The original specification required to use Xamarin, because the product owner had an MSDN subscription. Other requirements included:
 \begin{enumerate}
 	\item Focus on iOS and Android, with later implementation for Windows Phones
 	\item Implementation of a Microsoft Azure cloud service, communicating with the mobile app and the water valve
